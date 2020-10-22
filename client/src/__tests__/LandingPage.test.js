@@ -1,0 +1,1 @@
+<h1>this is test for components belongs to landing page</h1>;
