@@ -89,7 +89,7 @@ This section shows file structures used in backend:
 
 This section shows file structures used in this app:
 
-**tests** : Any tests for the components are stored here.
+**tests** : E2E testing for the app.
 
 **assets**: The project's assests are stored here.
 
