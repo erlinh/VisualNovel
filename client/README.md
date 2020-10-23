@@ -39,7 +39,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### `npm run lint`
 
-This command runs the eslint to check wheather the provided rules are followed or not. If code don't followed the provided rules, it will shows errors in the terminal. Check the error and fixed it before commit to local or remote.
+Go to the client folder of the app and run the command (npm run lint) the eslint to check wheather the provided rules are followed or not. If code don't followed the provided rules, it will shows errors in the terminal. Check the error and fixed it before commit to local or remote.
 
 ### `npm run lint:fix`
 
