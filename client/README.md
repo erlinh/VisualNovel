@@ -37,6 +37,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+### `npm run lint`
+
+Go to the client folder of the app and run the command (npm run lint) the eslint to check wheather the provided rules are followed or not. If code don't followed the provided rules, it will shows errors in the terminal. Check the error and fixed it before commit to local or remote.
+
+### `npm run lint:fix`
+
+This command try to fix the outcomes errors. Run the (npm run lint) to see the error at first before npm run lint:fix in order to fix the error.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
@@ -66,3 +74,39 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## file structures
+
+### api(backend) folder:
+
+This section shows file structures used in backend:
+
+**config**: It takes all the configuration files. environamental variables. PORT number, secrets, keys etc. **Do not commit this file to Git**.
+
+**controllers**: It takes user request (HTTp request) and then generates appropriate response which is fed to the viewer. In short, (req, res) handler.
+
+**models**: All the database models should go here. you should write each model into its own file.
+
+**public**: All the public files such as: images, javascript files, css files should go into this folder having seperate folder for each.
+
+**routes**: All your routing-realted logic should go into this folder. Again divide this logic into multiple files based on functionality. for examble: User routing functionaloty should go into UserRouter.js.
+
+**views**: This folder contains all your views ie. HTML tampletes(ejs/jeda files)
+
+### client folder
+
+This section shows file structures used in this app:
+
+**tests** : E2E testing for the app.
+
+**assets**: The project's assests are stored here.
+
+- resources: Contains all graphics in a graphic format(ex: jpg, png, svg, mp4). for eg: logo.srv, main-banner.png, langingPage-video.mp4 and so on.
+
+**components**: All components that are either presentational or containers are stored here. Testing, css and index.js of every components should store into its own folder. for eg. Example.css, Example.test.js and index.js.
+
+**pages**: All components that represent a react Route are stored here.
+
+- for eg: HomePage.js, Contactpage.js and so on.
+
+**styles**: All styling for the components are stored here (css, scss, styled components)
