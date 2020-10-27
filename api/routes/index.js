@@ -6,4 +6,7 @@ router.get('/', function(req, res, next) {
   res.send("ok");
 });
 
+router.get('/story',(req,res)=>{
+  res.send('this is story section')
+})
 module.exports = router;
