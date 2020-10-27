@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function HeroBanner() {
+export default function HeroBanner({name}) {
   return (
     <div>
-      <h2>This is hero banner</h2>
+      <h2>Hello, {name}!</h2>
     </div>
   );
 }
