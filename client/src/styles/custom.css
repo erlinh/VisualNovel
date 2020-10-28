@@ -1,27 +1,12 @@
-:root {
-    --main-primary: #CA86FF;
-    --main-secondary: #4ADD58;
-    --neon-primary: #BB64FF;
-    --neon-secondary: #3DFF50;
-    --dark-primary: #A02FF8 ;
-    --dark-secondary:#04DB19;
-    --background-dark: black;
-    --background-light: #F9F9F9;
-    --font-light: white;
-    --font-dark: black;
-}
+@import './variables.css';
 
 body {
     background-color: var(--background-dark);
 }
 
-h1 {
-    color: var(--font-light);
-    text-align: center;
-}
 
-h2{
-    color: var(--font-light);
+.jumbotron {
+    background: var(--background-dark);
 }
 
 .card {
