@@ -7,9 +7,32 @@ import './BrowsingGrid.css';
 
 export default function BrowsingGrid() {
   return (
-    <div className="browsing-grid-wrapper">
-      <StoryCards/>
-    </div>
+    <>
+      <h3>All Stories:</h3>
+      <div className="browsing-grid-wrapper">
+        <StoryCards category="all"/>
+      </div>
+
+      <h3>Fantasy:</h3>
+      <div className="browsing-grid-wrapper">
+        <StoryCards category="fantasy"/>
+      </div>
+
+      <h3>Timeless Classics:</h3>
+      <div className="browsing-grid-wrapper">
+        <StoryCards category="classics"/>
+      </div>
+
+      <h3>Teen Literature:</h3>
+      <div className="browsing-grid-wrapper">
+        <StoryCards category="teen"/>
+      </div>
+
+      <h3>For Children:</h3>
+      <div className="browsing-grid-wrapper">
+        <StoryCards category="children"/>
+      </div>
+    </>
   );
 }
 

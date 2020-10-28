@@ -13,7 +13,7 @@ export default function StoryCard({id, title, author, rating, categories}) {
       <p>This is a story card.</p>
       <p>ID: {id}</p>
       <p>Rating: {rating}/5</p>
-      <p>Categories: {categories}</p>
+      {/* <p>Categories: {categories}</p> */}
     </Card>
   );
 }
