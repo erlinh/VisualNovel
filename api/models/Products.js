@@ -13,8 +13,6 @@ const ProductSchema = new Schema({
     type: String,
     required: true,
   },
-  image: String,
-
   createdAt: {
     type: Date,
     default: Date.now,
@@ -23,9 +21,9 @@ const ProductSchema = new Schema({
   timestamps: true,
 });
 
-//inside mongoose.model('Product')=>'Product'represent the singular form of database.
-//name(mongodb will search pular name of 'Product' in db)
+//inside mongoose.model('product')=>'product'represent the singular form of database.
+//name(mongodb will search pular name of 'product' in db)
 //Afterward we can use variable name (Product) anytime when we put, create,delete,update our db.
-const Product = mongoose.model("Product", ProductSchema);
+const Product = mongoose.model("product", ProductSchema);
 
 module.exports = Product;
