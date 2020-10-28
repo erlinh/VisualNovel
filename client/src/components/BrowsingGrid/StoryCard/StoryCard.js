@@ -4,6 +4,7 @@ import {
   Card,
   CardTitle, CardSubtitle
 } from 'reactstrap';
+import './StoryCard.css';
 
 export default function StoryCard({id, title, author, rating, categories}) {
   return (
