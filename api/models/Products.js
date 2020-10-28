@@ -9,10 +9,17 @@ const ProductSchema = new Schema({
     type: String,
     required: true,
   },
+  author:{
+    type:String,
+    required:true,
+  },
   rating: {
     type: String,
     required: true,
   },
+  categories: [{
+    type:String
+  }],
   createdAt: {
     type: Date,
     default: Date.now,

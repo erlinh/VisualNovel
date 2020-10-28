@@ -7,30 +7,30 @@ router.get('/', function(req, res, next) {
   res.send("ok");
 });
 
-//GET 
-router.get('/stories',(req,res)=>{
+//GET the data from database
+router.get('/stories', async (req,res)=>{
   try {
-  const products = Products.find({})
-  res.send(products)
+  const products = await Products.find({});
+  res.json(products)
   } catch (error) {
-    res.send('there is an error to get the data')
+    res.send('there is an error to get the data'+error)
   }
  
 })
 
-//POST
+//POST request to database
 router.post('/stories', async(req,res)=>{
   try {
-  console.log(req.body)
   const product=new Products();
   product.title=req.body.title;
+  product.author=req.body.author;
   product.rating=req.body.rating;
-  //product.image=req.body.image;
-  console.log(product)
+  product.categories=req.body.categories;
+  console.log(product) 
   await product.save();
-  res.send(product)
+  res.json(product)
   } catch (error) {
-    res.send('there is an error')
+    res.send('there is an error' + error)
   } 
 })
 module.exports = router;
