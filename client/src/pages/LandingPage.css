@@ -1,0 +1,11 @@
+@import '../styles/variables.css';
+
+
+h1 {
+    color: var(--font-light);
+    text-align: center;
+}
+
+h2{
+    color: var(--font-light);
+}
