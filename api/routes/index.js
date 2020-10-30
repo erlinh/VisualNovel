@@ -38,6 +38,7 @@ Productrouter.post('/stories', async(req,res)=>{
   } 
 })
 
+//GET route to specific ID, in this we use slug inplace of ID.
 Productrouter.get('/stories/:slug', async (req,res)=>{
   const product = await Products.findOne({
     slug:req.params.slug
