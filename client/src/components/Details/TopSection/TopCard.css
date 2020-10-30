@@ -1,3 +1,20 @@
 .topSection__bg{
     background-color: #130f40;
 }
+
+.topSection__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding-bottom: 2rem;
+    /*border: 1px solid red; */
+    
+}
+.topSection__CardImg{
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+    padding-right: 2rem;
+}
+ 
