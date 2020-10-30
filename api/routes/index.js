@@ -4,6 +4,7 @@ const Products=require('../models/Products')
 
 /* GET home page. */
 Productrouter.get('/', function(req, res, next) {
+  res.redirect('/stories');
   res.send("ok");
 });
 
