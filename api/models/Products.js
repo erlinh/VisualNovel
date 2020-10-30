@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const slugify= require('slugify')
  
 
 //Schema represent the database's structure and it's contents.
@@ -17,6 +18,12 @@ const ProductSchema = new Schema({
     type: String,
     required: true,
   },
+  slug: {
+    type: String,
+    required: true,
+    unique:true,
+
+  },
   categories: [{
     type:String
   }],
@@ -27,6 +34,18 @@ const ProductSchema = new Schema({
 }, {
   timestamps: true,
 });
+
+//this will validate ProductSchema before store its data to database.
+ProductSchema.pre('validate', function (next) {
+  if (this.title) {
+    this.slug = slugify(this.title, {
+      lower: true,
+      strict: true
+    })
+    next()
+  }
+})
+
 
 //inside mongoose.model('product')=>'product'represent the singular form of database.
 //name(mongodb will search pular name of 'product' in db)

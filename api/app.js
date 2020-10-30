@@ -20,6 +20,7 @@ mangoose.connect( dbURI, {
   })
   .then(() => console.log("connected to db"))
   .catch((err) => console.log("there is an error", err));
+ 
 //listing to LocalHost
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
@@ -32,7 +33,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
