@@ -37,4 +37,18 @@ Productrouter.post('/stories', async(req,res)=>{
     res.send('there is an error' + error)
   } 
 })
+
+Productrouter.get('/stories/:slug', async (req,res)=>{
+  const product = await Products.findOne({
+    slug:req.params.slug
+  })
+  try {
+    res.json(product)
+  } catch (err) {
+    console.log("there is an error to get data", err)
+    //res.json({message:"There is no data with that ID"})
+    res.json({message:"there is no data with that title"})
+  }
+})
+
 module.exports = Productrouter;
