@@ -4,13 +4,13 @@ import '../TopSection/TopCard.css';
 const TopCard =()=>{
   return(
     <>
-      <div className="media topSection__bg">
+      <div className="media body topSection__bg">
         <div className="container">
           <div className="topSection__row text-light">
             <div className="topSection__CardImg ">
               <img src="https://via.placeholder.com/250x350" alt="img"/>
             </div>
-            <div className="media-body">
+            <div className="media-body topSection__p">
               <h5 className="mt-0">Title of the Book</h5>
               <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
               </p>
