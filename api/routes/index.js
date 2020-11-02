@@ -17,18 +17,32 @@ Productrouter.get('/stories', async (req,res)=>{
   });
   //console.log(products)
 
-  const categories = ["cartoon", "animation", "kids", "fantasy", "action"];
+  // get the list of categories available in the whole DB
+  const categories = [];
+  products.forEach(product => {
+    product.categories.forEach(category => {
+      if (!categories.includes(category)) {
+        categories.push(category);
+      }
+    })
+  })
 
-  const productsInCategories = {};
+  // the "new" object of all entries, sorted into categories
+  const productsInCategories = {
+    "all": products
+  };
 
+  // populate categories
   categories.forEach(category => {
     let productsOfCategory = [];
+    // fish out the entries with certain category
     products.forEach(product => {
       if (product.categories.includes(category)) {
         productsOfCategory.push(product)
       }
     });
 
+    // add to the "new" end object the key-value pair of category and array of all fitting entries
     productsInCategories[category] = productsOfCategory;
   })
 
