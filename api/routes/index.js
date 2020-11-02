@@ -46,7 +46,8 @@ Productrouter.get('/stories', async (req,res)=>{
     productsInCategories[category] = productsOfCategory;
   })
 
-  console.log(productsInCategories);
+  //console.log(productsInCategories);
+  res.json(productsInCategories);
 
   // LODASH TRY
   /* const categoriesAvailable = ["cartoon", "animation", "kids", "fantasy", "action"];
@@ -56,9 +57,7 @@ Productrouter.get('/stories', async (req,res)=>{
       return product.categories;
     })
     console.log(groupedProducts) */
-  
 
-  res.json(products);
   } catch (error) {
     res.send('there is an error to get the data'+error);
   }
