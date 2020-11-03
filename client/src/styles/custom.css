@@ -1,0 +1,17 @@
+@import './variables.css';
+
+/* Style customizations for reactstrap styles. */
+
+body {
+    background-color: var(--background-dark);
+}
+
+
+.jumbotron {
+    background: var(--background-dark);
+}
+
+.card {
+    background-color: var(--main-primary);
+}
+
