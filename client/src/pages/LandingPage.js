@@ -8,7 +8,7 @@ export default function LandingPage() {
   return (
     <div>
       <Jumbotron>
-        <h1>this is landing page. Includes all the components belongs to landing page</h1>
+        <h1>This is the landing page. Includes all the components that belong to the landing page.</h1>
         <HeroBanner name={'Reader'}/>
       </Jumbotron>
       <BrowsingGrid />

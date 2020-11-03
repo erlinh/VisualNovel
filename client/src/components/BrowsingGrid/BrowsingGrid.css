@@ -1,6 +1,11 @@
 @import '../../styles/variables.css';
 
-.browsing-grid-wrapper {
+/* .browsing-grid-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+} */
+
+h3 {
+    color: var(--font-light);
+    margin-left: 2rem;
 }

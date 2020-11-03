@@ -1,11 +1,12 @@
 @import '../styles/variables.css';
 
+/* Jumbotron background color set in custom.css */
 
 h1 {
     color: var(--font-light);
     text-align: center;
-}
+    }
 
 h2{
-    color: var(--font-light);
-}
+    color: var(--font-light);  
+    }
