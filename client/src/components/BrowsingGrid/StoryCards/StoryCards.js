@@ -5,6 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import StoryCard from '../StoryCard/StoryCard';
 
 import allStories from '../../../assets/resources/sampleBookData.json';
+import './StoryCards.css';
 
 // responsiveness settings for the carousels
 const responsive = {

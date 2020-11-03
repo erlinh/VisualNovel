@@ -1,7 +1,26 @@
 @import '../../../styles/variables.css';
 
+/* Styling for individual story cards/covers. Card background color
+set in custom.css */
+
 .card {
     margin: 1rem;
     padding: 0.5rem;
-    
+    height: 250px;
+    width: 190px;
+}
+
+
+@media only screen and (max-width:1024px){
+    .card{
+        width: 170px;
+        height: 230px;
+    }
+}
+
+@media only screen and (max-width:364px){
+    .card{
+        width: 170px;
+        height: 230px;
+    }
 }

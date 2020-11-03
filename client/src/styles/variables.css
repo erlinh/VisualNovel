@@ -1,3 +1,6 @@
+/* Variables for colors and other recurring styles used across the app, 
+imported into individual stylesheets */
+
 :root {
     --main-primary: #CA86FF;
     --main-secondary: #4ADD58;

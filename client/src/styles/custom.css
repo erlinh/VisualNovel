@@ -1,5 +1,7 @@
 @import './variables.css';
 
+/* Style customizations for reactstrap styles. */
+
 body {
     background-color: var(--background-dark);
 }
@@ -12,3 +14,4 @@ body {
 .card {
     background-color: var(--main-primary);
 }
+

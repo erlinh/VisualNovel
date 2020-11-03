@@ -1,0 +1,6 @@
+/* Removes the highlight box around the navigation arrows. */
+
+.react-multiple-carousel__arrow:focus,
+.react-multiple-carousel__arrow:active{
+outline: none;
+}
