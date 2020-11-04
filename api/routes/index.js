@@ -6,6 +6,7 @@ var _ = require('lodash');
 
 /* GET home page. */
 Productrouter.get('/', function(req, res, next) {
+  res.redirect('/stories');
   res.send("ok");
 });
 
@@ -81,5 +82,19 @@ Productrouter.post('/stories', async(req,res)=>{
     res.send('there is an error' + error);
   } 
 });
+
+//GET route to specific ID, in this we use slug inplace of ID.
+Productrouter.get('/stories/:slug', async (req,res)=>{
+  const product = await Products.findOne({
+    slug:req.params.slug
+  })
+  try {
+    res.json(product)
+  } catch (err) {
+    console.log("there is an error to get data", err)
+    //res.json({message:"There is no data with that ID"})
+    res.json({message:"there is no data with that title"})
+  }
+})
 
 module.exports = Productrouter;
