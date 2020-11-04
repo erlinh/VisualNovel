@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 import SearchBox from '../SearchBox/SearchBox';
 
-export default function NavBar(props) {
+export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -23,7 +23,7 @@ export default function NavBar(props) {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <SearchBox searchInputOnChange={props.searchInputOnChange} searchPhrase={props.searchPhrase} triggerSearch={props.triggerSearch}/>
+              <SearchBox/>
             </NavItem>
             <NavItem>
               <NavLink href="/">Log In</NavLink>

@@ -1,6 +1,7 @@
 require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
+var cors = require('cors');
 var mangoose = require("mongoose");
 var path = require('path');
 var bodyParser = require('body-parser')
@@ -10,6 +11,9 @@ var Indexrouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// allow cross-origin
+app.use(cors());
 
 //connect to Mangodb...
 const dbURI = process.env.mongodb_URI;
