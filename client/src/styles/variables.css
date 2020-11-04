@@ -1,0 +1,15 @@
+/* Variables for colors and other recurring styles used across the app, 
+imported into individual stylesheets */
+
+:root {
+    --main-primary: #CA86FF;
+    --main-secondary: #4ADD58;
+    --neon-primary: #BB64FF;
+    --neon-secondary: #3DFF50;
+    --dark-primary: #A02FF8 ;
+    --dark-secondary:#04DB19;
+    --background-dark: black;
+    --background-light: #F9F9F9;
+    --font-light: white;
+    --font-dark: black;
+}
