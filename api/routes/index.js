@@ -2,7 +2,7 @@ var express = require('express');
 var Productrouter = express.Router();
 const Products=require('../models/Products');
 
-var _ = require('lodash');
+//var _ = require('lodash');
 
 /* GET home page. */
 Productrouter.get('/', function(req, res, next) {
@@ -65,7 +65,7 @@ Productrouter.get('/stories', async (req,res)=>{
  
 })
 
-//POST request to database
+//POST request to database - save new product
 Productrouter.post('/stories', async(req,res)=>{
   try {
   const product=new Products();
@@ -83,7 +83,12 @@ Productrouter.post('/stories', async(req,res)=>{
   } 
 });
 
-//GET route to specific ID, in this we use slug inplace of ID.
+// POST - search for entries that include the searchphrase in any field
+Productrouter.post('/search/:searchTerm', async (req, res) => {
+  res.send('search results for "' + req.params.searchTerm + '": blah blah');
+});
+
+//GET route to specific ID, in this we use slug inplace of ID - find product by slug
 Productrouter.get('/stories/:slug', async (req,res)=>{
   const product = await Products.findOne({
     slug:req.params.slug

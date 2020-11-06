@@ -14,10 +14,11 @@ export default function SearchBox() {
       console.log('trying to look for: ' + phrase);
 
       try {
-        const foundStories = await axios.get(`${process.env.REACT_APP_API_URL}/stories`);
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/search/${phrase}`);
+        const foundStories = response.data;
         console.log(foundStories);
       } catch (error) {
-        console.log('error when trying to search: ' + error.message);
+        console.log(`error when trying to search for "${phrase}": ` + error.message);
       }
     };
 
