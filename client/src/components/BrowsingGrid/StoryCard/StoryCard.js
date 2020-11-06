@@ -1,12 +1,11 @@
 import React from 'react';
-//mport ButtonReadMore from '../../Details/TopSection/Buttons';
 import {
   Card,
   CardTitle, CardSubtitle
 } from 'reactstrap';
 import './StoryCard.css';
 
-export default function StoryCard({id, title, author, rating, categories, ButtonReadMore}) {
+export default function StoryCard({id, title, author, rating, categories}) {
   return (
     <Card/*  style={{width: "100px"}} className="mx-3" */>
       <CardTitle>Title: {title}</CardTitle>
