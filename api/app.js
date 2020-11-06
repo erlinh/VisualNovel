@@ -1,15 +1,15 @@
 require('dotenv').config();
-var createError = require('http-errors');
-var express = require('express');
-var mangoose = require("mongoose");
-var path = require('path');
-var bodyParser = require('body-parser')
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var Indexrouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const createError = require('http-errors');
+const express = require('express');
+const mangoose = require("mongoose");
+const path = require('path');
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const Indexrouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 //connect to Mangodb...
 const dbURI = process.env.mongodb_URI;

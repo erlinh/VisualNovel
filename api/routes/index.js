@@ -1,8 +1,7 @@
-var express = require('express');
-var Productrouter = express.Router();
+const express = require('express');
+const Productrouter = express.Router();
 const Products=require('../models/Products');
-
-var _ = require('lodash');
+const _ = require('lodash');
 
 /* GET home page. */
 Productrouter.get('/', function(req, res, next) {
