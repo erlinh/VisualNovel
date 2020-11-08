@@ -1,10 +1,9 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
 import StoryCard from '../StoryCard/StoryCard';
-
 import allStories from '../../../assets/resources/sampleBookData.json';
+//import allStories from '../../../../../api/routes/index'
 import './StoryCards.css';
 
 // responsiveness settings for the carousels
