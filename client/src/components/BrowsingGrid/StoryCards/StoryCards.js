@@ -28,7 +28,7 @@ const responsive = {
 export default function StoryCards() {
 
   const [storiesList, setStoriesList]= useState([]);
-  const  [kidsList, setKidsList]=useState([]);
+  const [kidsList, setKidsList]=useState([]);
   const [actionList, setactionList]=useState([]);
   const [cartoonList, setcartoonList]=useState([]);
   const [fantasylist, setfantasyList]=useState([]);
@@ -76,27 +76,27 @@ const animationListCategory = animationList.map(story =>
 
 return (
     <>
-     <h2>All Stories:</h2>
+     <h2 style={{color:"#cc8e35"}} >All Stories:</h2>
     <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
       {chosenStoriesCards}
     </Carousel>
-    <h2>Kids:</h2>
+    <h2 style={{color:"#cc8e35"}}>Kids:</h2>
     <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
      {kidsListCategory}
     </Carousel>
-    <h2>Actions:</h2>
+    <h2 style={{color:"#cc8e35"}}>Actions:</h2>
     <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
       {actionListCategory}
     </Carousel>
-    <h2>fantasy:</h2>
+    <h2 style={{color:"#cc8e35"}}>fantasy:</h2>
     <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
       {fantasyListCategory}
     </Carousel>
-    <h2>Cartoons:</h2>
+    <h2 style={{color:"#cc8e35"}}>Cartoons:</h2>
     <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
       {cartoonListCategory}
     </Carousel>
-    <h2>Animations:</h2>
+    <h2 style={{color:"#cc8e35"}}>Animations:</h2>
     <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
       {animationListCategory}
     </Carousel>

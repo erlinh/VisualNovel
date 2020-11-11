@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {ButtonInfo, ButtonReadMore, ButtonBuy} from './Buttons';
 import '../TopSection/TopCard.css';
 import axios from 'axios';
+import { Button } from 'reactstrap';
 const TopCard =()=>{
   const [storiesList, setStoriesList]= useState([]);
 
@@ -19,7 +19,6 @@ const TopCard =()=>{
     
   },[])
   return(
-    storiesList.map(story=>
       <div className="media body topSection__bg">
       <div className="container">
         <div className="topSection__row text-light">
@@ -27,10 +26,10 @@ const TopCard =()=>{
             <img src="https://picsum.photos/250/350" alt="img"/>
           </div>
           <div className="media-body topSection__p">
-            <h5 className="mt-0">{story.title}</h5>
+            <h5 className="mt-0">title:</h5>
             <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
             </p>
-            <h6 className="mt-0">Author:{story.author}</h6>
+            <h6 className="mt-0">Author:</h6>
             <p> Cras sit amet nibh libero.
             </p>
             <h6 className="mt-0">Description</h6>
@@ -39,17 +38,16 @@ const TopCard =()=>{
                   tempus viverra turpis. 
                   Fusce condimentum nunc ac nisi vulputate fringilla. 
             </p>
-            <h6 className="mt-0">Categories:{story.categories + ""}</h6>
+            <h6 className="mt-0">Categories:</h6>
             <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
             </p>
-            <h6 className="mt-0 pb-3"> rating:{story.rating}/5</h6>
+            <h6 className="mt-0 pb-3"> rating:/5</h6>
             <h6 className="mt-0 pb-3"> IMBD: <i className="fas fa-star" style={{color:'yellow'}}></i> <i className="fas fa-star" style={{color:'yellow'}}>
 
             </i> <i className="fas fa-star" style={{color:'yellow'}}></i></h6>
-
-            <ButtonInfo  />
-            <ButtonReadMore />
-            <ButtonBuy />
+            <Button style={{backgroundColor:"red", borderRadius:"15px",marginRight:"5px"}}>Read More</Button>
+            <Button style={{backgroundColor:"black", borderRadius:"15px",marginRight:"5px"}}>Info</Button>
+            <Button style={{backgroundColor:"blue", borderRadius:"15px",marginRight:"5px"}}>Buy</Button>
               
           </div>
         </div>
@@ -57,10 +55,7 @@ const TopCard =()=>{
     </div>
      
 
-)
-      )
-    
-      
+)  
 };
 
 export default TopCard;
