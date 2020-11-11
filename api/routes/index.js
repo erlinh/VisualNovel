@@ -85,7 +85,24 @@ Productrouter.post('/stories', async(req,res)=>{
 
 // POST - search for entries that include the searchphrase in any field
 Productrouter.post('/search/:searchTerm', async (req, res) => {
-  res.send('search results for "' + req.params.searchTerm + '": blah blah');
+  try {
+    const searchQuery = req.params.searchTerm;
+    
+    const foundProducts = await Products.find({
+      // find products which author or title field includes the search term, case insensitive
+      // if nothing found, returns empty array
+      $or: [
+        {author: { "$regex": searchQuery, "$options": "i"}},
+        {title: { "$regex": searchQuery, "$options": "i"}}
+      ]
+    })
+    console.log('foundProducts: ', foundProducts);
+    res.send(`Search results for "${searchQuery}": found ${foundProducts.length} items`);
+
+  } catch (err) {
+    console.log('error when searching: ', err);
+    res.json({message: 'error when searching'});
+  }
 });
 
 //GET route to specific ID, in this we use slug inplace of ID - find product by slug
