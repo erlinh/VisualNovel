@@ -33,6 +33,7 @@ export default function StoryCards() {
   const [cartoonList, setcartoonList]=useState([]);
   const [fantasylist, setfantasyList]=useState([]);
   const [animationList, setanimationList]=useState([]);
+  const [comedyList, setcomedyList]=useState([]);
 
   useEffect(() => {
     async function fetchData () {
@@ -46,6 +47,7 @@ export default function StoryCards() {
     setcartoonList(data.cartoon);
     setfantasyList(data.fantasy);
     setanimationList(data.animation);
+    setcomedyList(data.comedy);
     } catch (err) {
         console.log(err);
     }
@@ -71,6 +73,9 @@ const cartoonListCategory = cartoonList.map(story =>
   <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} rating={story.rating} slug={story.slug} categories={story.categories+''} />
 );
 const animationListCategory = animationList.map(story =>
+  <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} rating={story.rating} slug={story.slug} categories={story.categories+''} />
+);
+const comedyListCategory = comedyList.map(story =>
   <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} rating={story.rating} slug={story.slug} categories={story.categories+''} />
 );
 
@@ -99,6 +104,10 @@ return (
     <h2 style={{color:"#cc8e35"}}>Animations:</h2>
     <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
       {animationListCategory}
+    </Carousel>
+    <h2 style={{color:"#cc8e35"}}>Comedy:</h2>
+    <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
+      {comedyListCategory}
     </Carousel>
     </>
     

@@ -4,36 +4,34 @@ import instance from '../axios';
 import TopCard from '../components/Details/TopSection/TopCard';
 import EpisodeCard from '../components/Details/MiddleSection/EpisodeCard';
 import NavBar from '../components/NavBar/Navbar';
-
+import {useParams} from 'react-router-dom';
 
 const DetailsPage=()=>{
    //const [storiesList, setStoriesList]= useState([]);
-   const[storiesList, setStoriesList]=useState([]);
-   const [slug, setSlug]=useState([]);
-
+   const[storiesDetails, setStoriesDetails]=useState([]);
+    const slug= useParams().slug;
+console.log(slug);
    useEffect(() => {
      async function fetchData () {
        try {
     
-     const {data} = await instance.get("/stories/:slug");
+     const {data} = await instance.get(`/stories/${slug}`);
      //console.log(data);
-     setStoriesList(data.all);
-     setSlug(data.slug)
-     console.log(setSlug);
+     setStoriesDetails(data);
+      console.log(data)
+     //console.log(setSlug);
      } catch (err) {
          console.log(err);
      }
      }
      fetchData();
      
-   },[])
+   },[slug])
 
   return(
     <>
     <NavBar/>
-    {/* <TopCard key={story._id} id={story._id} title={story.title} author={story.author} rating={story.rating} slug={story.slug} categories={story.categories+''} /> */}
-
-    <TopCard setSlug={setSlug}/>
+    <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
     <EpisodeCard episode=" One"/>
     <EpisodeCard episode=" Two"/>
     <EpisodeCard episode=" Three"/>

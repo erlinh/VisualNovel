@@ -2,22 +2,8 @@ import React, {useState, useEffect} from 'react';
 import '../TopSection/TopCard.css';
 import axios from 'axios';
 import { Button } from 'reactstrap';
-const TopCard =()=>{
-  const [storiesList, setStoriesList]= useState([]);
-
-  useEffect(() => {
-    async function fetchData () {
-      try {
-    const {data} = await axios.get("http://localhost:5000/stories");
-    //console.log(data)
-    setStoriesList(data.all);
-    } catch (err) {
-        console.log(err);
-    }
-    }
-    fetchData();
-    
-  },[])
+const TopCard =({id, title, author, rating, slug, categories})=>{
+  
   return(
       <div className="media body topSection__bg">
       <div className="container">
@@ -26,10 +12,10 @@ const TopCard =()=>{
             <img src="https://picsum.photos/250/350" alt="img"/>
           </div>
           <div className="media-body topSection__p">
-            <h5 className="mt-0">title:</h5>
+            <h5 className="mt-0">{title}</h5>
             <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
             </p>
-            <h6 className="mt-0">Author:</h6>
+            <h6 className="mt-0">Author:{author}</h6>
             <p> Cras sit amet nibh libero.
             </p>
             <h6 className="mt-0">Description</h6>
@@ -38,10 +24,10 @@ const TopCard =()=>{
                   tempus viverra turpis. 
                   Fusce condimentum nunc ac nisi vulputate fringilla. 
             </p>
-            <h6 className="mt-0">Categories:</h6>
+            <h6 className="mt-0">Categories:{categories}</h6>
             <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
             </p>
-            <h6 className="mt-0 pb-3"> rating:/5</h6>
+            <h6 className="mt-0 pb-3"> rating:{rating} /5</h6>
             <h6 className="mt-0 pb-3"> IMBD: <i className="fas fa-star" style={{color:'yellow'}}></i> <i className="fas fa-star" style={{color:'yellow'}}>
 
             </i> <i className="fas fa-star" style={{color:'yellow'}}></i></h6>
