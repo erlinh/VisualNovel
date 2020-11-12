@@ -1,0 +1,9 @@
+.textSettings {
+    color: var(--font-dark);
+    background: var(--background-light);
+    position: absolute;
+    top:10px;
+    left: 90%;
+    z-index: 20;
+}
+

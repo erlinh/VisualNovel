@@ -1,5 +1,7 @@
 /* Variables for colors and other recurring styles used across the app, 
 imported into individual stylesheets */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 :root {
     --main-primary: #CA86FF;
@@ -12,4 +14,7 @@ imported into individual stylesheets */
     --background-light: #F9F9F9;
     --font-light: white;
     --font-dark: black;
+    --font-sans-serif: 'Open Sans', sans-serif;
+    --font-serif: 'Lora', serif;
+
 }
