@@ -7,31 +7,31 @@ import {useParams} from 'react-router-dom';
 
 const DetailsPage=()=>{
    
-   const[storiesDetails, setStoriesDetails]=useState([]);
-    const slug= useParams().slug;
-   useEffect(() => {
-     async function fetchData () {
-       try {
-    const {data} = await instance.get(`/stories/${slug}`);
-    setStoriesDetails(data);
-     } catch (err) {
-         console.log(err);
-     }
-     }
-     fetchData();
+  const[storiesDetails, setStoriesDetails]=useState([]);
+  const slug= useParams().slug;
+  useEffect(() => {
+    async function fetchData () {
+      try {
+        const {data} = await instance.get(`/stories/${slug}`);
+        setStoriesDetails(data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
 
-   },[slug])
+  },[slug]);
 
   return(
     <>
-    <NavBar/>
-    <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
-    <EpisodeCard episode=" One"/>
-    <EpisodeCard episode=" Two"/>
-    <EpisodeCard episode=" Three"/>
-    <EpisodeCard episode=" Four"/>
+      <NavBar/>
+      <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
+      <EpisodeCard episode=" One"/>
+      <EpisodeCard episode=" Two"/>
+      <EpisodeCard episode=" Three"/>
+      <EpisodeCard episode=" Four"/>
     </>
-  )
+  );
 };
 
 export default DetailsPage;

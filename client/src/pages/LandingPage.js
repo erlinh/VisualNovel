@@ -4,6 +4,7 @@ import BrowsingGrid from '../components/BrowsingGrid/BrowsingGrid';
 import Navbar from '../components/NavBar/Navbar';
 import { Jumbotron } from 'reactstrap';
 import './LandingPage.css';
+import FooterGrid from '../components/Footer/FooterGrid';
 
 export default function LandingPage() {
   return (
@@ -14,6 +15,7 @@ export default function LandingPage() {
         <HeroBanner name={'Reader'}/>
       </Jumbotron>
       <BrowsingGrid />
+      <FooterGrid/>
   
     </div>
   );
