@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Button } from 'reactstrap';
-import axios from 'axios';
+import instance from '../../axios';
 
 export default function SearchBox(props) {
     const [searchInput, setSearchInput] = useState('');
@@ -15,7 +15,7 @@ export default function SearchBox(props) {
       
       try {
         // get the stories
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/search/${phrase}`);
+        const response = await instance.post(`/search/${phrase}`);
         const foundStories = response.data;
         // console.log(searchInput, foundStories);
 
