@@ -32,7 +32,7 @@ export default function BrowsingGrid() {
         <StoryCards category="action"/>
       </div> */}
 
-     {/* <div>
+      {/* <div>
         <h3>Kids</h3>
         <StoryCards categories ="kids"/>
       </div>   */}

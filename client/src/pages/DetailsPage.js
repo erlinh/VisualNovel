@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import instance from '../axios';
 import TopCard from '../components/Details/TopSection/TopCard';
 import EpisodeCard from '../components/Details/MiddleSection/EpisodeCard';
@@ -7,25 +6,20 @@ import NavBar from '../components/NavBar/Navbar';
 import {useParams} from 'react-router-dom';
 
 const DetailsPage=()=>{
-   //const [storiesList, setStoriesList]= useState([]);
+   
    const[storiesDetails, setStoriesDetails]=useState([]);
     const slug= useParams().slug;
-console.log(slug);
    useEffect(() => {
      async function fetchData () {
        try {
-    
-     const {data} = await instance.get(`/stories/${slug}`);
-     //console.log(data);
-     setStoriesDetails(data);
-      console.log(data)
-     //console.log(setSlug);
+    const {data} = await instance.get(`/stories/${slug}`);
+    setStoriesDetails(data);
      } catch (err) {
          console.log(err);
      }
      }
      fetchData();
-     
+
    },[slug])
 
   return(

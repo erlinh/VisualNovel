@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import '../TopSection/TopCard.css';
-import axios from 'axios';
 import { Button } from 'reactstrap';
 const TopCard =({id, title, author, rating, slug, categories})=>{
   
   return(
-      <div className="media body topSection__bg">
+    <div className="media body topSection__bg">
       <div className="container">
         <div className="topSection__row text-light">
           <div className="topSection__CardImg ">
@@ -31,9 +30,9 @@ const TopCard =({id, title, author, rating, slug, categories})=>{
             <h6 className="mt-0 pb-3"> IMBD: <i className="fas fa-star" style={{color:'yellow'}}></i> <i className="fas fa-star" style={{color:'yellow'}}>
 
             </i> <i className="fas fa-star" style={{color:'yellow'}}></i></h6>
-            <Button style={{backgroundColor:"red", borderRadius:"15px",marginRight:"5px"}}>Read More</Button>
-            <Button style={{backgroundColor:"black", borderRadius:"15px",marginRight:"5px"}}>Info</Button>
-            <Button style={{backgroundColor:"blue", borderRadius:"15px",marginRight:"5px"}}>Buy</Button>
+            <Button style={{backgroundColor:'red', borderRadius:'15px',marginRight:'5px'}}>Read More</Button>
+            <Button style={{backgroundColor:'black', borderRadius:'15px',marginRight:'5px'}}>Info</Button>
+            <Button style={{backgroundColor:'blue', borderRadius:'15px',marginRight:'5px'}}>Buy</Button>
               
           </div>
         </div>
@@ -41,7 +40,7 @@ const TopCard =({id, title, author, rating, slug, categories})=>{
     </div>
      
 
-)  
+  );  
 };
 
 export default TopCard;

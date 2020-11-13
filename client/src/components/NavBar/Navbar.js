@@ -17,9 +17,9 @@ const NavBar = (props) => {
 
   return (
     <div>
-      <Navbar className="fixed-top" style={{backgroundColor:"black"}} light expand="md">
+      <Navbar className="fixed-top" style={{backgroundColor:'black'}} light expand="md">
         <NavbarBrand className="text-light pl-5" href="/">StoryFics</NavbarBrand>
-        <NavbarToggler style={{backgroundColor:"#1e272e"}} onClick={toggle} />
+        <NavbarToggler style={{backgroundColor:'#1e272e'}} onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
@@ -36,6 +36,6 @@ const NavBar = (props) => {
       </Navbar>
     </div>
   );
-}
+};
 
 export default NavBar;
