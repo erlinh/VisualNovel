@@ -14,6 +14,7 @@ export default function LandingPage() {
         <HeroBanner name={'Reader'}/>
       </Jumbotron>
       <BrowsingGrid />
+  
     </div>
   );
 }
