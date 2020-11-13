@@ -98,7 +98,7 @@ Productrouter.post('/search/:searchTerm', async (req, res) => {
       ]
     })
     console.log('foundProducts: ', foundProducts);
-    res.send(`Search results for "${searchQuery}": found ${foundProducts.length} items`);
+    res.send(foundProducts);
 
   } catch (err) {
     console.log('error when searching: ', err);

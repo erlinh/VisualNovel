@@ -9,7 +9,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='App'>
+      <div className='text-white'>
       <Navbar/>
         <Switch>
           <Route exact path='/' component={LandingPage} />
