@@ -1,0 +1,9 @@
+.search-res-card {
+    border-radius: 5px;
+    border: solid 1px rgba(104, 104, 104, 0.384);
+    padding: 1rem;
+}
+
+.search-res-card h3 {
+    margin-left: 0;
+}

@@ -12,6 +12,9 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// allow cross-origin
+app.use(cors());
+
 //connect to Mangodb...
 const dbURI = process.env.mongodb_URI;
 mangoose.connect( dbURI, {
