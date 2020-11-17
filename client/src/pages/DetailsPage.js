@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import instance from '../axios';
 import TopCard from '../components/Details/TopSection/TopCard';
 import EpisodeCard from '../components/Details/MiddleSection/EpisodeCard';
-import NavBar from '../components/NavBar/Navbar';
+import NavBar from '../components/NavBar/NavBar';
 import {useParams} from 'react-router-dom';
 import FooterGrid from '../components/Footer/FooterGrid';
 
