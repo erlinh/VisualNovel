@@ -4,6 +4,7 @@ import TopCard from '../components/Details/TopSection/TopCard';
 import EpisodeCard from '../components/Details/MiddleSection/EpisodeCard';
 import NavBar from '../components/NavBar/Navbar';
 import {useParams} from 'react-router-dom';
+import FooterGrid from '../components/Footer/FooterGrid';
 
 const DetailsPage=()=>{
    
@@ -30,6 +31,13 @@ const DetailsPage=()=>{
       <EpisodeCard episode=" Two"/>
       <EpisodeCard episode=" Three"/>
       <EpisodeCard episode=" Four"/>
+      <div className="col-lg-10 container">
+        <div className="bg-danger">
+          <hr />
+        </div>
+        <FooterGrid />
+      </div>
+     
     </>
   );
 };

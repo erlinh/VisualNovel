@@ -15,8 +15,10 @@ export default function LandingPage() {
         <HeroBanner name={'Reader'}/>
       </Jumbotron>
       <BrowsingGrid />
+      <div className="bg-danger">
+        <hr />
+      </div>
       <FooterGrid/>
-  
     </div>
   );
 }
