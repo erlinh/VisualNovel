@@ -11,7 +11,7 @@ const TextSettings = () => {
   return (
     <ButtonDropdown isOpen={dropdownOpen} toggle={toggle} className="textSettings">
       <DropdownToggle caret>
-              Menu
+              
       </DropdownToggle>
       <DropdownMenu>
         <DropdownItem header>
