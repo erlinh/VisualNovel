@@ -10,7 +10,7 @@ export default function SearchResults({searchTerm, searchResults}) {
   const storiesToDisplay = searchResults.map(story => {
     return (
       <div key={story.slug} className="search-res-card mb-2 d-flex">
-        <img src="https://picsum.photos/150" alt="img" />
+        <img src={story.imgUrl} alt="book cover" />
         <div className="pl-3">
           <h3>{story.title}</h3>
           <p>By {story.author}</p>
