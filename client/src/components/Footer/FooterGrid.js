@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtomFooter from './Buttom/ButtomFooter';
+import BottomFooter from './Bottom/BottomFooter';
 import Connect from './Connect/Connect';
 import Learn from './Learn/Learn';
 import SocialMedia from './SocialMedia/SocialMedia';
@@ -19,7 +19,7 @@ const FooterGrid=()=>{
       <div className="bg-light">
         <hr />
       </div>
-      <ButtomFooter/>
+      <BottomFooter/>
     </>
   );
   
