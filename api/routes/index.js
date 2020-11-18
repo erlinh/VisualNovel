@@ -72,6 +72,7 @@ Productrouter.post('/stories', async(req,res)=>{
   const product=new Products();
   product.title=req.body.title;
   product.author=req.body.author;
+  product.imgUrl=req.body.imgUrl;
   product.rating=req.body.rating;
   product.categories=req.body.categories;
   console.log(product);

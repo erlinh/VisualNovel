@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import {StoryCard} from '../StoryCard/StoryCard';
-//import allStories from '../../../assets/resources/sampleBookData.json';
-//import StoriesServices from '../../../services/StoriesServices';
-//import allStories from '../../../../../api/routes/index'
 import './StoryCards.css';
 import instance from '../../../axios'; 
 
@@ -26,6 +23,37 @@ const responsive = {
 };
 
 export default function StoryCards() {
+
+  const [storiesList, setStoriesList]= useState([]);
+
+  useEffect(() => {
+    async function fetchData () {
+      try {
+        const {data} = await instance.get('/stories');
+        console.log(data);
+        setStoriesList(data.all);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  },[]);
+
+  const chosenStoriesCards = storiesList.map(story =>
+    <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} imgUrl={story.imgUrl} rating={story.rating} slug={story.slug} categories={story.categories+''} />
+  );
+
+  return (
+    <>
+      <h2 style={{color:'#cc8e35'}} >All Stories:</h2>
+      <Carousel responsive={responsive} centerMode={true} draggable={false} infinite={true} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
+        {chosenStoriesCards}
+      </Carousel>
+      </>
+  )
+}
+
+/* export default function StoryCards() {
 
   const [storiesList, setStoriesList]= useState([]);
   const [kidsList, setKidsList]=useState([]);
@@ -121,7 +149,7 @@ export default function StoryCards() {
   const animationListCategory = animationList.map(story =>
     <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} rating={story.rating} slug={story.slug} categories={story.categories+''} />
   );
-  
+
   const comedyListCategory = comedyList.map(story =>
     <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} rating={story.rating} slug={story.slug} categories={story.categories+''} />
   );
@@ -180,7 +208,7 @@ export default function StoryCards() {
     </>
     
   );
-}
+} */
 
 // draggable=false disables dragging on desktop
 // infinite=true makes it infinite, it does NOT jump back to the beginning when clicking "next" at the last item

@@ -7,11 +7,11 @@ import {
 
 import './StoryCard.css';
 
-const StoryCard=({id, title, author, rating, slug, categories})=> {
+const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
   return (
     <Card style={{width: '300px', height:'460px', backgroundColor:'black', borderRadius:'5px', border:'1px #1e272e solid', lineHeight:'1.2'}} 
       className="p-2 mr-5 text-light">
-      <img className="pb-3" src="https://picsum.photos/150" alt="img" />
+      <img className="pb-3" src={imgUrl} alt="Cover of the story" />
       <CardTitle style={{fontSize:'2rem'}}>{title}</CardTitle>
       <CardSubtitle>By {author}</CardSubtitle>
       <p>This is a story card.</p>
