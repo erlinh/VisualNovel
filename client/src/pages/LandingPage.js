@@ -3,6 +3,8 @@ import HeroBanner from '../components/HeroBanner/HeroBanner';
 import BrowsingGrid from '../components/BrowsingGrid/BrowsingGrid';
 import { Jumbotron } from 'reactstrap';
 import './LandingPage.css';
+import FooterGrid from '../components/Footer/FooterGrid';
+
 
 export default function LandingPage() {
   return (
@@ -12,6 +14,10 @@ export default function LandingPage() {
         <HeroBanner name={'Reader'}/>
       </Jumbotron>
       <BrowsingGrid />
+      <div className="bg-danger">
+        <hr />
+      </div>
+      <FooterGrid/>
     </div>
   );
 }

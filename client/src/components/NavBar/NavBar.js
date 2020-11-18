@@ -32,7 +32,7 @@ const NavBar = (props) => {
             </NavItem>
           </Nav>
           <NavbarText className="text-light pr-4">Redeem</NavbarText>
-           |
+          <span className="mx-2">|</span>
           <NavbarText className="text-light pl-4 ">Sign In</NavbarText>
         </Collapse>
       </Navbar>
