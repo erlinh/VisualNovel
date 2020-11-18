@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import '../TopSection/TopCard.css';
 import { Button } from 'reactstrap';
-const TopCard =({id, title, author, rating, slug, categories})=>{
+const TopCard =({id, title, author, imgUrl, rating, slug, categories})=>{
   
   return(
     <div className="media body topSection__bg">
       <div className="container">
         <div className="topSection__row text-light">
           <div className="topSection__CardImg ">
-            <img src="https://picsum.photos/250/350" alt="img"/>
+            <img src={imgUrl} alt="Book cover"/>
           </div>
           <div className="media-body topSection__p">
             <h5 className="mt-0">{title}</h5>

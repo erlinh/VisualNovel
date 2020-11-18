@@ -39,7 +39,7 @@ export default function StoryCards() {
     async function fetchData () {
       try {
         const {data} = await instance.get('/stories');
-        console.log(data);
+        //console.log(data);
         setAllList(data.all);
         setMysteryList(data.mystery);
         setEroticList(data.erotic);
