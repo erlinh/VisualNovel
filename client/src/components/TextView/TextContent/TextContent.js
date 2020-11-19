@@ -27,9 +27,11 @@ const TextContent = () => {
     <TextCard id={page.id} content={page.content} />
   ));
 
-  return <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
+  return (
+  <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
     {pagesFromJson}
-  </Carousel>;
+  </Carousel>
+  );
 };
 
 export default TextContent;
