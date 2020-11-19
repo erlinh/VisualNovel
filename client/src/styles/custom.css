@@ -15,3 +15,7 @@ body {
     background-color: var(--main-primary);
 }
 
+.storyPage, .textSettingsContainer {
+    color: var(--font-dark)
+}
+

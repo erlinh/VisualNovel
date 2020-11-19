@@ -1,7 +1,8 @@
 .storyPage {
 width: 50vw;
 height: 90vh;
-padding: 4rem 2rem;
+/* padding: 4rem 2rem; */
+padding: 8rem 2rem;
 background-color: var(--background-light);
 font-family: var(--font-serif);
 }

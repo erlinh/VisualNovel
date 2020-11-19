@@ -2,7 +2,7 @@ var express = require('express');
 var Productrouter = express.Router();
 const Products=require('../models/Products');
 
-var _ = require('lodash');
+//var _ = require('lodash');
 
 /* GET home page. */
 Productrouter.get('/', function(req, res, next) {
@@ -47,8 +47,9 @@ Productrouter.get('/stories', async (req,res)=>{
     productsInCategories[category] = productsOfCategory;
   })
 
-  //console.log(productsInCategories);
+  console.log(productsInCategories);
   res.json(productsInCategories);
+
 
   // LODASH TRY
   /* const categoriesAvailable = ["cartoon", "animation", "kids", "fantasy", "action"];
@@ -65,7 +66,7 @@ Productrouter.get('/stories', async (req,res)=>{
  
 })
 
-//POST request to database
+//POST request to database - save new product
 Productrouter.post('/stories', async(req,res)=>{
   try {
   const product=new Products();
@@ -83,7 +84,29 @@ Productrouter.post('/stories', async(req,res)=>{
   } 
 });
 
-//GET route to specific ID, in this we use slug inplace of ID.
+// POST - search for entries that include the searchphrase in any field
+Productrouter.post('/search/:searchTerm', async (req, res) => {
+  try {
+    const searchQuery = req.params.searchTerm;
+    
+    const foundProducts = await Products.find({
+      // find products which author or title field includes the search term, case insensitive
+      // if nothing found, returns empty array
+      $or: [
+        {author: { "$regex": searchQuery, "$options": "i"}},
+        {title: { "$regex": searchQuery, "$options": "i"}}
+      ]
+    })
+    console.log('foundProducts: ', foundProducts);
+    res.send(foundProducts);
+
+  } catch (err) {
+    console.log('error when searching: ', err);
+    res.json({message: 'error when searching'});
+  }
+});
+
+//GET route to specific ID, in this we use slug inplace of ID - find product by slug
 Productrouter.get('/stories/:slug', async (req,res)=>{
   const product = await Products.findOne({
     slug:req.params.slug

@@ -1,5 +1,6 @@
 import React from 'react';
 import StoryCards from './StoryCards/StoryCards';
+ 
 import './BrowsingGrid.css';
 
 // import {Col, Row} from 'reactstrap';
@@ -8,29 +9,33 @@ export default function BrowsingGrid() {
   return (
     <>
       <div>
-        <h3>All Stories:</h3>
-        <StoryCards category="all"/>
+        <StoryCards  />
       </div>
 
-      <div>
+      {/* <div>
         <h3>Fantasy:</h3>
         <StoryCards category="fantasy"/>
       </div>
 
       <div>
-        <h3>Timeless Classics:</h3>
-        <StoryCards category="classics"/>
+        <h3>Animation:</h3>
+        <StoryCards category="animation"/>
       </div>
-
       <div>
-        <h3>Teen Literature:</h3>
-        <StoryCards category="teen"/>
-      </div>
+        <h3>Cartoons:</h3>
+        <StoryCards category="cartoon"/>
+      </div>*/}
 
-      <div>
-        <h3>For Children:</h3>
-        <StoryCards category="children"/>
-      </div>
+
+      {/* <div>
+        <h3>Action:</h3>
+        <StoryCards category="action"/>
+      </div> */}
+
+      {/* <div>
+        <h3>Kids</h3>
+        <StoryCards categories ="kids"/>
+      </div>   */}
     </>
   );
 }
