@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import '../TopSection/TopCard.css';
 import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+
 const TopCard =({id, title, author, imgUrl, rating, slug, categories})=>{
   
   return(
@@ -30,7 +32,7 @@ const TopCard =({id, title, author, imgUrl, rating, slug, categories})=>{
             <h6 className="mt-0 pb-3"> IMBD: <i className="fas fa-star" style={{color:'yellow'}}></i> <i className="fas fa-star" style={{color:'yellow'}}>
 
             </i> <i className="fas fa-star" style={{color:'yellow'}}></i></h6>
-            <Button style={{backgroundColor:'red', borderRadius:'15px',marginRight:'5px'}}>Read More</Button>
+            <Button style={{backgroundColor:'red', borderRadius:'15px',marginRight:'5px'}}><Link to="/text" className="linkToText">Read More</Link></Button>
             <Button style={{backgroundColor:'black', borderRadius:'15px',marginRight:'5px'}}>Info</Button>
             <Button style={{backgroundColor:'blue', borderRadius:'15px',marginRight:'5px'}}>Buy</Button>
               

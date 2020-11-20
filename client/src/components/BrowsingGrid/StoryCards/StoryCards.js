@@ -112,9 +112,9 @@ export default function StoryCards() {
     <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} imgUrl={story.imgUrl} rating={story.rating} slug={story.slug} categories={story.categories+''} />
   );
   
-    const romanceListCategory = romanceList.map(story =>
-      <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} imgUrl={story.imgUrl} rating={story.rating} slug={story.slug} categories={story.categories+''} />
-    );
+  const romanceListCategory = romanceList.map(story =>
+    <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} imgUrl={story.imgUrl} rating={story.rating} slug={story.slug} categories={story.categories+''} />
+  );
 
   const scifiListCategory = scifilist.map(story =>
     <StoryCard key={story._id} id={story._id} title={story.title} author={story.author} imgUrl={story.imgUrl} rating={story.rating} slug={story.slug} categories={story.categories+''} />
