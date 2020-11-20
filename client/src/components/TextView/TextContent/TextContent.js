@@ -28,9 +28,9 @@ const TextContent = () => {
   ));
 
   return (
-  <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
-    {pagesFromJson}
-  </Carousel>
+    <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
+      {pagesFromJson}
+    </Carousel>
   );
 };
 

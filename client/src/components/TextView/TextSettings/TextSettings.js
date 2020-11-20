@@ -19,11 +19,11 @@ const TextSettings = () => {
       <Button color="light" onClick={toggle} className="settingsBtn"><i className="fas fa-cog"></i></Button>
       <Collapse isOpen={isOpen}>
 
-       <div className="textSettingsContainer">
+        <div className="textSettingsContainer">
          
 
-         {/* This dropdown menu is intended for the reader to adjust the page view into their liking */}
-         <ButtonDropdown isOpen={dropdownOpen} toggle={toggleDropDown}>
+          {/* This dropdown menu is intended for the reader to adjust the page view into their liking */}
+          <ButtonDropdown isOpen={dropdownOpen} toggle={toggleDropDown}>
             <DropdownToggle color="light">
                     Aa
             </DropdownToggle>
@@ -46,15 +46,15 @@ const TextSettings = () => {
             </DropdownMenu>
           </ButtonDropdown>
 
-{/* A search function could be implemented here. Kindle has this feature. */}
-         <Button color="light"><i class="fas fa-search"></i></Button>    
+          {/* A search function could be implemented here. Kindle has this feature. */}
+          <Button color="light"><i className="fas fa-search"></i></Button>    
 
-{/* Functionality to add a bookmark on a page could be implemented here. Kindle has this feature. */}
-         <Button color="light"><i class="fas fa-bookmark"></i></Button>        
+          {/* Functionality to add a bookmark on a page could be implemented here. Kindle has this feature. */}
+          <Button color="light"><i className="fas fa-bookmark"></i></Button>        
 
-         <Link to="/">Home</Link>
+          <Link to="/">Home</Link>
 
-       </div>
+        </div>
       </Collapse>
     </div>
 
