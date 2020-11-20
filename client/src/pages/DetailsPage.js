@@ -24,7 +24,7 @@ const DetailsPage=()=>{
 
   return(
     <>
-      <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
+      <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} imgUrl={storiesDetails.imgUrl} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
       <EpisodeCard episode=" One"/>
       <EpisodeCard episode=" Two"/>
       <EpisodeCard episode=" Three"/>

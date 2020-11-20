@@ -11,16 +11,21 @@ set in custom.css */
     font-size: small;
 }
 
+.card img {
+    height: 150px;
+    width: 100px;
+}
 
-@media only screen and (max-width:1024px){
-    .card{
+
+@media only screen and (max-width:1024px) {
+    .card {
         width: 170px;
         height: 230px;
     }
 }
 
-@media only screen and (max-width:364px){
-    .card{
+@media only screen and (max-width:364px) {
+    .card {
         width: 170px;
         height: 230px;
     }

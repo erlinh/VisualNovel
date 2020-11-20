@@ -7,3 +7,7 @@
 .search-res-card h3 {
     margin-left: 0;
 }
+
+.search-res-card img {
+    height: 200px;
+}
