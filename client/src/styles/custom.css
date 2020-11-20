@@ -16,6 +16,9 @@ body {
 }
 
 .storyPage, .textSettingsContainer {
-    color: var(--font-dark)
+    color: var(--font-dark);
 }
 
+.linkToText {
+    color: var(--font-light);
+}
