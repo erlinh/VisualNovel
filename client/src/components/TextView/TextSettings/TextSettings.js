@@ -4,15 +4,20 @@ import { Collapse, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './TextSettings.css';
 
-const TextSettings = () => {
+const TextSettings = ({passTextSize}) => {
 
+  // whole settings submenu
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
 
+  // text modifiers dropdown
   const [dropdownOpen, setOpen] = useState(false);
-
   const toggleDropDown = () => setOpen(!dropdownOpen);
+
+  // text size
+  const changeTextSize = (newSize) => {
+    passTextSize(newSize);
+  };
 
   return (
     <div>
@@ -31,9 +36,20 @@ const TextSettings = () => {
               <DropdownItem header>
                 <p>Text modifiers</p>
               </DropdownItem>
+
               <DropdownItem> 
                 <p>Text Size</p>
               </DropdownItem>
+              <DropdownItem onClick={() => changeTextSize('small')}> 
+                <p>-- Small</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeTextSize('regular')}> 
+                <p>-- Regular</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeTextSize('big')}> 
+                <p>-- Big</p>
+              </DropdownItem>
+
               <DropdownItem> 
                 <p>Color</p>
               </DropdownItem>

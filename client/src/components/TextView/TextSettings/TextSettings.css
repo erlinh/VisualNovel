@@ -1,19 +1,19 @@
-.settingsBtn{
+.settingsBtn {
     /* position: absolute;
     top:10px;
     left: 90%; */
     position: absolute;
-    top:50px;
+    top: 50px;
     left: 90%;
     z-index: 40;
 }
 
 .textSettingsContainer {
     color: var(--font-dark);
-    background: var(--background-light);
+    /* background: var(--background-light); */
     position: absolute;
     top: 50px;
-    left:0;
+    left: 0;
     /* position: absolute;
     top:0;
     left: 0; */
@@ -27,14 +27,14 @@
 }
 
 
-@media only screen and (max-width:1024px){
-    .settingsBtn{
+@media only screen and (max-width:1024px) {
+    .settingsBtn {
         left: 85%;
     }
 }
 
-@media only screen and (max-width:364px){
-    .textSettingsContainer{
+@media only screen and (max-width:364px) {
+    .textSettingsContainer {
         padding-right: 4rem;
     }
 }

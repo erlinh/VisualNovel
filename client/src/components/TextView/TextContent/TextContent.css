@@ -1,15 +1,27 @@
 .storyPage {
-width: 50vw;
-height: 90vh;
-/* padding: 4rem 2rem; */
-padding: 8rem 2rem;
-background-color: var(--background-light);
-font-family: var(--font-serif);
+    width: 50vw;
+    height: 90vh;
+    /* padding: 4rem 2rem; */
+    padding: 8rem 2rem;
+    /* background-color: var(--background-light); */
+    font-family: var(--font-serif);
 }
 
-@media only screen and (max-width:400px){
+.text-size-small {
+    font-size: 0.85rem;
+}
+
+.text-size-regular {
+    font-size: 1rem;
+}
+
+.text-size-big {
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width:400px) {
     .storyPage {
         width: 100vw;
-        font-size: smaller;
+        /* font-size: smaller; */
     }
 }
