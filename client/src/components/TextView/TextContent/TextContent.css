@@ -10,7 +10,7 @@
     height: 90vh;
     /* padding: 4rem 2rem; */
     padding: 8rem 2rem;
-    background-color: var(--background-light);
+    /* background-color: var(--background-light); */
     font-family: var(--font-serif);
 }
 
@@ -24,6 +24,22 @@
 
 .text-size-big {
     font-size: 1.2rem;
+}
+
+.bg-white {
+    background-color: var(--background-light);
+}
+
+.bg-offwhite {
+    background-color: var(--bg-reading-offwhite);
+}
+
+.bg-yellow {
+    background-color: var(--bg-reading-yellow);
+}
+
+.bg-blue {
+    background-color: var(--bg-reading-blue);
 }
 
 @media only screen and (max-width:400px) {

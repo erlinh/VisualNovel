@@ -5,16 +5,20 @@ import './TextPage.css';
 
 const TextPage = () => {
   const [textSize, setTextSize] = useState('regular');
+  const [bgColor, setBgColor] = useState('offwhite');
+
   const handleTextSize = (newSize) => {
     setTextSize(newSize);
-    console.log('newSize', newSize);
-    console.log('textSize', textSize);
+  };
+
+  const handleBgColor = (newColor) => {
+    setBgColor(newColor);
   };
 
   return (
     <div className="textPage">
-      <TextSettings passTextSize={handleTextSize}/>
-      <TextContent textSizeClass={textSize}/>
+      <TextSettings passTextSize={handleTextSize} passBgColor={handleBgColor}/>
+      <TextContent textSizeClass={textSize} bgColorClass={bgColor}/>
     </div>
   );
 };

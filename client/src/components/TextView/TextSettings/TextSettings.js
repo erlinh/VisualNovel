@@ -4,7 +4,7 @@ import { Collapse, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './TextSettings.css';
 
-const TextSettings = ({passTextSize}) => {
+const TextSettings = ({passTextSize, passBgColor}) => {
 
   // whole settings submenu
   const [isOpen, setIsOpen] = useState(false);
@@ -12,11 +12,19 @@ const TextSettings = ({passTextSize}) => {
 
   // text size dropdown
   const [sizeDropdownOpen, setSizeOpen] = useState(false);
-  const toggleDropDown = () => setSizeOpen(!sizeDropdownOpen);
+  const toggleSizeDropdown = () => setSizeOpen(!sizeDropdownOpen);
 
-  // text size
+  // text color dropdown
+  const [colorDropdownOpen, setColorOpen] = useState(false);
+  const toggleColorDropdown = () => setColorOpen(!colorDropdownOpen);
+
+  // option handlers: text size, bg color, font, margins, line height
   const changeTextSize = (newSize) => {
     passTextSize(newSize);
+  };
+ 
+  const changeBgColor = (newColor) => {
+    passBgColor(newColor);
   };
 
   return (
@@ -26,31 +34,50 @@ const TextSettings = ({passTextSize}) => {
 
         <div className="textSettingsContainer">
          
-
-          {/* This dropdown menu is intended for the reader to adjust the page view into their liking */}
-          <ButtonDropdown isOpen={sizeDropdownOpen} toggle={toggleDropDown}>
+          {/* This dropdown menus are intended for the reader to adjust the page view into their liking */}
+          <ButtonDropdown isOpen={sizeDropdownOpen} toggle={toggleSizeDropdown}>
             <DropdownToggle color="light">
                     Aa
             </DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>
-                <p>Text modifiers</p>
-              </DropdownItem>
-
-              <DropdownItem> 
-                <p>Text Size</p>
+                <p>Text size</p>
               </DropdownItem>
               <DropdownItem onClick={() => changeTextSize('small')}> 
-                <p>-- Small</p>
+                <p>Small</p>
               </DropdownItem>
               <DropdownItem onClick={() => changeTextSize('regular')}> 
-                <p>-- Regular</p>
+                <p>Regular</p>
               </DropdownItem>
               <DropdownItem onClick={() => changeTextSize('big')}> 
-                <p>-- Big</p>
+                <p>Big</p>
               </DropdownItem>
+            </DropdownMenu>
+          </ButtonDropdown>
 
-              <DropdownItem> 
+          <ButtonDropdown isOpen={colorDropdownOpen} toggle={toggleColorDropdown}>
+            <DropdownToggle color="light">
+                    Color
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>
+                <p>Background color</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeBgColor('white')}> 
+                <p>White</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeBgColor('offwhite')}> 
+                <p>Off-White</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeBgColor('yellow')}> 
+                <p>Yellow</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeBgColor('blue')}> 
+                <p>Blue</p>
+              </DropdownItem>
+            </DropdownMenu>
+          </ButtonDropdown>
+              {/* <DropdownItem> 
                 <p>Color</p>
               </DropdownItem>
               <DropdownItem> 
@@ -58,9 +85,7 @@ const TextSettings = ({passTextSize}) => {
               </DropdownItem>
               <DropdownItem> 
                 <p>Margins</p>
-              </DropdownItem>
-            </DropdownMenu>
-          </ButtonDropdown>
+              </DropdownItem> */}
 
           {/* A search function could be implemented here. Kindle has this feature. */}
           <Button color="light"><i className="fas fa-search"></i></Button>    

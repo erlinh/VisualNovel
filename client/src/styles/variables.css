@@ -8,10 +8,14 @@ imported into individual stylesheets */
     --main-secondary: #4ADD58;
     --neon-primary: #BB64FF;
     --neon-secondary: #3DFF50;
-    --dark-primary: #A02FF8 ;
-    --dark-secondary:#04DB19;
-    --background-dark:black;
+    --dark-primary: #A02FF8;
+    --dark-secondary: #04DB19;
+    --background-dark: black;
     --background-light: #F9F9F9;
+    /* background colors for text pages */
+    --bg-reading-offwhite: #F9F9F9;
+    --bg-reading-yellow: #FDFFE2;
+    --bg-reading-blue: #F5FEFF;
     --font-light: white;
     --font-dark: black;
     --font-sans-serif: 'Open Sans', sans-serif;
