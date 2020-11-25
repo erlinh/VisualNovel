@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SearchBox from '../components/SearchBox/SearchBox';
 import SearchResults from '../components/SearchResults/SearchResults';
+import NavBar from '../components/NavBar/NavBar';
 
 export default function SearchPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,6 +14,7 @@ export default function SearchPage() {
 
   return (
     <div className="container col-lg-10 mt-5 pt-5">
+      <NavBar/>
       <h2>Search</h2>
       <SearchBox passDataToPage={handleDataFromChild} />
       <SearchResults searchTerm={searchTerm} searchResults={foundStories} />
