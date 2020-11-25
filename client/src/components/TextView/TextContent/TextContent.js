@@ -5,7 +5,7 @@ import './TextContent.css';
 import TextCard from './TextCard';
 import textForPages from '../../../assets/resources/sampleTextData.json';
 
-const TextContent = ({textSizeClass, fontClass}) => {
+const TextContent = ({textSizeClass, fontClass, marginsClass}) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -24,7 +24,7 @@ const TextContent = ({textSizeClass, fontClass}) => {
   };
 
   const pagesFromJson = textForPages.map((page) => (
-    <TextCard id={page.id} content={page.content} key={page.id} textSizeClass={textSizeClass} fontClass={fontClass}/>
+    <TextCard id={page.id} content={page.content} key={page.id} textSizeClass={textSizeClass} fontClass={fontClass} marginsClass={marginsClass} />
   ));
 
   return (

@@ -7,6 +7,7 @@ const TextPage = () => {
   const [textSize, setTextSize] = useState('regular');
   const [bgColor, setBgColor] = useState('offwhite');
   const [font, setFont] = useState('serif');
+  const [margins, setMargins] = useState('2');
 
   const handleTextSize = (newSize) => {
     setTextSize(newSize);
@@ -20,10 +21,14 @@ const TextPage = () => {
     setFont(newFont);
   };
 
+  const handleMargins = (newMargins) => {
+    setMargins(newMargins);
+  };
+
   return (
     <div className={`textPage bg-${bgColor}`}>
-      <TextSettings passTextSize={handleTextSize} passBgColor={handleBgColor} passFont={handleFont} />
-      <TextContent textSizeClass={textSize} fontClass={font} />
+      <TextSettings passTextSize={handleTextSize} passBgColor={handleBgColor} passFont={handleFont} passMargins={handleMargins}/>
+      <TextContent textSizeClass={textSize} fontClass={font} marginsClass={margins} />
     </div>
   );
 };

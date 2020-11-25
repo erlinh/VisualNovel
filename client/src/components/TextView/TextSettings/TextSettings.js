@@ -4,7 +4,7 @@ import { Collapse, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './TextSettings.css';
 
-const TextSettings = ({passTextSize, passBgColor, passFont}) => {
+const TextSettings = ({passTextSize, passBgColor, passFont, passMargins}) => {
 
   // whole settings submenu
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +21,10 @@ const TextSettings = ({passTextSize, passBgColor, passFont}) => {
   // font dropdown
   const [fontDropdownOpen, setFontOpen] = useState(false);
   const toggleFontDropdown = () => setFontOpen(!fontDropdownOpen);
+ 
+  // margins dropdown
+  const [marginsDropdownOpen, setMarginsOpen] = useState(false);
+  const toggleMarginsDropdown = () => setMarginsOpen(!marginsDropdownOpen);
 
   // option handlers: text size, bg color, font, margins, line height
   const changeTextSize = (newSize) => {
@@ -33,6 +37,10 @@ const TextSettings = ({passTextSize, passBgColor, passFont}) => {
 
   const changeFont = (newFont) => {
     passFont(newFont);
+  };
+
+  const changeMargins = (newMargins) => {
+    passMargins(newMargins);
   };
 
   return (
@@ -102,13 +110,29 @@ const TextSettings = ({passTextSize, passBgColor, passFont}) => {
               </DropdownItem>
             </DropdownMenu>
           </ButtonDropdown>
-              {/* 
-              <DropdownItem> 
-                <p>Font</p>
-              </DropdownItem>
-              <DropdownItem> 
+
+          <ButtonDropdown isOpen={marginsDropdownOpen} toggle={toggleMarginsDropdown}>
+            <DropdownToggle color="light">
+                    Margins
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>
                 <p>Margins</p>
-              </DropdownItem> */}
+              </DropdownItem>
+              <DropdownItem onClick={() => changeMargins('0')}> 
+                <p>None</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeMargins('1')}> 
+                <p>Small</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeMargins('2')}> 
+                <p>Medium</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeMargins('3')}> 
+                <p>Big</p>
+              </DropdownItem>
+            </DropdownMenu>
+          </ButtonDropdown>
 
           {/* A search function could be implemented here. Kindle has this feature. */}
           <Button color="light"><i className="fas fa-search"></i></Button>    

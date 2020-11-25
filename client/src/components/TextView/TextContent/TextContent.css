@@ -9,7 +9,7 @@
     max-width: 50vw;
     height: 90vh;
     /* padding: 4rem 2rem; */
-    padding: 8rem 2rem;
+    /* padding: 8rem 2rem; */
     /* background-color: var(--background-light); */
     font-family: var(--font-serif);
 }
@@ -32,6 +32,26 @@
 
 .font-sans-serif {
     font-family: var(--font-sans-serif);
+}
+
+.margins-0 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.margins-1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.margins-2 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.margins-3 {
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 @media only screen and (max-width:400px) {
