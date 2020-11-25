@@ -4,6 +4,7 @@ import TopCard from '../components/Details/TopSection/TopCard';
 import EpisodeCard from '../components/Details/MiddleSection/EpisodeCard';
 import {useParams} from 'react-router-dom';
 import FooterGrid from '../components/Footer/FooterGrid';
+import NavBar from '../components/NavBar/NavBar';
 
 const DetailsPage=()=>{
    
@@ -24,6 +25,7 @@ const DetailsPage=()=>{
 
   return(
     <>
+      <NavBar/>
       <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} imgUrl={storiesDetails.imgUrl} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
       <EpisodeCard episode=" One"/>
       <EpisodeCard episode=" Two"/>

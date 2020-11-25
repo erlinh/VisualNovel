@@ -24,13 +24,15 @@ const TextContent = ({textSizeClass}) => {
   };
 
   const pagesFromJson = textForPages.map((page) => (
-    <TextCard id={page.id} content={page.content} textSizeClass={textSizeClass}/>
+    <TextCard id={page.id} content={page.content} key={page.id} textSizeClass={textSizeClass}/>
   ));
 
   return (
+    <div className="textContentContainer">
     <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
       {pagesFromJson}
     </Carousel>
+    </div>
   );
 };
 

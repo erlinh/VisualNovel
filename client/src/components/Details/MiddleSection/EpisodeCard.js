@@ -12,7 +12,7 @@ const EpisodeCard = (props) => {
         <Media heading className="text-danger">
           Episode:{props.episode}
         </Media>
-        <Button style={{backgroundColor:'red', borderRadius:'15px',margin:'5px'}}><Link to="/text" className="linkToText">Read More</Link></Button>
+        <Link to="/text" className="linkToText"><Button style={{backgroundColor:'red', borderRadius:'15px',margin:'5px'}}>Read More</Button></Link>
         <Button style={{backgroundColor:'#00d8d6', borderRadius:'15px',margin:'5px'}}>Info</Button>
         <p className="text-light">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
          Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
