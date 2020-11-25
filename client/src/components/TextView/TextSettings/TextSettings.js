@@ -4,7 +4,7 @@ import { Collapse, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './TextSettings.css';
 
-const TextSettings = ({passTextSize, passBgColor, passFont, passMargins}) => {
+const TextSettings = ({passTextSize, passBgColor, passFont, passMargins, passSpacing}) => {
 
   // whole settings submenu
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +25,10 @@ const TextSettings = ({passTextSize, passBgColor, passFont, passMargins}) => {
   // margins dropdown
   const [marginsDropdownOpen, setMarginsOpen] = useState(false);
   const toggleMarginsDropdown = () => setMarginsOpen(!marginsDropdownOpen);
+ 
+  // line height dropdown
+  const [spacingDropdownOpen, setSpacingOpen] = useState(false);
+  const toggleSpacingDropdown = () => setSpacingOpen(!spacingDropdownOpen);
 
   // option handlers: text size, bg color, font, margins, line height
   const changeTextSize = (newSize) => {
@@ -41,6 +45,10 @@ const TextSettings = ({passTextSize, passBgColor, passFont, passMargins}) => {
 
   const changeMargins = (newMargins) => {
     passMargins(newMargins);
+  };
+
+  const changeSpacing = (newSpacing) => {
+    passSpacing(newSpacing);
   };
 
   return (
@@ -129,6 +137,26 @@ const TextSettings = ({passTextSize, passBgColor, passFont, passMargins}) => {
                 <p>Medium</p>
               </DropdownItem>
               <DropdownItem onClick={() => changeMargins('3')}> 
+                <p>Big</p>
+              </DropdownItem>
+            </DropdownMenu>
+          </ButtonDropdown>
+
+          <ButtonDropdown isOpen={spacingDropdownOpen} toggle={toggleSpacingDropdown}>
+            <DropdownToggle color="light">
+                    Spacing
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>
+                <p>Spacing</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeSpacing('0')}> 
+                <p>Small</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeSpacing('1')}> 
+                <p>Regular</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeSpacing('2')}> 
                 <p>Big</p>
               </DropdownItem>
             </DropdownMenu>
