@@ -10,9 +10,9 @@ const TextSettings = ({passTextSize}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  // text modifiers dropdown
-  const [dropdownOpen, setOpen] = useState(false);
-  const toggleDropDown = () => setOpen(!dropdownOpen);
+  // text size dropdown
+  const [sizeDropdownOpen, setSizeOpen] = useState(false);
+  const toggleDropDown = () => setSizeOpen(!sizeDropdownOpen);
 
   // text size
   const changeTextSize = (newSize) => {
@@ -28,7 +28,7 @@ const TextSettings = ({passTextSize}) => {
          
 
           {/* This dropdown menu is intended for the reader to adjust the page view into their liking */}
-          <ButtonDropdown isOpen={dropdownOpen} toggle={toggleDropDown}>
+          <ButtonDropdown isOpen={sizeDropdownOpen} toggle={toggleDropDown}>
             <DropdownToggle color="light">
                     Aa
             </DropdownToggle>
