@@ -1,5 +1,21 @@
 .textPage {
-    background-color: var(--background-light);
+    /* background-color: var(--background-light); */
     height: 100vh;
     width: 100vw;
+}
+
+.bg-white {
+    background-color: var(--background-light);
+}
+
+.bg-offwhite {
+    background-color: var(--bg-reading-offwhite);
+}
+
+.bg-yellow {
+    background-color: var(--bg-reading-yellow);
+}
+
+.bg-blue {
+    background-color: var(--bg-reading-blue);
 }

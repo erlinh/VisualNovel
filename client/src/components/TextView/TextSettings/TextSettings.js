@@ -4,7 +4,7 @@ import { Collapse, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './TextSettings.css';
 
-const TextSettings = ({passTextSize, passBgColor}) => {
+const TextSettings = ({passTextSize, passBgColor, passFont}) => {
 
   // whole settings submenu
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +18,10 @@ const TextSettings = ({passTextSize, passBgColor}) => {
   const [colorDropdownOpen, setColorOpen] = useState(false);
   const toggleColorDropdown = () => setColorOpen(!colorDropdownOpen);
 
+  // font dropdown
+  const [fontDropdownOpen, setFontOpen] = useState(false);
+  const toggleFontDropdown = () => setFontOpen(!fontDropdownOpen);
+
   // option handlers: text size, bg color, font, margins, line height
   const changeTextSize = (newSize) => {
     passTextSize(newSize);
@@ -25,6 +29,10 @@ const TextSettings = ({passTextSize, passBgColor}) => {
  
   const changeBgColor = (newColor) => {
     passBgColor(newColor);
+  };
+
+  const changeFont = (newFont) => {
+    passFont(newFont);
   };
 
   return (
@@ -77,9 +85,24 @@ const TextSettings = ({passTextSize, passBgColor}) => {
               </DropdownItem>
             </DropdownMenu>
           </ButtonDropdown>
-              {/* <DropdownItem> 
-                <p>Color</p>
+
+          <ButtonDropdown isOpen={fontDropdownOpen} toggle={toggleFontDropdown}>
+            <DropdownToggle color="light">
+                    Font
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>
+                <p>Font</p>
               </DropdownItem>
+              <DropdownItem onClick={() => changeFont('serif')}> 
+                <p>Serif</p>
+              </DropdownItem>
+              <DropdownItem onClick={() => changeFont('sans-serif')}> 
+                <p>Sans-Serif</p>
+              </DropdownItem>
+            </DropdownMenu>
+          </ButtonDropdown>
+              {/* 
               <DropdownItem> 
                 <p>Font</p>
               </DropdownItem>

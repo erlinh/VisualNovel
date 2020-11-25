@@ -6,6 +6,7 @@ import './TextPage.css';
 const TextPage = () => {
   const [textSize, setTextSize] = useState('regular');
   const [bgColor, setBgColor] = useState('offwhite');
+  const [font, setFont] = useState('serif');
 
   const handleTextSize = (newSize) => {
     setTextSize(newSize);
@@ -15,10 +16,14 @@ const TextPage = () => {
     setBgColor(newColor);
   };
 
+  const handleFont = (newFont) => {
+    setFont(newFont);
+  };
+
   return (
-    <div className="textPage">
-      <TextSettings passTextSize={handleTextSize} passBgColor={handleBgColor}/>
-      <TextContent textSizeClass={textSize} bgColorClass={bgColor}/>
+    <div className={`textPage bg-${bgColor}`}>
+      <TextSettings passTextSize={handleTextSize} passBgColor={handleBgColor} passFont={handleFont} />
+      <TextContent textSizeClass={textSize} fontClass={font} />
     </div>
   );
 };
