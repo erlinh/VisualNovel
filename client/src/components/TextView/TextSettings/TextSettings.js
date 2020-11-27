@@ -103,9 +103,9 @@ const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, pa
                     Font
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem header>
+              {/*  <DropdownItem header>
                 <p>Font</p>
-              </DropdownItem>
+              </DropdownItem> */}
               <DropdownItem onClick={() => changeFont('serif')}> 
                 <p>Serif</p>
               </DropdownItem>
@@ -120,9 +120,9 @@ const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, pa
                     Margins
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem header>
+              {/*   <DropdownItem header>
                 <p>Margins</p>
-              </DropdownItem>
+              </DropdownItem> */}
               <DropdownItem onClick={() => changeMargins('0')}> 
                 <p>None</p>
               </DropdownItem>
@@ -162,7 +162,7 @@ const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, pa
       </Collapse>
 
       <Collapse isOpen={isReadingNavOpen} >
-      <div className="textNavBottom textSettingsContainer">
+        <div className="textNavBottom textSettingsContainer">
 
           {/* A search function could be implemented here. Kindle has this feature. */}
           <Button color="light"><i className="fas fa-search"></i></Button>    
@@ -175,7 +175,7 @@ const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, pa
 
           <Link to="/"><Button color="light"><i className="fas fa-home"></i></Button> </Link>
 
-      </div>
+        </div>
       </Collapse>
     </div>
   );

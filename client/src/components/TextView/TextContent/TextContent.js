@@ -29,9 +29,9 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, fontClass, marginsCla
 
   return (
     <div className="textContentContainer">
-    <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']} sliderClass='text-pages-carousel-track'>
-      {pagesFromJson}
-    </Carousel>
+      <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']} sliderClass='text-pages-carousel-track'>
+        {pagesFromJson}
+      </Carousel>
     </div>
   );
 };
