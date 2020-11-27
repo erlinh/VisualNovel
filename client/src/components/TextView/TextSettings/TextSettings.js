@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Collapse, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './TextSettings.css';
 
-const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, passMargins, passSpacing}) => {
+const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, passMargins, passSpacing, history}) => {
 
   // text size dropdown
   const [sizeDropdownOpen, setSizeOpen] = useState(false);
@@ -169,7 +170,8 @@ const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, pa
           {/* Functionality to add a bookmark on a page could be implemented here. Kindle has this feature. */}
           <Button color="light"><i className="fas fa-bookmark"></i></Button>  
 
-          {/* Add "Back to details page" instead fo the bookmark? */}      
+          {/* Back to Details page */}
+          <Button color="light" onClick={() => history.goBack()}><i className="fas fa-book"></i></Button>
 
           <Link to="/"><Button color="light"><i className="fas fa-home"></i></Button> </Link>
 
@@ -179,4 +181,4 @@ const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, pa
   );
 };
 
-export default TextSettings;
+export default withRouter(TextSettings);
