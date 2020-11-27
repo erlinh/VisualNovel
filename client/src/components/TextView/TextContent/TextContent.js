@@ -5,7 +5,7 @@ import './TextContent.css';
 import TextCard from './TextCard';
 import textForPages from '../../../assets/resources/sampleTextData.json';
 
-const TextContent = ({textSizeClass, fontClass, marginsClass, spacingClass}) => {
+const TextContent = ({toggleReadingNavOpen, textSizeClass, fontClass, marginsClass, spacingClass}) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -24,7 +24,7 @@ const TextContent = ({textSizeClass, fontClass, marginsClass, spacingClass}) => 
   };
 
   const pagesFromJson = textForPages.map((page) => (
-    <TextCard id={page.id} content={page.content} key={page.id} textSizeClass={textSizeClass} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
+    <TextCard id={page.id} content={page.content} key={page.id} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
   ));
 
   return (

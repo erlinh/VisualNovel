@@ -4,11 +4,7 @@ import { Collapse, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './TextSettings.css';
 
-const TextSettings = ({passTextSize, passBgColor, passFont, passMargins, passSpacing}) => {
-
-  // whole settings submenu
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, passMargins, passSpacing}) => {
 
   // text size dropdown
   const [sizeDropdownOpen, setSizeOpen] = useState(false);
@@ -53,8 +49,7 @@ const TextSettings = ({passTextSize, passBgColor, passFont, passMargins, passSpa
 
   return (
     <div>
-      <Button color="light" onClick={toggle} className="settingsBtn"><i className="fas fa-cog"></i></Button>
-      <Collapse isOpen={isOpen}>
+      <Collapse isOpen={isReadingNavOpen}>
 
         <div className="textNavTop textSettingsContainer">
          
@@ -165,14 +160,16 @@ const TextSettings = ({passTextSize, passBgColor, passFont, passMargins, passSpa
         </div>
       </Collapse>
 
-      <Collapse isOpen={isOpen} >
+      <Collapse isOpen={isReadingNavOpen} >
       <div className="textNavBottom textSettingsContainer">
 
           {/* A search function could be implemented here. Kindle has this feature. */}
           <Button color="light"><i className="fas fa-search"></i></Button>    
 
           {/* Functionality to add a bookmark on a page could be implemented here. Kindle has this feature. */}
-          <Button color="light"><i className="fas fa-bookmark"></i></Button>        
+          <Button color="light"><i className="fas fa-bookmark"></i></Button>  
+
+          {/* Add "Back to details page" instead fo the bookmark? */}      
 
           <Link to="/"><Button color="light"><i className="fas fa-home"></i></Button> </Link>
 

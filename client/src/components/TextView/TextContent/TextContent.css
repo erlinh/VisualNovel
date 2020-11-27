@@ -5,7 +5,8 @@
 }
 
 .text-pages-carousel-track {
-    height: 100vh;
+    margin: 3rem 0;
+    height: calc(100vh - 6rem);
 }
 
 .storyPage {
