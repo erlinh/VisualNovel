@@ -5,11 +5,11 @@
 }
 
 .bg-white {
-    background-color: var(--background-light);
+    background-color: var(--bg-reading-white);
 }
 
 .bg-offwhite {
-    background-color: var(--bg-reading-offwhite);
+    background-color: var(--background-light);
 }
 
 .bg-yellow {

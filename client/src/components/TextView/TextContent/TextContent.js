@@ -29,7 +29,7 @@ const TextContent = ({textSizeClass, fontClass, marginsClass, spacingClass}) => 
 
   return (
     <div className="textContentContainer">
-    <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
+    <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']} sliderClass='text-pages-carousel-track'>
       {pagesFromJson}
     </Carousel>
     </div>

@@ -13,7 +13,7 @@ imported into individual stylesheets */
     --background-dark: black;
     --background-light: #F9F9F9;
     /* background colors for text pages */
-    --bg-reading-offwhite: #F9F9F9;
+    --bg-reading-white: white;
     --bg-reading-yellow: #FDFFE2;
     --bg-reading-blue: #F5FEFF;
     --font-light: white;
