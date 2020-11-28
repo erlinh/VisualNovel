@@ -15,6 +15,14 @@ body {
     background-color: var(--main-primary);
 }
 
+.getDetails{
+    background-color: var(--main-secondary);
+    color: var(--font-dark);
+    font-weight: 600;
+    
+}
+
+
 .storyPage, .textSettingsContainer {
     color: var(--font-dark);
 }

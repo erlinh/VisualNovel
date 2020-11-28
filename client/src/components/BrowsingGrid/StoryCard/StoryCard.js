@@ -22,7 +22,7 @@ const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
 
       </i> <i className="fas fa-star" style={{color:'yellow'}}></i></h6> */}
       <Link to= {`/stories/${slug}`}>
-        <Button className="btn-danger">Read More</Button>
+        <Button className="getDetails">Get Details</Button>
       </Link>
      
     </Card>
