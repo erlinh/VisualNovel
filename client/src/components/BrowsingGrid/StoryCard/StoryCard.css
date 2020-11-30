@@ -9,6 +9,7 @@ set in custom.css */
     height: 250px;
     width: 190px;
     font-size: small;
+    
 }
 
 .card img {
@@ -21,11 +22,11 @@ set in custom.css */
     display: none;
     width: 500px;
     height: 300px;
-    background-color: fuchsia;
+    background-color: var(--background-dark);
     z-index: 1000;
     position: fixed;
-    top:50px;
-    left:40px;
+    top:0;
+    left:0;
 }
 
 
