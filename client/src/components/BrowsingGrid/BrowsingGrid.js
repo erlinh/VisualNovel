@@ -8,7 +8,7 @@ import './BrowsingGrid.css';
 export default function BrowsingGrid() {
   return (
     <>
-      <div>
+      <div className="browsingGrid">
         <StoryCards  />
       </div>
 

@@ -18,7 +18,7 @@ set in custom.css */
     width: 100px; */
 }
 
-#overlay {
+.overlay {
     display: none;
     width: 500px;
     height: 300px;
