@@ -124,7 +124,7 @@ export default function StoryCards() {
   return (
     <>
       <h2 style={{color:'#cc8e35'}} >Top 10:</h2>
-      <Carousel responsive={responsive} draggable={false} /* infinite={true}  */removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
+      <Carousel responsive={responsive} draggable={false}  infinite={true}  removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
         {top10Category}
       </Carousel>
 

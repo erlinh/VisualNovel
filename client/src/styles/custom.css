@@ -16,7 +16,7 @@ body {
 }
 
 .getDetails{
-    background-color: var(--main-secondary);
+    background-color: var(--main-orange);
     color: var(--font-dark);
     font-weight: 600;
     
