@@ -17,12 +17,12 @@ const NavBar = (props) => {
   return (
     <div>
       <Navbar className="fixed-top" style={{backgroundColor:'black'}} light expand="md">
-        <Link className="text-light navbar-brand pl-5" to="/">StoryFics</Link>
+        <Link className="text-light navbar-brand pl-5" to="/">Storyfics</Link>
         <NavbarToggler style={{backgroundColor:'#1e272e'}} onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
-              <Link className="text-light nav-link" to="/">Titles</Link>
+              <Link className="text-light nav-link" to="/"><i className="fas fa-home"></i></Link>
             </NavItem>
             <NavItem>
               <Link className="text-light nav-link" to="/">My Library</Link>
@@ -31,9 +31,6 @@ const NavBar = (props) => {
               <Link className="text-light nav-link" to="/search">Search</Link>
             </NavItem>
           </Nav>
-          <NavbarText className="text-light pr-4">Redeem</NavbarText>
-          <span className="mx-2">|</span>
-          <NavbarText className="text-light pl-4 ">Sign In</NavbarText>
         </Collapse>
       </Navbar>
     </div>

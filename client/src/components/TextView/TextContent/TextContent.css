@@ -1,22 +1,94 @@
-.textContentContainer{
- max-width: 1500px;
- margin-left: auto;
- margin-right: auto;
+.textContentContainer {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.text-pages-carousel-track {
+    margin: 3rem 0;
+    height: calc(100vh - 6rem);
+}
 
 .storyPage {
-max-width: 50vw;
-height: 90vh;
-/* padding: 4rem 2rem; */
-padding: 8rem 2rem;
-background-color: var(--background-light);
-font-family: var(--font-serif);
+    max-width: 50vw;
+    height: 100%;
+    /* padding: 4rem 2rem; */
+    /* padding: 8rem 2rem; */
+    /* background-color: var(--background-light); */
+    font-family: var(--font-serif);
 }
 
-@media only screen and (max-width:400px){
+.text-size-small {
+    font-size: 0.85rem;
+}
+
+.text-size-regular {
+    font-size: 1rem;
+}
+
+.text-size-big {
+    font-size: 1.2rem;
+}
+
+.font-serif {
+    font-family: var(--font-serif);
+}
+
+.font-sans-serif {
+    font-family: var(--font-sans-serif);
+}
+
+.margins-0 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.margins-1 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.margins-2 {
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+}
+
+.margins-3 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+
+.spacing-0 {
+    line-height: 1.2;
+}
+
+.spacing-1 {
+    line-height: 1.5;
+}
+
+.spacing-2 {
+    line-height: 2;
+}
+
+@media only screen and (max-width:400px) {
     .storyPage {
         max-width: 100vw;
-        font-size: smaller;
+        /* font-size: smaller; */
+    }
+
+    .margins-1 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .margins-2 {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .margins-3 {
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 }

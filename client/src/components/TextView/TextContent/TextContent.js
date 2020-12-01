@@ -5,7 +5,7 @@ import './TextContent.css';
 import TextCard from './TextCard';
 import textForPages from '../../../assets/resources/sampleTextData.json';
 
-const TextContent = () => {
+const TextContent = ({toggleReadingNavOpen, textSizeClass, fontClass, marginsClass, spacingClass}) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -24,14 +24,14 @@ const TextContent = () => {
   };
 
   const pagesFromJson = textForPages.map((page) => (
-    <TextCard id={page.id} content={page.content} key={page.id} />
+    <TextCard id={page.id} content={page.content} key={page.id} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
   ));
 
   return (
     <div className="textContentContainer">
-    <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
-      {pagesFromJson}
-    </Carousel>
+      <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']} sliderClass='text-pages-carousel-track'>
+        {pagesFromJson}
+      </Carousel>
     </div>
   );
 };
