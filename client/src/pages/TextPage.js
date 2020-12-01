@@ -7,7 +7,7 @@ const TextPage = () => {
   return (
     <div className="textPage">
       <TextSettings/>
-      <TextContent/>
+      <TextContent />
     </div>
   );
 };

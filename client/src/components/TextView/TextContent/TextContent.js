@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
+import {useParams} from 'react-router-dom';
 import 'react-multi-carousel/lib/styles.css';
 import './TextContent.css';
 import TextCard from './TextCard';
-import textForPages from '../../../assets/resources/sampleTextData.json';
+//import textForPages from '../../../assets/resources/sampleTextData.json';
+import instance from '../../../axios'; 
 
 const TextContent = () => {
   const responsive = {
@@ -22,16 +24,32 @@ const TextContent = () => {
       items: 1,
     },
   };
+  const [contents, setContents]=useState([]);
+  const slug= useParams().slug;
 
-  const pagesFromJson = textForPages.map((page) => (
-    <TextCard id={page.id} content={page.content} key={page.id} />
-  ));
+  useEffect(()=>{
+    async function fetchContent(){
+      try {
+        const {data} = await instance.get(`/stories/${slug}/content`);
+        console.log(data);
+        setContents(data);
+      //console.log(setContents);
+      } catch (err) {
+        console.log('There is an error to get content', err);
+      }
+    }
+    fetchContent();
+  },[slug]);
+  // const pagesFromDatabase = contents.map((page) => (
+  //   <TextCard key={page._id} content={page.content}  />
+  // ));
 
   return (
     <div className="textContentContainer">
-    <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
-      {pagesFromJson}
-    </Carousel>
+   
+      <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
+        <TextCard key={contents._id} content={contents.content} />
+      </Carousel>
     </div>
   );
 };
