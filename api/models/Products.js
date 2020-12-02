@@ -5,7 +5,9 @@ const slugify= require('slugify')
 //Schema represent the database's structure and it's contents.
 const Schema = mongoose.Schema;
 
-const ProductSchema = new Schema({
+const ProductSchema = new Schema(
+ 
+  {
   title: {
     type: String,
     required: true,
@@ -18,6 +20,10 @@ const ProductSchema = new Schema({
     type:String,
     required:true,
   },
+  content:[{
+    type:Schema.Types.Mixed,
+    required:true,
+  }],
   rating: {
     type: String,
     required: true,
@@ -37,7 +43,8 @@ const ProductSchema = new Schema({
   }
 }, {
   timestamps: true,
-});
+},
+{typeKey:'$type'});
 
 //this will validate ProductSchema before store its data to database.
 ProductSchema.pre('validate', function (next) {
