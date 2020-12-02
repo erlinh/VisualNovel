@@ -49,7 +49,7 @@ const TextContent = () => {
     <div className="textContentContainer">
    
       <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
-      {pagesFromDatabase}
+        {pagesFromDatabase}
       </Carousel>
     </div>
   );

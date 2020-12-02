@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import '../TopSection/TopCard.css';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const TopCard =({id, title, author, imgUrl,content, rating, slug, categories})=>{
+const TopCard =({title, author, imgUrl, rating, slug, categories})=>{
   
   return(
     <div className="media body topSection__bg">
