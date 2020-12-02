@@ -6,12 +6,21 @@ body {
     background-color: var(--background-dark);
 }
 
+/* 
+.react-multiple-carousel {
+    position: relative;
+    z-index: -1;
+}
 
-/* .card {
-    background-color: var(--main-primary);
-    
+.card {
+    position: relative;
+    z-index: 1;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 5;
 } */
-
 
 .getDetails{
     background-color: var(--main-orange);
