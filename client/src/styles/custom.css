@@ -7,13 +7,11 @@ body {
 }
 
 
-.jumbotron {
-    background: var(--background-dark);
-}
-
-.card {
+/* .card {
     background-color: var(--main-primary);
-}
+    
+} */
+
 
 .getDetails{
     background-color: var(--main-orange);

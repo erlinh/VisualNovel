@@ -6,47 +6,68 @@ set in custom.css */
 .card {
     margin: 1rem;
     padding: 0.5rem;
-    height: 250px;
-    width: 190px;
+    width: '20vw';
+    height:'30vw';
     font-size: small;
     
 }
+
 
 .card img {
     width: 100%;
     /* height: 150px;
     width: 100px; */
+   
 }
 
 .card .overlayImg {
-    width: 100px;
+    width: 150px;
     height:auto;
+    margin: 1rem;
 }
 
 .overlay {
     display: none;
-    width: 310px;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--background-dark);
-    z-index: 1000;
     position: fixed;
     top:0;
     left:0;
+    padding: 2rem;
 }
 
-
+.overlayContent {
+    display: flex;
+    width: 700px;
+    background-color: var(--background-dark);
+    position: fixed;
+    top:0;
+    left:0;
+    padding: 2rem;
+}
 
 
 @media only screen and (max-width:1024px) {
     .card {
-        width: 170px;
-        height: 230px;
+        width: 30vw;
+        height: 45vw;
     }
 }
 
-@media only screen and (max-width:364px) {
+@media only screen and (max-width:380px) {
     .card {
-        width: 170px;
-        height: 230px;
+        width: 80vw;
+        height: 125vw;
+    }
+
+    .overlayContent {
+        display: block;
+        font-size: smaller;
+        width: 90vw;
+    }
+
+    .card .overlayImg {
+        width: 100px;
     }
 }
