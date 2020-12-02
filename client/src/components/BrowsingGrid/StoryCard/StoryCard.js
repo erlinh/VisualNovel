@@ -20,20 +20,20 @@ const overlayOff = (id) => {
 
 const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
 
-  // const [popoverOpen, setPopoverOpen] = useState(false);
+  const [popoverOpen, setPopoverOpen] = useState(false);
 
-  // const toggle = (id) => {
+  const toggle = (id) => {
     
-  //   setPopoverOpen(!popoverOpen);
-  // }
+    setPopoverOpen(!popoverOpen);
+  }
 
 
   return (
     <Card style={{backgroundColor:'black', borderRadius:'5px', border:'1px #1e272e solid', lineHeight:'1.2', position:'relative'}} 
       className="p-2 mr-5 text-light">
-      <img className="pb-3" src={imgUrl} alt="Cover of the story" /*id= "PopoverClick"*/ onClick={() => overlayOn(id)}/>
+      <img className="pb-3" src={imgUrl} alt="Cover of the story" id= {"Popover-" +id} /*onClick={() => overlayOn(id)}*//>
      
-      {/* <Popover id={id} isOpen={popoverOpen} toggle={toggle}  >
+      <Popover target={"Popover-" + id} isOpen={popoverOpen} toggle={toggle}  >
         <PopoverBody className="overlayContent">
         <img className="overlayImg" src={imgUrl} alt="Cover of the story"/> 
         <div className="overlayText">       
@@ -48,9 +48,9 @@ const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
           </Link>
         </div>
         </PopoverBody>
-      </Popover> */}
+      </Popover>
      
-      <div id={id} onClick={() => overlayOff(id)} className="overlay" >
+      {/* <div id={id} onClick={() => overlayOff(id)} className="overlay" >
         <div className="overlayContent">
         <img className="overlayImg" src={imgUrl} alt="Cover of the story"/> 
         <div className="overlayText">       
@@ -65,7 +65,7 @@ const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
           </Link>
         </div>
         </div>
-      </div>
+      </div> */}
      
     </Card>
   );
