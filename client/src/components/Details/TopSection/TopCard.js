@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const TopCard =({title, author, imgUrl, rating, slug, categories})=>{
   
   return(
-    <div className="media body topSection__bg">
+    <div className="media body topSection__bg ">
       <div className="container">
         <div className="topSection__row text-light">
           <div className="topSection__CardImg ">

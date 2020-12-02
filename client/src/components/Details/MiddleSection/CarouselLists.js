@@ -44,7 +44,8 @@ export default function CarouselLists(){
 
   return(
     <>
-      <h2 style={{color:'#cc8e35'}} >People may interest:</h2>
+      <h4 style={{color:'#cc8e35', padding:"40px 0 30px 0"}}>
+      You might interest:</h4>
       <Carousel responsive={responsive} draggable={false} infinite={true} showDots={false} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
         {allListCategory}
       </Carousel>

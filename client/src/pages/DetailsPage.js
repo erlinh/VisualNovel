@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import instance from '../axios';
 import TopCard from '../components/Details/TopSection/TopCard';
-import CarouselCards from '../components/Details/MiddleSection/CarouselLists';
-import EpisodeCard from '../components/Details/MiddleSection/EpisodeCard';
 import {useParams} from 'react-router-dom';
 import FooterGrid from '../components/Footer/FooterGrid';
 import NavBar from '../components/NavBar/NavBar';
 import CarouselLists from '../components/Details/MiddleSection/CarouselLists';
  
-
 
 const DetailsPage=()=>{
    
@@ -32,14 +29,9 @@ const DetailsPage=()=>{
   return(
     <>
       <NavBar/>
+      <div className="col-lg-11 container">
       <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} imgUrl={storiesDetails.imgUrl} content={storiesDetails.content} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
-      {/* <EpisodeCard episode=" One"/>
-      <EpisodeCard episode=" Two"/>
-      <EpisodeCard episode=" Three"/>
-      <EpisodeCard episode=" Four"/> */}
       <CarouselLists />
-      
-      <div className="col-lg-10 container">
         <div className="bg-danger">
           <hr />
         </div>
