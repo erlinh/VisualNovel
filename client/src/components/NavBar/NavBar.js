@@ -30,6 +30,9 @@ const NavBar = (props) => {
             <NavItem>
               <Link className="text-light nav-link" to="/search">Search</Link>
             </NavItem>
+            <NavItem>
+              <Link className="text-light nav-link" to="/login">Log In</Link>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
