@@ -32,7 +32,7 @@ const TextContent = () => {
       try {
         const {data} = await instance.get(`/stories/${slug}/content`);
         console.log(data);
-        setContents(data);
+        setContents(data.content);
       //console.log(setContents);
       } catch (err) {
         console.log('There is an error to get content', err);
@@ -40,15 +40,16 @@ const TextContent = () => {
     }
     fetchContent();
   },[slug]);
-  // const pagesFromDatabase = contents.map((page) => (
-  //   <TextCard key={page._id} content={page.content}  />
-  // ));
+
+  const pagesFromDatabase = contents.map((page) => (
+    <TextCard key={page.id} content={page.text} />
+  ));
 
   return (
     <div className="textContentContainer">
    
       <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
-        <TextCard key={contents._id} content={contents.content} />
+      {pagesFromDatabase}
       </Carousel>
     </div>
   );
