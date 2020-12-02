@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import initFirebase from './firebase/firebase.config';
 import NavBar from './components/NavBar/NavBar';
 import DetailsPage from './pages/DetailsPage';
 import LandingPage from './pages/LandingPage';
@@ -9,6 +10,9 @@ import TextPage from './pages/TextPage';
 import SearchPage from './pages/SearchPage';
 
 function App() {
+  useEffect(() => {
+    initFirebase()
+  });
 
   return (
     <BrowserRouter>
