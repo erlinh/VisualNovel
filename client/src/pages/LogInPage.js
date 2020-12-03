@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import firebase from "firebase/app";
-
-import './LogInPage.css';
-import FooterGrid from '../components/Footer/FooterGrid';
+import firebase from 'firebase/app';
+//import firebaseApp from '../firebase/firebase.config';
 import NavBar from '../components/NavBar/NavBar';
+import FooterGrid from '../components/Footer/FooterGrid';
+
+import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import './LogInPage.css';
 
 
 export default function LandingPage() {
@@ -34,35 +35,35 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="container col-lg-10 mt-5 pt-5">
-      <NavBar />
-    
-      <h1>Log In</h1>
+        <div className="container col-lg-10 mt-5 pt-5">
+        <NavBar />
+        
+        <h1>Log In</h1>
 
-      <Form className="auth-form">
-      <FormGroup row>
-        <Label for="email" sm={2}>Email</Label>
-        <Col sm={10}>
-          <Input type="email" name="email" id="email" onChange={handleInputChange} />
-        </Col>
-      </FormGroup>
-      <FormGroup row>
-        <Label for="password" sm={2}>Password</Label>
-        <Col sm={10}>
-          <Input type="password" name="password" id="password" onChange={handleInputChange} />
-        </Col>
-      </FormGroup>
-      <FormGroup check row>
-        <Col className="d-flex justify-content-center">
-          <Button onClick={() => submitAuth(credentials)} >Submit</Button>
-        </Col>
-      </FormGroup>
-      </Form>
+        <Form className="auth-form">
+        <FormGroup row>
+            <Label for="email" sm={2}>Email</Label>
+            <Col sm={10}>
+            <Input type="email" name="email" id="email" onChange={handleInputChange} />
+            </Col>
+        </FormGroup>
+        <FormGroup row>
+            <Label for="password" sm={2}>Password</Label>
+            <Col sm={10}>
+            <Input type="password" name="password" id="password" onChange={handleInputChange} />
+            </Col>
+        </FormGroup>
+        <FormGroup check row>
+            <Col className="d-flex justify-content-center">
+            <Button onClick={() => submitAuth(credentials)} >Submit</Button>
+            </Col>
+        </FormGroup>
+        </Form>
 
-      <div className="bg-danger">
-        <hr />
-      </div>
-      <FooterGrid/>
-    </div>
+        <div className="bg-danger">
+            <hr />
+        </div>
+        <FooterGrid/>
+        </div>
   );
 }

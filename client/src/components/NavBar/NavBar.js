@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import firebaseApp from '../../firebase/firebase.config';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../firebase/authContext';
 import {
   Collapse,
   Navbar,
@@ -10,6 +12,9 @@ import {
 } from 'reactstrap';
 
 const NavBar = (props) => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -21,18 +26,28 @@ const NavBar = (props) => {
         <NavbarToggler style={{backgroundColor:'#1e272e'}} onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
-              <Link className="text-light nav-link" to="/"><i className="fas fa-home"></i></Link>
-            </NavItem>
-            <NavItem>
-              <Link className="text-light nav-link" to="/">My Library</Link>
-            </NavItem>
-            <NavItem>
-              <Link className="text-light nav-link" to="/search">Search</Link>
-            </NavItem>
-            <NavItem>
+            {!user ? (
+              // not logged-in
+              <NavItem>
               <Link className="text-light nav-link" to="/login">Log In</Link>
-            </NavItem>
+              </NavItem>
+            ) : (
+              // logged-in
+              <>
+                <NavItem>
+                  <Link className="text-light nav-link" to="/"><i className="fas fa-home"></i></Link>
+                </NavItem>
+                <NavItem>
+                  <Link className="text-light nav-link" to="/">My Library</Link>
+                </NavItem>
+                <NavItem>
+                  <Link className="text-light nav-link" to="/search">Search</Link>
+                </NavItem>
+                <NavItem>
+                  <Link className="text-light nav-link" onClick={() => firebaseApp.auth().signOut()}>Log Out</Link>
+                </NavItem>
+              </>
+            )}
           </Nav>
         </Collapse>
       </Navbar>
