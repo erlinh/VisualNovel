@@ -6,23 +6,17 @@ body {
     background-color: var(--background-dark);
 }
 
-/* 
-.react-multiple-carousel {
-    position: relative;
-    z-index: -1;
-}
+.card,.card-title, .card-subtitle, .overlayText p {
+    color: var(--font-light); 
+    }
 
-.card {
-    position: relative;
-    z-index: 1;
-}
+.popoverBtn {
+        padding: 0;
+        background-color: var(--background-dark);
+        border: none;
+    }    
 
-.overlay {
-    position: fixed;
-    z-index: 5;
-} */
-
-.getDetails{
+.getDetailsBtn{
     background-color: var(--main-orange);
     color: var(--font-dark);
     font-weight: 600;

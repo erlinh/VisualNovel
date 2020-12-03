@@ -2,38 +2,40 @@ import React, { useState} from 'react';
 import { Link} from 'react-router-dom';
 import {
   Card,
-  CardTitle, CardSubtitle, Button, Popover, PopoverBody
+  CardTitle, CardSubtitle, Button, UncontrolledPopover, PopoverBody
 } from 'reactstrap';
 
 import './StoryCard.css';
 
-const overlayOn = (id) => {
-  document.getElementById(id).style.display = "flex";
-}
+// const overlayOn = (id) => {
+//   document.getElementById(id).style.display = "flex";
+// }
 
-const overlayOff = (id) => {
-  document.getElementById(id).style.display = "none";
+// const overlayOff = (id) => {
+//   document.getElementById(id).style.display = "none";
 
 
-}
+// }
 
 
 const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
 
-  const [popoverOpen, setPopoverOpen] = useState(false);
+  // const [popoverOpen, setPopoverOpen] = useState(false);
 
-  const toggle = (id) => {
+  // const toggle = (id) => {
     
-    setPopoverOpen(!popoverOpen);
-  }
+  //   setPopoverOpen(!popoverOpen);
+  // }
 
 
   return (
-    <Card style={{backgroundColor:'black', borderRadius:'5px', border:'1px #1e272e solid', lineHeight:'1.2', position:'relative'}} 
-      className="p-2 mr-5 text-light">
-      <img className="pb-3" src={imgUrl} alt="Cover of the story" id= {"Popover-" +id} /*onClick={() => overlayOn(id)}*//>
+    <Card style={{backgroundColor:'black', borderRadius:'5px', /*border:'1px #1e272e solid',*/ lineHeight:'1.2'}} 
+      className="p-2 mr-5 text-light" >
+      <Button className="popoverBtn">
+        <img className="pb-3" src={imgUrl} alt="Cover of the story"  id= {"Popover-" + id}/*onClick={() => overlayOn(id)}*//>
+      </Button>
      
-      <Popover target={"Popover-" + id} isOpen={popoverOpen} toggle={toggle}  >
+      <UncontrolledPopover trigger= "legacy" target={"Popover-" + id} /*isOpen={popoverOpen} toggle={toggle}*/ hideArrow={true} placement="auto">
         <PopoverBody className="overlayContent">
         <img className="overlayImg" src={imgUrl} alt="Cover of the story"/> 
         <div className="overlayText">       
@@ -44,11 +46,11 @@ const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
           <p>Categories: {categories}</p>
         
           <Link to= {`/stories/${slug}`}>
-            <Button className="getDetails">Get Details</Button>
+            <Button className="getDetailsBtn">Get Details</Button>
           </Link>
         </div>
         </PopoverBody>
-      </Popover>
+      </UncontrolledPopover>
      
       {/* <div id={id} onClick={() => overlayOff(id)} className="overlay" >
         <div className="overlayContent">
