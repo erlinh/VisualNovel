@@ -57,11 +57,6 @@ const TextSettings = () => {
         </div>
       </Collapse>
     </div>
-
-
-
- 
-    
     
   );
 };

@@ -4,7 +4,6 @@ import {useParams} from 'react-router-dom';
 import 'react-multi-carousel/lib/styles.css';
 import './TextContent.css';
 import TextCard from './TextCard';
-//import textForPages from '../../../assets/resources/sampleTextData.json';
 import instance from '../../../axios'; 
 
 const TextContent = () => {
@@ -31,9 +30,7 @@ const TextContent = () => {
     async function fetchContent(){
       try {
         const {data} = await instance.get(`/stories/${slug}/content`);
-        console.log(data);
         setContents(data.content);
-      //console.log(setContents);
       } catch (err) {
         console.log('There is an error to get content', err);
       }
