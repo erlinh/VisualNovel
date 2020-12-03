@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 import firebase from 'firebase/app';
 //import firebaseApp from '../firebase/firebase.config';
+import { AuthContext } from '../firebase/authContext';
 import NavBar from '../components/NavBar/NavBar';
 import FooterGrid from '../components/Footer/FooterGrid';
 
@@ -9,6 +11,9 @@ import './LogInPage.css';
 
 
 export default function LandingPage() {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
   const [credentials, setCredentials] = useState({ email: '', password: '' });
 
   const handleInputChange = (e) => {
@@ -35,6 +40,10 @@ export default function LandingPage() {
   };
 
   return (
+      <>
+    {user ? (
+        <Redirect to="/" /> 
+    ) : (
         <div className="container col-lg-10 mt-5 pt-5">
         <NavBar />
         
@@ -65,5 +74,7 @@ export default function LandingPage() {
         </div>
         <FooterGrid/>
         </div>
+    )}
+     </>
   );
 }

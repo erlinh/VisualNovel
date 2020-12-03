@@ -13,7 +13,7 @@ import {
 
 const NavBar = (props) => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  //console.log(user);
 
   const [isOpen, setIsOpen] = useState(false);
 

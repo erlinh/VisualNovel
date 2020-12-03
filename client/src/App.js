@@ -20,9 +20,8 @@ function App() {
             <Route exact path='/' component={LandingPage} />          
             <Route path='/login' component={LogInPage} />
             <ProtectedRoute path="/stories/:slug" component={DetailsPage} />
-          {/*   <Route path='/stories/:slug' component={DetailsPage} /> */}
-            <Route exact path='/search' component={SearchPage} />
-            <Route path='/text' component={TextPage} />
+            <Route path='/search' component={SearchPage} />
+            <ProtectedRoute path='/text' component={TextPage} />
           </Switch>
         </div>
       </BrowserRouter>
