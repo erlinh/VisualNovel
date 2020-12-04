@@ -4,3 +4,8 @@
 .react-multiple-carousel__arrow:active{
 outline: none;
 }
+
+.react-multiple-carousel {
+    position: relative;
+    z-index: -1;
+}

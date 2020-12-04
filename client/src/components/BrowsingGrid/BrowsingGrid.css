@@ -9,3 +9,7 @@ h3 {
     color: var(--font-light);
     margin-left: 2rem;
 }
+
+.browsingGrid {
+    margin-top: 4rem;
+}

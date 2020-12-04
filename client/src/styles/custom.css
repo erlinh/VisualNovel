@@ -7,12 +7,23 @@ body {
 }
 
 
-.jumbotron {
-    background: var(--background-dark);
-}
 
-.card {
-    background-color: var(--main-primary);
+.card,.card-title, .card-subtitle, .overlayText p {
+    color: var(--font-light); 
+    }
+
+.popoverBtn {
+        padding: 0;
+        background-color: var(--background-dark);
+        border: none;
+    }
+
+
+.getDetailsBtn{
+    background-color: var(--main-orange);
+    color: var(--font-dark);
+    font-weight: 600;
+    
 }
 
 .storyPage, .textSettingsContainer {
@@ -22,3 +33,5 @@ body {
 .linkToText {
     color: var(--font-light);
 }
+
+
