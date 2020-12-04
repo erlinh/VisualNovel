@@ -73,6 +73,7 @@ Productrouter.post('/stories', async(req,res)=>{
   product.title=req.body.title;
   product.author=req.body.author;
   product.imgUrl=req.body.imgUrl;
+  product.content=req.body.content;
   product.rating=req.body.rating;
   product.categories=req.body.categories;
   console.log(product);
@@ -120,5 +121,21 @@ Productrouter.get('/stories/:slug', async (req,res)=>{
     res.json({message:"there is no data with that title"})
   }
 })
+
+Productrouter.get('/stories/:slug/content', async(req,res)=>{
+  const result=await Products.findOne({
+    slug:req.params.slug
+  });
+  
+  //console.log(result)
+  try {
+    res.json(result);
+  } catch (err) {
+    console.log(err)
+    res.json({message:"there is no data with that content"})
+
+  }
+})
+ 
 
 module.exports = Productrouter;

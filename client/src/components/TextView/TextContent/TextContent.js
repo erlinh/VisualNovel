@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
+import {useParams} from 'react-router-dom';
 import 'react-multi-carousel/lib/styles.css';
 import './TextContent.css';
 import TextCard from './TextCard';
-import textForPages from '../../../assets/resources/sampleTextData.json';
+import instance from '../../../axios'; 
 
-const TextContent = () => {
+const TextContent = ({toggleReadingNavOpen, textSizeClass, fontClass, marginsClass, spacingClass}) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -22,15 +23,30 @@ const TextContent = () => {
       items: 1,
     },
   };
+  const [contents, setContents]=useState([]);
+  const slug= useParams().slug;
 
-  const pagesFromJson = textForPages.map((page) => (
-    <TextCard id={page.id} content={page.content} key={page.id} />
+  useEffect(()=>{
+    async function fetchContent(){
+      try {
+        const {data} = await instance.get(`/stories/${slug}/content`);
+        setContents(data.content);
+      } catch (err) {
+        console.log('There is an error to get content', err);
+      }
+    }
+    fetchContent();
+  },[slug]);
+
+  const pagesFromDatabase = contents.map((page) => (
+    <TextCard key={page.id} content={page.text} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
   ));
 
   return (
     <div className="textContentContainer">
+   
       <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
-        {pagesFromJson}
+        {pagesFromDatabase}
       </Carousel>
     </div>
   );
