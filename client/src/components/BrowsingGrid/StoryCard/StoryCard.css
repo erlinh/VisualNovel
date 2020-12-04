@@ -6,8 +6,8 @@ set in custom.css */
 .card {
     margin: 1rem;
     padding: 0.5rem;
-    width: '20vw';
-    height:'30vw';
+    width: 20vw;
+    height:30vw;
     font-size: small;
     position: relative;
     z-index: 1;
@@ -20,18 +20,24 @@ set in custom.css */
     
 }
 
+.popover {
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}
+
 .popover-body {
     background-color: var(--background-dark);
     padding: 2rem;
-    width: 60vw;
+    width: 40vw;
     display: flex;
    
 }
 
 
 .overlayImg {
-    max-width: 25vw;
-    max-height:37.5vw;
+    max-width: 20vw;
+    max-height:30vw;
     margin: 1rem;
 }
 
@@ -39,6 +45,12 @@ set in custom.css */
 
 .overlayText{
     background-color: var(--background-dark);
+    
+}
+
+
+.card-title, .card-subtitle, .overlayText p {
+    margin: 1rem; 
 }
 
 @media only screen and (max-width:1024px) {

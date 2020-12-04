@@ -6,6 +6,8 @@ body {
     background-color: var(--background-dark);
 }
 
+
+
 .card,.card-title, .card-subtitle, .overlayText p {
     color: var(--font-light); 
     }
@@ -14,7 +16,8 @@ body {
         padding: 0;
         background-color: var(--background-dark);
         border: none;
-    }    
+    }
+
 
 .getDetailsBtn{
     background-color: var(--main-orange);
@@ -22,7 +25,6 @@ body {
     font-weight: 600;
     
 }
-
 
 .storyPage, .textSettingsContainer {
     color: var(--font-dark);
