@@ -20,11 +20,11 @@ set in custom.css */
     
 }
 
-.popover {
+/* .popover {
     margin-left: 50px;
     margin-right: 50px;
     
-}
+} */
 
 .popover-body {
     background-color: var(--background-dark);
@@ -73,7 +73,7 @@ set in custom.css */
     }
 
     .overlayContent {
-        /* display: block; */
+        display: block; 
         font-size: smaller;
         width: 90vw;
     }
@@ -81,4 +81,10 @@ set in custom.css */
     .overlayImg {
         width: 100px;
     }
+
+    .card-title, .card-subtitle, .overlayText p {
+        margin: 0.5rem; 
+       
+    }
+    
 }
