@@ -11,10 +11,6 @@ export default function LandingPage() {
   return (
     <div className="container col-lg-10">
       <NavBar />
-      <Jumbotron>
-        {/* <h1>This is the landing page. Includes all the components that belong to the landing page.</h1> */}
-        <HeroBanner name={'Reader'}/>
-      </Jumbotron>
       <BrowsingGrid />
       <div className="bg-danger">
         <hr />

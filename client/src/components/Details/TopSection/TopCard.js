@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import '../TopSection/TopCard.css';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const TopCard =({id, title, author, imgUrl, rating, slug, categories})=>{
+const TopCard =({title, author, imgUrl, rating, slug, categories})=>{
   
   return(
-    <div className="media body topSection__bg">
+    <div className="media body topSection__bg ">
       <div className="container">
         <div className="topSection__row text-light">
           <div className="topSection__CardImg ">
@@ -29,12 +29,8 @@ const TopCard =({id, title, author, imgUrl, rating, slug, categories})=>{
             <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
             </p>
             <h6 className="mt-0 pb-3"> rating:{rating} /5</h6>
-            <h6 className="mt-0 pb-3"> IMBD: <i className="fas fa-star" style={{color:'yellow'}}></i> <i className="fas fa-star" style={{color:'yellow'}}>
-
-            </i> <i className="fas fa-star" style={{color:'yellow'}}></i></h6>
-            <Link to="/text" className="linkToText"><Button style={{backgroundColor:'red', borderRadius:'15px',marginRight:'5px'}}>Read More</Button></Link>
-            <Button style={{backgroundColor:'black', borderRadius:'15px',marginRight:'5px'}}>Info</Button>
-            <Button style={{backgroundColor:'blue', borderRadius:'15px',marginRight:'5px'}}>Buy</Button>
+            <Link to={`/stories/${slug}/content`} className="linkToText"><Button style={{backgroundColor:'green', borderRadius:'15px',marginRight:'5px'}}>Read More</Button></Link>
+            
               
           </div>
         </div>

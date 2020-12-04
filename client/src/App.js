@@ -19,9 +19,9 @@ function App() {
           <Switch>
             <Route exact path='/' component={LandingPage} />          
             <Route path='/login' component={LogInPage} />
+            <Route path='/stories/:slug/content' component={TextPage} /> 
             <ProtectedRoute path="/stories/:slug" component={DetailsPage} />
             <Route path='/search' component={SearchPage} />
-            <ProtectedRoute path='/text' component={TextPage} />
           </Switch>
         </div>
       </BrowserRouter>

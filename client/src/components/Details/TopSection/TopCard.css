@@ -9,6 +9,7 @@
 
 .topSection__bg {
     background-color: #130f40;
+    padding: 20px;
 }
 
 .topSection__row {
@@ -16,6 +17,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
     margin-top: 5rem;
+    margin-bottom: 4rem;
     /*border: 1px solid red; */
 
 }
@@ -28,8 +30,7 @@
 
 .topSection__CardImg img {
     max-height: 70vh;
-    margin: 2rem;
-}
+ }
 
 .media-body {
     padding: 2rem;
@@ -38,4 +39,21 @@
 .topSection__p p {
     font-size: 14px;
     font-size: .875rem;
+}
+ 
+
+@media only screen and (max-width:450px) {
+    .topSection__CardImg img{
+        max-height: 40vh;
+        min-width: 70vw;
+
+    }
+    .media-body, .topSection__p{
+        padding: 20px 0 0 0;
+        line-height:15px;
+        
+    }
+    .topSection__row {
+        margin-bottom: 2px;
+    }
 }
