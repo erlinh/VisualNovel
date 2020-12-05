@@ -6,6 +6,7 @@ import ProtectedRoute from './firebase/ProtectedRoute';
 import DetailsPage from './pages/DetailsPage';
 import LandingPage from './pages/LandingPage';
 import LogInPage from './pages/LogInPage';
+import RegisterPage from './pages/RegisterPage';
 import TextPage from './pages/TextPage';
 import SearchPage from './pages/SearchPage';
 
@@ -25,6 +26,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={LandingPage} />          
             <Route path='/login' component={LogInPage} />
+            <Route path='/register' component={RegisterPage} />
             <ProtectedRoute path='/stories/:slug/content' component={TextPage} /> 
             <ProtectedRoute path="/stories/:slug" component={DetailsPage} />
             <Route path='/search' component={SearchPage} />

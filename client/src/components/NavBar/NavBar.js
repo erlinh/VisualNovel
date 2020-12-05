@@ -40,9 +40,14 @@ const NavBar = (props) => {
           <Nav className="ml-auto" navbar>
             {!userID ? (
               // not logged-in
-              <NavItem>
-              <Link className="text-light nav-link" to="/login">Log In</Link>
-              </NavItem>
+              <>
+                <NavItem>
+                <Link className="text-light nav-link" to="/register">Register</Link>
+                </NavItem>
+                <NavItem>
+                <Link className="text-light nav-link" to="/login">Log In</Link>
+                </NavItem>
+              </>
             ) : (
               // logged-in
               <>
