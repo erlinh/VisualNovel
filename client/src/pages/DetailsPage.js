@@ -15,7 +15,7 @@ const DetailsPage=()=>{
     async function fetchData () {
       try { 
         const {data} = await instance.get(`/stories/${slug}`);
-        console.log(data);
+        //console.log(data);
         setStoriesDetails(data);
         
       } catch (err) {

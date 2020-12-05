@@ -7,13 +7,25 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
-  NavItem,
-  NavbarText
+  NavItem
 } from 'reactstrap';
 
 const NavBar = (props) => {
-  const { user } = useContext(AuthContext);
-  //console.log(user);
+  const { userID, updateUserID } = useContext(AuthContext);
+  //console.log(userID);
+
+  const logOut = () => {
+    firebaseApp.auth().signOut()
+    .then(() => {
+      console.log('signed out!');
+      updateUserID(null);
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    });
+  }
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +38,7 @@ const NavBar = (props) => {
         <NavbarToggler style={{backgroundColor:'#1e272e'}} onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            {!user ? (
+            {!userID ? (
               // not logged-in
               <NavItem>
               <Link className="text-light nav-link" to="/login">Log In</Link>
@@ -44,7 +56,7 @@ const NavBar = (props) => {
                   <Link className="text-light nav-link" to="/search">Search</Link>
                 </NavItem>
                 <NavItem>
-                  <Link className="text-light nav-link" onClick={() => firebaseApp.auth().signOut()}>Log Out</Link>
+                  <Link className="text-light nav-link" to="/login" onClick={logOut}>Log Out</Link>
                 </NavItem>
               </>
             )}

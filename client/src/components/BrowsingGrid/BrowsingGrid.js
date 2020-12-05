@@ -22,7 +22,7 @@ export default function BrowsingGrid() {
     async function fetchData () {
       try {
         const {data} = await instance.get('/stories');
-        console.log(data);
+        //console.log(data);
         setWholeBooksObject(data);
 
         // random, hard-coded stories to be rendered in top10

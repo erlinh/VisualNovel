@@ -14,7 +14,7 @@ const ButtomFooter =()=>{
           <span className="mx-2">|</span>
           <span><Link to="#">Cookie Notice</Link></span>
           <span className="mx-2">|</span>
-          <span><Link class="analytics-track-link" data-analytics-destination="status" to="#">Status</Link></span>
+          <span><Link to="#" className="analytics-track-link" data-analytics-destination="status">Status</Link></span>
         </p>
       </div>
     </div>

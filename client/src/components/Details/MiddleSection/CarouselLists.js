@@ -30,7 +30,7 @@ export default function CarouselLists(){
       try {
         const {data}= await instance.get('/stories');
         setAllList(data.all);
-        console.log(setAllList);
+        //console.log(setAllList);
       } catch (error) {
         console.log(error);
       }

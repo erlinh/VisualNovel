@@ -10,9 +10,9 @@ import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import './LogInPage.css';
 
 
-export default function LandingPage() {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+export default function LogInPage() {
+  const { userID, updateUserID } = useContext(AuthContext);
+  //console.log(userID);
 
   const [credentials, setCredentials] = useState({ email: '', password: '' });
 
@@ -28,8 +28,10 @@ export default function LandingPage() {
     .then((user) => {
       // Signed in 
       console.log('signed in!');
-      console.log('user', user);
-      console.log('userID', user.user.uid);
+      /* console.log('user', user);
+      console.log('userID', user.user.uid); */
+      console.log('trying to update the userID...')
+      updateUserID(user.user.uid);
       // console.log('maybe token', user.user.refreshToken);
     })
     .catch((error) => {
@@ -41,7 +43,7 @@ export default function LandingPage() {
 
   return (
       <>
-    {user ? (
+    {userID ? (
         <Redirect to="/" /> 
     ) : (
         <div className="container col-lg-10 mt-5 pt-5">
