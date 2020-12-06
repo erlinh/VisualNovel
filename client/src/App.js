@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { AuthContext } from './firebase/authContext';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ProtectedRoute from './firebase/ProtectedRoute';

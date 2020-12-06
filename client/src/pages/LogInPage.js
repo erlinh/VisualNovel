@@ -24,82 +24,82 @@ export default function LogInPage() {
 
   const handleInputChange = (e) => {
     setCredentials({
-        ...credentials,
-        [e.target.name]: e.target.value
+      ...credentials,
+      [e.target.name]: e.target.value
     });
   };
 
   const submitAuth = (credentials) => {
     firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)
-    .then((user) => {
+      .then((user) => {
       // Signed in 
-      console.log('signed in!');
-      setErrMsg('');
-      /* console.log('user', user);
+        console.log('signed in!');
+        setErrMsg('');
+        /* console.log('user', user);
       console.log('userID', user.user.uid); */
-      console.log('trying to update the userID...')
-      updateUserID(user.user.uid);
+        console.log('trying to update the userID...');
+        updateUserID(user.user.uid);
       // console.log('maybe token', user.user.refreshToken);
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
 
-      if (errorCode === 'auth/user-not-found' || errorCode === 'auth/wrong-password') {
-        setErrMsg('Email or password incorrect.');
-      }
-    });
+        if (errorCode === 'auth/user-not-found' || errorCode === 'auth/wrong-password') {
+          setErrMsg('Email or password incorrect.');
+        }
+      });
   };
 
   return (
-      <>
-    {userID ? (
+    <>
+      {userID ? (
         <Redirect to="/" /> 
-    ) : (
+      ) : (
         <div className="container col-lg-10 mt-5 pt-5">
-        <NavBar />
+          <NavBar />
         
-        <h1>Log In</h1>
+          <h1>Log In</h1>
 
-        <Form className="auth-form">
-        <FormGroup row>
-            <Label for="email" sm={2}>Email</Label>
-            <Col sm={10}>
-            <Input type="email" name="email" id="email" onChange={handleInputChange} onFocus={resetErrMsg} />
-            </Col>
-        </FormGroup>
-        <FormGroup row>
-            <Label for="password" sm={2}>Password</Label>
-            <Col sm={10}>
-            <Input type="password" name="password" id="password" onChange={handleInputChange} onFocus={resetErrMsg} />
-            </Col>
-        </FormGroup>
+          <Form className="auth-form">
+            <FormGroup row>
+              <Label for="email" sm={2}>Email</Label>
+              <Col sm={10}>
+                <Input type="email" name="email" id="email" onChange={handleInputChange} onFocus={resetErrMsg} />
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Label for="password" sm={2}>Password</Label>
+              <Col sm={10}>
+                <Input type="password" name="password" id="password" onChange={handleInputChange} onFocus={resetErrMsg} />
+              </Col>
+            </FormGroup>
 
-        {errMsg ? (
-            <div className="error-msg">
+            {errMsg ? (
+              <div className="error-msg">
                 <p>{errMsg}</p>
-            </div>
-        ) : (
-            null
-        )}
+              </div>
+            ) : (
+              null
+            )}
 
-        <FormGroup check row>
-            <Col className="d-flex justify-content-center">
-            <Button onClick={() => submitAuth(credentials)} >Submit</Button>
-            </Col>
-        </FormGroup>
-        </Form>
+            <FormGroup check row>
+              <Col className="d-flex justify-content-center">
+                <Button onClick={() => submitAuth(credentials)} >Submit</Button>
+              </Col>
+            </FormGroup>
+          </Form>
 
-        <p className="text-center mt-5" >If you don't have an account yet, <Link to="/register" >register here</Link>.</p>
+          <p className="text-center mt-5" >If you don't have an account yet, <Link to="/register" >register here</Link>.</p>
 
-        <div className="bg-danger">
+          <div className="bg-danger">
             <hr />
+          </div>
+          <FooterGrid/>
         </div>
-        <FooterGrid/>
-        </div>
-    )}
-     </>
+      )}
+    </>
   );
 }

@@ -16,16 +16,16 @@ const NavBar = (props) => {
 
   const logOut = () => {
     firebaseApp.auth().signOut()
-    .then(() => {
-      console.log('signed out!');
-      updateUserID(null);
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-    });
-  }
+      .then(() => {
+        console.log('signed out!');
+        updateUserID(null);
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,10 +42,10 @@ const NavBar = (props) => {
               // not logged-in
               <>
                 <NavItem>
-                <Link className="text-light nav-link" to="/register">Register</Link>
+                  <Link className="text-light nav-link" to="/register">Register</Link>
                 </NavItem>
                 <NavItem>
-                <Link className="text-light nav-link" to="/login">Log In</Link>
+                  <Link className="text-light nav-link" to="/login">Log In</Link>
                 </NavItem>
               </>
             ) : (
