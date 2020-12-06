@@ -15,7 +15,7 @@ export default function SearchBox(props) {
       
     try {
       // get the stories
-      const response = await instance.post(`/search/${phrase}`);
+      const response = await instance.get(`/search/${phrase}`);
       const foundStories = response.data;
       // console.log(searchInput, foundStories);
 

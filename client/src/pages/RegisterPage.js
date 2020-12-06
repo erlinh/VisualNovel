@@ -3,6 +3,7 @@ import { Redirect, Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 //import firebaseApp from '../firebase/firebase.config';
 import { AuthContext } from '../firebase/authContext';
+import instance from '../axios';
 import NavBar from '../components/NavBar/NavBar';
 import FooterGrid from '../components/Footer/FooterGrid';
 
@@ -35,7 +36,7 @@ export default function RegisterPage() {
   };
 
   const registerNewUser = (newUser) => {
-    console.log(newUser);
+    //console.log('from form inputs', newUser);
     
     if (newUser.password !== newUser.confirmPassword) {
       setErrMsg('Passwords do not match');
@@ -44,17 +45,25 @@ export default function RegisterPage() {
 
     firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password)
       .then((user) => {
-      // Signed in 
-        console.log('signed in!');
+      // New user registered and signed in
+        console.log('registered!');
         setErrMsg('');
-        /* console.log('user', user);
-      console.log('userID', user.user.uid); */
-        console.log('trying to update the userID...');
-        updateUserID(user.user.uid);
-      // console.log('maybe token', user.user.refreshToken);
+        const firebaseID = user.user.uid;
+        updateUserID(firebaseID);
+      // console.log('refresh token', user.user.refreshToken);
+        return firebaseID;
+      })
+      .then(async (firebaseID) => {
+        const response = await instance.post('/users/new-user', {
+          firebaseID: firebaseID,
+          firstname: newUser.firstname,
+          email: newUser.email
+        });
+        // console.log('freshly saved user', response.data);
+        return response.data;
       })
       .catch((error) => {
-        var errorCode = error.code;
+        var errorCode = error.code || 400;
         var errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);

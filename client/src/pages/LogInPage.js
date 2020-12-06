@@ -35,11 +35,8 @@ export default function LogInPage() {
       // Signed in 
         console.log('signed in!');
         setErrMsg('');
-        /* console.log('user', user);
-      console.log('userID', user.user.uid); */
-        console.log('trying to update the userID...');
         updateUserID(user.user.uid);
-      // console.log('maybe token', user.user.refreshToken);
+      // console.log('refresh token', user.user.refreshToken);
       })
       .catch((error) => {
         var errorCode = error.code;

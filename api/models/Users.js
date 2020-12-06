@@ -8,6 +8,6 @@ const UserSchema = new mongoose.Schema({
     favoriteBooks: [String],
 });
 
-const User = mongoose.model("user", UserSchema);
+const Users = mongoose.model("user", UserSchema);
 
-module.exports = User;
+module.exports = Users;

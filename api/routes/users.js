@@ -1,6 +1,6 @@
-var express = require('express');
-const User = require('../models/User');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const Users = require('../models/Users');
 
 /* GET all users */
 /* only for development, maybe later for admins as well */
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 /* POST create a new user entry */
 router.post('/new-user', async (req, res) => {
   try {
-    const newUser = new User({
+    const newUser = new Users({
       firebaseID: req.body.firebaseID,
       userType: 'reader',
       firstname: req.body.firstname,
@@ -30,6 +30,7 @@ router.post('/new-user', async (req, res) => {
     res.send(doc);
   } catch (err) {
     console.log('Error when saving new user: ', err);
+    res.status(400);
     res.send({message: 'error when saving a new user'});
   }
 })

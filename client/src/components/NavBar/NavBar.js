@@ -42,6 +42,9 @@ const NavBar = (props) => {
               // not logged-in
               <>
                 <NavItem>
+                  <Link className="text-light nav-link" to="/search">Search</Link>
+                </NavItem>
+                <NavItem>
                   <Link className="text-light nav-link" to="/register">Register</Link>
                 </NavItem>
                 <NavItem>
