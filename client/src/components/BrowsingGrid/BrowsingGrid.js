@@ -6,6 +6,7 @@ import './BrowsingGrid.css';
 
 
 export default function BrowsingGrid() {
+  const[loading, setLoading]=useState(false);
   const [wholeBooksObject, setWholeBooksObject]= useState({
     all: [],
     erotic: [],
@@ -21,6 +22,7 @@ export default function BrowsingGrid() {
   useEffect(() => {
     async function fetchData () {
       try {
+        setLoading(true)
         const {data} = await instance.get('/stories');
         console.log(data);
         setWholeBooksObject(data);
@@ -50,7 +52,12 @@ export default function BrowsingGrid() {
     fetchData();
     
   },[]);
-  
+ 
+  if(!loading==true){
+    return (
+    <p>Loading....</p>
+    )
+  }
   return (
     <>
       <div>
@@ -62,7 +69,7 @@ export default function BrowsingGrid() {
         <h3 style={{color:'#cc8e35'}} >Popular in Your Area:</h3>
         <StoryCards booksOfCategory={popularInArea} />
       </div>
-
+  
       <div>
         <h3 style={{color:'#cc8e35'}} >Recent Stories:</h3>
         <StoryCards booksOfCategory={recent} />

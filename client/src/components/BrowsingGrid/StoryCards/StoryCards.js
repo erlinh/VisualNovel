@@ -8,8 +8,8 @@ import './StoryCards.css';
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 4,
-    slidesToSlide: 2 // clicking on "next" arrow moves the carousel by 2 items (default: 1)
+    items: 6.5,
+    slidesToSlide: 3 // clicking on "next" arrow moves the carousel by 2 items (default: 1)
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -17,7 +17,7 @@ const responsive = {
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 2
+    items: 2.5
   }
 };
 

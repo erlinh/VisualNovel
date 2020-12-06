@@ -10,10 +10,9 @@ import './StoryCard.css';
 const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
 
   return (
-    <Card style={{backgroundColor:'black', borderRadius:'5px', /*border:'1px #1e272e solid',*/ lineHeight:'1.2'}} 
-      className="p-2 mr-5 text-light" >
+    <Card className="mr-3 text-light" >
       <Button className="popoverBtn">
-        <img className="pb-3" src={imgUrl} alt="Cover of the story"  id= {'Popover-' + id}/>
+        <img src={imgUrl} alt="Cover of the story"  id= {'Popover-' + id}/>
       </Button>
      
       <UncontrolledPopover trigger= "legacy" target={'Popover-' + id} hideArrow={true} placement="auto">

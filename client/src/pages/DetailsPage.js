@@ -10,12 +10,15 @@ import CarouselLists from '../components/Details/MiddleSection/CarouselLists';
 const DetailsPage=()=>{
    
   const[storiesDetails, setStoriesDetails]=useState([]);
+  const [loading, setLoading]=useState(false);
   const slug= useParams().slug;
   useEffect(() => {
     async function fetchData () {
+    
       try { 
         const {data} = await instance.get(`/stories/${slug}`);
-        console.log(data);
+        //console.log(data);
+        setLoading(true);
         setStoriesDetails(data);
         
       } catch (err) {
@@ -26,20 +29,25 @@ const DetailsPage=()=>{
 
   },[slug]);
 
-  return(
-    <>
-      <NavBar/>
-      <div className="col-lg-11 container">
-        <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} imgUrl={storiesDetails.imgUrl} content={storiesDetails.content} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
-        <CarouselLists />
-        <div className="bg-danger">
-          <hr />
+  if(setLoading==true){
+    return <p>Loading...</p>
+  }else{
+    return(
+      <>
+        <NavBar/>
+        <div className="col-lg-11 container">
+          <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} imgUrl={storiesDetails.imgUrl} content={storiesDetails.content} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
+          <CarouselLists />
+          <div className="bg-danger">
+            <hr />
+          </div>
+          <FooterGrid />
         </div>
-        <FooterGrid />
-      </div>
-     
-    </>
-  );
+       
+      </>
+    );
+  }
+  
 };
 
 export default DetailsPage;
