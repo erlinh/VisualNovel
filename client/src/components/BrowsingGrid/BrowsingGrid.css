@@ -13,3 +13,39 @@ h3 {
 .browsingGrid {
     margin-top: 4rem;
 }
+
+.search__bar{
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+    margin-bottom: 0;
+    padding: 40px;
+
+}
+ .search__bar input{
+    border-radius: 20px;
+    width: 500px;
+    line-height: 2;
+    border-style: none;
+    background-color: rgba(222, 227, 228, 0.968);
+    color: black;
+    outline-style: none;
+    
+ }
+@media only screen and (max-width:420px) {
+     .search__bar{
+        margin-top: 100px;
+        margin-bottom: 35px;
+        border: none;
+        padding:0;
+        
+     }
+     .search__bar input{
+         border-style: none;
+         border-radius: 8px;
+         background-color: rgba(222, 227, 228, 0.968);
+         color: black;
+         outline-style: none;
+     }
+    
+}

@@ -16,10 +16,11 @@ const DetailsPage=()=>{
     async function fetchData () {
     
       try { 
+        setLoading(true);
         const {data} = await instance.get(`/stories/${slug}`);
         //console.log(data);
-        setLoading(true);
         setStoriesDetails(data);
+        setLoading(false);
         
       } catch (err) {
         console.log(err);
@@ -29,8 +30,13 @@ const DetailsPage=()=>{
 
   },[slug]);
 
-  if(setLoading==true){
-    return <p>Loading...</p>
+  if(loading){
+    return (
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="spinner-border text-success" role="status">
+              <span className="sr-only">Loading...</span>
+          </div>
+        </div>);
   }else{
     return(
       <>

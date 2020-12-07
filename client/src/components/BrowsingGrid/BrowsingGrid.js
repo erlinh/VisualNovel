@@ -18,14 +18,16 @@ export default function BrowsingGrid() {
   const [top10, setTop10] = useState([]);
   const [popularInArea, setPopularInArea] = useState([]);
   const [recent, setRecent] = useState([]);
+  const [search, setSearch]=useState('');
 
   useEffect(() => {
     async function fetchData () {
       try {
-        setLoading(true)
+        setLoading(true);
         const {data} = await instance.get('/stories');
         console.log(data);
         setWholeBooksObject(data);
+        setLoading(false);
 
         // random, hard-coded stories to be rendered in top10
         const top10Stories = [];
@@ -53,13 +55,39 @@ export default function BrowsingGrid() {
     
   },[]);
  
-  if(!loading==true){
+  if(loading){
     return (
-    <p>Loading....</p>
-    )
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border text-success" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    );
   }
+  function InputChangeOnSearch(e){
+    return(
+      setSearch (e.target.value)
+    ); 
+  }
+
+  const filteredStories = wholeBooksObject.all.filter(story=>{
+    return(
+      story.title.toLowerCase().includes(search.toLowerCase()) +
+      story.author.toLowerCase().includes(search.toLowerCase())
+    );
+  });
+
   return (
     <>
+      <div className="search__bar">
+        <input type="text" placeholder="Search story..." 
+          onChange={InputChangeOnSearch}/>
+      </div>
+      {search?<div>
+        <h5 style={{color:'#cc8e35'}} >Searched story:</h5>
+        <StoryCards booksOfCategory={filteredStories} />
+      </div>:null}
+   
       <div>
         <h3 style={{color:'#cc8e35'}} >Top 10:</h3>
         <StoryCards booksOfCategory={top10} />
