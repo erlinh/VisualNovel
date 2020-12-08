@@ -1,0 +1,11 @@
+@media only screen and (max-width:450px) {
+   .footer__mob{
+       display: none;
+   }
+    .footer__p{
+        display: flex;
+        justify-content: center;
+        font-size: small;
+
+    }
+}
