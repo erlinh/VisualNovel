@@ -34,9 +34,9 @@ const TextPage = () => {
   };
 
   return (
-    <div className={`textPage bg-${bgColor}`}>
+    <div className={`reading-view bg-${bgColor}`}>
       <TextSettings isReadingNavOpen={isReadingNavOpen} passTextSize={handleTextSize} passBgColor={handleBgColor} passFont={handleFont} passMargins={handleMargins} passSpacing={handleSpacing} />
-      <TextContent toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSize} fontClass={font} marginsClass={margins} spacingClass={spacing} />
+      <TextContent toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSize} bgColor={bgColor} fontClass={font} marginsClass={margins} spacingClass={spacing} />
     </div>
   );
 };
