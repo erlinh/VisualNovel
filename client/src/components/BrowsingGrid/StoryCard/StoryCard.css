@@ -57,18 +57,23 @@ set in custom.css */
         margin: 1rem;
     }
 }
+ 
 
-@media only screen and (max-width:370px) {
+@media only screen and (max-width:450px) {
     .card {
-        width: 40vw;
-        height: 60vw;
-      
+        max-width: 40vw;
+        min-height: fit-content;
+        object-fit: fill;
+         
     }
+.card__mob{
+    max-height: min-content;
+}
 
     .overlayContent {
-        display: block; 
+        display: flex; 
         font-size: smaller;
-        min-width: 200px;
+        max-width: 200px;
     }
 
     .overlayImg {
@@ -79,5 +84,6 @@ set in custom.css */
         margin: 0.5rem; 
        
     }
+     
     
 }
