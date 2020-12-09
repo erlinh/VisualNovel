@@ -1,30 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import Carousel from 'react-multi-carousel';
-import {useParams} from 'react-router-dom';
-import 'react-multi-carousel/lib/styles.css';
-import './TextContent.css';
-import TextCard from './TextCard';
+import { useParams } from 'react-router-dom';
 import instance from '../../../axios'; 
+import TextChunk from './TextChunk';
+import './TextContent.css';
 
-const TextContent = ({toggleReadingNavOpen, textSizeClass, fontClass, marginsClass, spacingClass}) => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 2,
-      slidesToSlide: 2
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
-  const [contents, setContents]=useState([]);
-  const slug= useParams().slug;
+const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, marginsClass, spacingClass}) => {
+ 
+  const [contents, setContents] = useState([]);
+  const [currentChunkId, setCurrentChunkId] = useState(0);
+
+  const slug = useParams().slug;
 
   useEffect(()=>{
     async function fetchContent(){
@@ -38,16 +23,13 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, fontClass, marginsCla
     fetchContent();
   },[slug]);
 
-  const pagesFromDatabase = contents.map((page) => (
-    <TextCard key={page.id} content={page.text} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
-  ));
-
   return (
     <div className="textContentContainer">
-   
-      <Carousel responsive={responsive} removeArrowOnDeviceType={['mobile']}>
-        {pagesFromDatabase}
-      </Carousel>
+      { contents.length === 0 ? (
+        <h3>Loading...</h3>
+      ) : (
+          <TextChunk content={contents[currentChunkId].text} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} bgColorClass={bgColor} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
+      )}
     </div>
   );
 };
