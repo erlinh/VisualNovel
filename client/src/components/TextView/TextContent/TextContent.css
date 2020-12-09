@@ -5,25 +5,30 @@
     height: 100vh;
     color: var(--font-dark);
     overflow-x: auto;
-    padding: 1rem 0;
 }
 
-.text-view-grid {
+.text-grid {
     display: grid;
-    grid-template-columns: fit-content 1fr;
-    grid-template-rows: minmax(90vh, 1fr);
+    grid-template-columns: fit-content;
+    grid-template-rows: 100vh;
+    align-items: center;
     overflow-x: auto;
 }
 
 .text-columns {
-    font-family: var(--font-serif);
-    height: 85vh;
+    height: 95vh;
     column-width: 300px;
-    width: fit-content;
+    /*  width: fit-content; */
+}
+
+.text-view-grid {
+    display: grid;
+    grid-template-columns: auto 1px;
 }
 
 .choice-screen h3 {
     color: var(--main-orange);
+    width: 100vw;
 }
 
 
