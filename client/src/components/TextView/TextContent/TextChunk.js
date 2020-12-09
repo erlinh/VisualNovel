@@ -3,10 +3,10 @@ import './TextContent.css';
 
 const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, fontClass, marginsClass, spacingClass}) => {
   return (
-    <div onClick={toggleReadingNavOpen} className={`text-view-grid text-size-${textSizeClass} font-${fontClass} bg-${bgColorClass} margins-${marginsClass} spacing-${spacingClass}`}>
+    <div onClick={toggleReadingNavOpen} className={`text-view-grid text-size-${textSizeClass} font-${fontClass} bg-${bgColorClass} spacing-${spacingClass}`}>
 
       <div className="text-grid">
-        <p className="mb-0 text-columns">{content}</p>
+        <p className={`mb-0 text-columns margins-${marginsClass}`}>{content}</p>
       </div>
 
       <div className="choice-screen">
