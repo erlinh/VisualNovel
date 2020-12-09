@@ -6,27 +6,76 @@ set in custom.css */
 .card {
     margin: 1rem;
     padding: 0.5rem;
-    height: 250px;
-    width: 190px;
+    width: 20vw;
+    height:30vw;
     font-size: small;
+    position: relative;
+    z-index: 1;
 }
+
+
 
 .card img {
-    height: 150px;
-    width: 100px;
+    width: 100%;
+    
 }
 
+.popover-body {
+    background-color: var(--background-dark);
+    padding: 2rem;
+    width: 40vw;
+    display: flex;
+   
+}
+
+
+.overlayImg {
+    max-width: 20vw;
+    max-height:30vw;
+    margin: 1rem;
+}
+ 
+.overlayText{
+    background-color: var(--background-dark);
+    
+}
+
+.card-title, .card-subtitle, .overlayText p {
+    margin: 1rem; 
+}
 
 @media only screen and (max-width:1024px) {
     .card {
-        width: 170px;
-        height: 230px;
+        width: 30vw;
+        height: 45vw;
+    }
+
+    .overlayImg {
+        max-width: 30vw;
+        max-height:45vw;
+        margin: 1rem;
     }
 }
 
-@media only screen and (max-width:364px) {
+@media only screen and (max-width:380px) {
     .card {
-        width: 170px;
-        height: 230px;
+        width: 40vw;
+        height: 60vw;
     }
+
+    .overlayContent {
+        display: block; 
+        font-size: smaller;
+        width: 70vw;
+    }
+
+    .overlayImg {
+        width: 100px;
+    }
+
+    .card-title, .card-subtitle, .overlayText p {
+        margin: 0.5rem; 
+       
+    }
+    
 }
