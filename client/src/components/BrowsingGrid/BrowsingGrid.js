@@ -88,7 +88,7 @@ export default function BrowsingGrid() {
         <h5 style={{color:'#cc8e35'}} >Avaliable Stories:</h5>
         <StoryCards booksOfCategory={filteredStories} />
       </div>:null}
-   
+      <hr className="bg-danger"/>
       <div>
         <h5 style={{color:'#cc8e35'}} >Top 10:</h5>
         <StoryCards booksOfCategory={top10} />

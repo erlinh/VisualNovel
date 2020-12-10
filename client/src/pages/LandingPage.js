@@ -7,8 +7,8 @@ import NavBar from '../components/NavBar/NavBar';
 export default function LandingPage() {
   return (
       <>
-    <div className="container col-lg-10">
       <NavBar />
+    <div className="container col-lg-10">
       <BrowsingGrid />
       <div className="bg-danger">
         <hr />
