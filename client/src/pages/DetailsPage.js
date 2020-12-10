@@ -47,7 +47,9 @@ const DetailsPage=()=>{
           <div className="bg-danger">
             <hr />
           </div>
-          <FooterGrid />
+        </div>
+        <div className="col-lg-12">
+        <FooterGrid />
         </div>
        
       </>
