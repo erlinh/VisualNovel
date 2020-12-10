@@ -18,7 +18,7 @@ const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
         <PopoverBody className="overlayContent">
           <img className="overlayImg" src={imgUrl} alt="Cover of the story"/> 
           <div className="overlayText">       
-            <CardTitle style={{fontSize:'1.5rem'}}>{title}</CardTitle>
+            <CardTitle className="card-title" style={{fontSize:'1.5rem'}} >{title}</CardTitle>
             <CardSubtitle>By {author}</CardSubtitle>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis elementum nulla ac pulvinar. Proin facilisis malesuada erat, sit amet semper mauris finibus id.</p>
             <p>{rating}/5</p>        

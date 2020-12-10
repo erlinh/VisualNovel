@@ -26,19 +26,16 @@ set in custom.css */
     padding: 2rem;
     width: 40vw;
     display: flex;
-   
 }
-
 
 .overlayImg {
     max-width: 20vw;
     max-height:30vw;
     margin: 1rem;
 }
- 
+
 .overlayText{
-    background-color: var(--background-dark);
-    
+    background-color: var(--background-dark); 
 }
 
 .card-title, .card-subtitle, .overlayText p {
@@ -47,43 +44,56 @@ set in custom.css */
 
 @media only screen and (max-width:1024px) {
     .card {
-        width: 30vw;
-        height: 45vw;
+        max-width: 30vw;    
+    }
+
+    .overlayContent {
+        display:block; 
+        font-size: smaller;
+        max-width: 35vw;
+        max-height: 40vh;
     }
 
     .overlayImg {
-        max-width: 30vw;
-        max-height:45vw;
+        display: none;
+        max-width: 80vw;
+        max-height:15vw;
         margin: 1rem;
     }
 }
  
-
 @media only screen and (max-width:450px) {
     .card {
-        max-width: 40vw;
-        min-height: fit-content;
-        object-fit: fill;
-         
+        max-width: 50vw;
+        max-height: 55vw;
     }
-.card__mob{
-    max-height: min-content;
-}
 
     .overlayContent {
-        display: flex; 
+        /* background-color: white; */
+        display:block; 
         font-size: smaller;
-        max-width: 200px;
+       max-height: 60vh;
+       min-width: 60vw;
     }
 
-    .overlayImg {
-        width: 100px;
+    .overlayText{
+        /* background-color: red; */
+      max-height: 55vh;
     }
-
+     .overlayImg {
+         display: none;
+        max-width: 50vw;
+        max-height:10vh;
+        margin: 0.5rem;
+    }  
+  
     .card-title, .card-subtitle, .overlayText p {
         margin: 0.5rem; 
+        max-height: 7rem;
        
     }
-     
+     .card-title{
+         font-size: 1rem !important;
+     }
     
 }
