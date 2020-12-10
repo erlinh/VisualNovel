@@ -60,14 +60,14 @@
 @media only screen and (max-width:450px) {
     .topSection__CardImg img{
         max-height: 40vh;
-        max-width: 70vw;
+        min-width: 50vw;
 
     }
     .media-body, .topSection__p{
-        padding: 20px 0 0 0;
+        display: block;
+        padding: 20px 0 0 
+        0px;
         line-height:15px;
-       
-        
     }
     .topSection__row {
         margin-bottom: 2px;

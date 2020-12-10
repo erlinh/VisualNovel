@@ -8,6 +8,7 @@ import {
   NavItem,
   NavbarText
 } from 'reactstrap';
+import './Navbar.css';
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const NavBar = (props) => {
   return (
     <div>
       <Navbar className="fixed-top" style={{backgroundColor:'black'}} light expand="md">
-        <Link className="text-light navbar-brand pl-5" to="/">Storyfics</Link>
+        <Link className="text-light navbar-brand pl-5 navlogo__mob " to="/">Storyfics</Link>
         <NavbarToggler style={{backgroundColor:'#1e272e'}} onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
