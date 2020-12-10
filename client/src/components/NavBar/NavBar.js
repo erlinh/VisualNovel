@@ -17,7 +17,7 @@ const NavBar = (props) => {
 
   return (
     <div>
-      <Navbar className="fixed-top" style={{backgroundColor:'black'}} light expand="md">
+      <Navbar className="fixed-top navbar__top" light expand="md">
         <Link className="text-light navbar-brand pl-5 navlogo__mob " to="/">Storyfics</Link>
         <NavbarToggler style={{backgroundColor:'#1e272e'}} onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

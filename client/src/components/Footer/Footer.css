@@ -1,5 +1,6 @@
 .footer__grid{
-    background-color:#0df0f09c ;
+    /* background-color:#0df0f09c ; */
+    background-image: linear-gradient(to left, #072b5c, #05274b, #0b2239, #121d28, #161718);
     
 }
  
