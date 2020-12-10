@@ -9,7 +9,7 @@ import './Footer.css'
 const FooterGrid=()=>{
   return(
     <>
-      <div className="col-lg-12 col-sm-12 my-3 py-5 footer__mob" style={{backgroundColor:'#bdc3c7', color:'black'}}>
+      <div className="col-lg-12 col-sm-12 my-3 py-5 footer__grid footer__mob" style={{color:'white'}}>
         <div className="row col-lg-12 justify-content-around">
           <StoryficsBox/>
           <Learn/>
