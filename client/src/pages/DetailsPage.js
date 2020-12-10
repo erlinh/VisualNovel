@@ -32,11 +32,11 @@ const DetailsPage=()=>{
 
   if(loading){
     return (
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="spinner-border text-success" role="status">
-              <span className="sr-only">Loading...</span>
-          </div>
-        </div>);
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="spinner-border text-success" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>);
   }else{
     return(
       <>
@@ -49,7 +49,7 @@ const DetailsPage=()=>{
           </div>
         </div>
         <div className="col-lg-12">
-        <FooterGrid />
+          <FooterGrid />
         </div>
        
       </>

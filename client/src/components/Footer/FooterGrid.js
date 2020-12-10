@@ -4,7 +4,7 @@ import Connect from './Connect/Connect';
 import Learn from './Learn/Learn';
 import SocialMedia from './SocialMedia/SocialMedia';
 import StoryficsBox from './StoryficsBox/StoryficsBox';
-import './Footer.css'
+import './Footer.css';
 
 const FooterGrid=()=>{
   return(

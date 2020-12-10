@@ -6,17 +6,17 @@ import NavBar from '../components/NavBar/NavBar';
 
 export default function LandingPage() {
   return (
-      <>
+    <>
       <NavBar />
-    <div className="container col-lg-10">
-      <BrowsingGrid />
-      <div className="bg-danger">
-        <hr />
+      <div className="container col-lg-10">
+        <BrowsingGrid />
+        <div className="bg-danger">
+          <hr />
+        </div>
       </div>
-    </div>
-    <div className="col-lg-12">
+      <div className="col-lg-12">
         <FooterGrid/>
       </div>
-      </>
+    </>
   );
 }
