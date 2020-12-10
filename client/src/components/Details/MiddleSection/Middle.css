@@ -1,0 +1,18 @@
+.carouselcard{
+   max-height: 30vh;
+}
+
+
+@media only screen and (max-width:1024px) {
+    .carouselcard{
+        max-height: 25vh;
+    }
+    
+}
+
+@media only screen and (max-width:450px) {
+    .carouselcard{
+        max-width: 30vw;
+    }
+    
+}
