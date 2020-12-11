@@ -103,9 +103,6 @@ const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, pa
                     Font
             </DropdownToggle>
             <DropdownMenu>
-              {/*  <DropdownItem header>
-                <p>Font</p>
-              </DropdownItem> */}
               <DropdownItem onClick={() => changeFont('serif')}> 
                 <p>Serif</p>
               </DropdownItem>
@@ -120,9 +117,6 @@ const TextSettings = ({isReadingNavOpen, passTextSize, passBgColor, passFont, pa
                     Margins
             </DropdownToggle>
             <DropdownMenu>
-              {/*   <DropdownItem header>
-                <p>Margins</p>
-              </DropdownItem> */}
               <DropdownItem onClick={() => changeMargins('0')}> 
                 <p>None</p>
               </DropdownItem>
