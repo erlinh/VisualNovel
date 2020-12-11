@@ -1,7 +1,6 @@
-.textPage {
+.reading-view {
     /* background-color: var(--background-light); */
     height: 100vh;
-    width: 100vw;
 }
 
 .bg-white {

@@ -2,22 +2,23 @@
 
 /* Styling for individual story cards/covers. Card background color
 set in custom.css */
-
+/* 
 .card {
     margin: 1rem;
     padding: 0.5rem;
     width: 20vw;
-    height:30vw;
+    height:20vw;
     font-size: small;
     position: relative;
     z-index: 1;
-}
-
-
+    
+} */
 
 .card img {
     width: 100%;
-    
+    object-fit: contain;
+  
+   
 }
 
 .popover-body {
@@ -25,19 +26,16 @@ set in custom.css */
     padding: 2rem;
     width: 40vw;
     display: flex;
-   
 }
-
 
 .overlayImg {
     max-width: 20vw;
     max-height:30vw;
     margin: 1rem;
 }
- 
+
 .overlayText{
-    background-color: var(--background-dark);
-    
+    background-color: var(--background-dark); 
 }
 
 .card-title, .card-subtitle, .overlayText p {
@@ -46,36 +44,56 @@ set in custom.css */
 
 @media only screen and (max-width:1024px) {
     .card {
-        width: 30vw;
-        height: 45vw;
-    }
-
-    .overlayImg {
-        max-width: 30vw;
-        max-height:45vw;
-        margin: 1rem;
-    }
-}
-
-@media only screen and (max-width:380px) {
-    .card {
-        width: 40vw;
-        height: 60vw;
+        max-width: 30vw;    
     }
 
     .overlayContent {
-        display: block; 
+        display:block; 
         font-size: smaller;
-        width: 70vw;
+        max-width: 35vw;
+        max-height: 40vh;
     }
 
     .overlayImg {
-        width: 100px;
+        display: none;
+        max-width: 80vw;
+        max-height:15vw;
+        margin: 1rem;
+    }
+}
+ 
+@media only screen and (max-width:450px) {
+    .card {
+        max-width: 50vw;
+        max-height: 55vw;
     }
 
+    .overlayContent {
+        /* background-color: white; */
+        display:block; 
+        font-size: smaller;
+       max-height: 60vh;
+       min-width: 60vw;
+    }
+
+    .overlayText{
+        /* background-color: red; */
+      max-height: 55vh;
+    }
+     .overlayImg {
+         display: none;
+        max-width: 50vw;
+        max-height:10vh;
+        margin: 0.5rem;
+    }  
+  
     .card-title, .card-subtitle, .overlayText p {
         margin: 0.5rem; 
+        max-height: 7rem;
        
     }
+     .card-title{
+         font-size: 1rem !important;
+     }
     
 }

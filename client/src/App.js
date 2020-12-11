@@ -7,7 +7,7 @@ import TextPage from './pages/TextPage';
 import SearchPage from './pages/SearchPage';
 
 function App() {
-
+  console.log('screen',window.screen.width);
   return (
     <BrowserRouter>
       <div className='text-white'>
