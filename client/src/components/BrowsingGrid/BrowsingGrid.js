@@ -6,6 +6,7 @@ import './BrowsingGrid.css';
 
 
 export default function BrowsingGrid() {
+  const[loading, setLoading]=useState(false);
   const [wholeBooksObject, setWholeBooksObject]= useState({
     all: [],
     erotic: [],
@@ -17,13 +18,16 @@ export default function BrowsingGrid() {
   const [top10, setTop10] = useState([]);
   const [popularInArea, setPopularInArea] = useState([]);
   const [recent, setRecent] = useState([]);
+  const [search, setSearch]=useState('');
 
   useEffect(() => {
     async function fetchData () {
       try {
+        setLoading(true);
         const {data} = await instance.get('/stories');
         console.log(data);
         setWholeBooksObject(data);
+        setLoading(false);
 
         // random, hard-coded stories to be rendered in top10
         const top10Stories = [];
@@ -50,49 +54,81 @@ export default function BrowsingGrid() {
     fetchData();
     
   },[]);
-  
+ 
+  if(loading){
+    return (
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border text-light" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+  function InputChangeOnSearch(e){
+    return(
+      setSearch (e.target.value)
+    ); 
+  }
+
+  const filteredStories = wholeBooksObject.all.filter(story=>{
+    return(
+      story.title.toLowerCase().includes(search.toLowerCase()) +
+      story.author.toLowerCase().includes(search.toLowerCase())
+    );
+  });
+
   return (
     <>
-      <div>
-        <h3 style={{color:'#cc8e35'}} >Top 10:</h3>
-        <StoryCards booksOfCategory={top10} />
-      </div>
+      <div style={{backgroundColor:'black'}}>
+        <div className="search__bar">
+          <input type="text" placeholder="Search story..." 
+            onChange={InputChangeOnSearch}/>
+        </div>
+        {search?<div>
+          <h5 style={{color:'#cc8e35'}} >Avaliable Stories:</h5>
+          <StoryCards booksOfCategory={filteredStories} />
+        </div>:null}
+        <hr className="bg-danger"/>
+        <div>
+          <h5 style={{color:'#cc8e35'}} >Top 10:</h5>
+          <StoryCards booksOfCategory={top10} />
+        </div>
 
-      <div>
-        <h3 style={{color:'#cc8e35'}} >Popular in Your Area:</h3>
-        <StoryCards booksOfCategory={popularInArea} />
-      </div>
+        <div>
+          <h5 style={{color:'#cc8e35'}} >Popular in Your Area:</h5>
+          <StoryCards booksOfCategory={popularInArea} />
+        </div>
+  
+        <div>
+          <h5 style={{color:'#cc8e35'}} >Recent Stories:</h5>
+          <StoryCards booksOfCategory={recent} />
+        </div>
 
-      <div>
-        <h3 style={{color:'#cc8e35'}} >Recent Stories:</h3>
-        <StoryCards booksOfCategory={recent} />
-      </div>
+        <div>
+          <h5 style={{color:'#cc8e35'}} >All Stories:</h5>
+          <StoryCards booksOfCategory={wholeBooksObject.all} />
+        </div>
 
-      <div>
-        <h3 style={{color:'#cc8e35'}} >All Stories:</h3>
-        <StoryCards booksOfCategory={wholeBooksObject.all} />
-      </div>
+        <div>
+          <h5 style={{color:'#cc8e35'}} >Mystery:</h5>
+          <StoryCards booksOfCategory={wholeBooksObject.mystery} />
+        </div>
 
-      <div>
-        <h3 style={{color:'#cc8e35'}} >Mystery:</h3>
-        <StoryCards booksOfCategory={wholeBooksObject.mystery} />
-      </div>
+        <div>
+          <h5 style={{color:'#cc8e35'}} >Sci-fi:</h5>
+          <StoryCards booksOfCategory={wholeBooksObject.scifi} />
+        </div>
 
-      <div>
-        <h3 style={{color:'#cc8e35'}} >Sci-fi:</h3>
-        <StoryCards booksOfCategory={wholeBooksObject.scifi} />
-      </div>
+        <div>
+          <h5 style={{color:'#cc8e35'}} >Romance:</h5>
+          <StoryCards booksOfCategory={wholeBooksObject.romance} />
+        </div>
 
-      <div>
-        <h3 style={{color:'#cc8e35'}} >Romance:</h3>
-        <StoryCards booksOfCategory={wholeBooksObject.romance} />
+        <div>
+          <h5 style={{color:'#cc8e35'}} >Erotic:</h5>
+          <StoryCards booksOfCategory={wholeBooksObject.erotic} />
+        </div>
       </div>
-
-      <div>
-        <h3 style={{color:'#cc8e35'}} >Erotic:</h3>
-        <StoryCards booksOfCategory={wholeBooksObject.erotic} />
-      </div>
-
     </>
   );
 }

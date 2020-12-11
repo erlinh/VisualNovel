@@ -4,6 +4,7 @@ import 'react-multi-carousel/lib/styles.css';
 import '../../BrowsingGrid/StoryCards/StoryCards.css';
 import instance from '../../../axios'; 
 import CarouselCard from './CarouselCard';
+import './Middle.css';
 
 // responsiveness settings for the carousels
 const responsive = {
@@ -14,11 +15,11 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 3
+    items: 4
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 3
+    items: 2.5
   }
 };
 
@@ -44,8 +45,8 @@ export default function CarouselLists(){
 
   return(
     <>
-      <h4 style={{color:'#cc8e35', padding:'40px 0 30px 0'}}>
-      You might interest:</h4>
+      <h5 className="carausel__title">
+      You may like this:</h5>
       <Carousel responsive={responsive} draggable={false} infinite={true} showDots={false} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
         {allListCategory}
       </Carousel>

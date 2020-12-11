@@ -1,0 +1,11 @@
+.navbar__top{
+    background-image: linear-gradient(to left, #072b5c, #05274b, #0b2239, #121d28, #161718);
+}
+
+@media only screen and (max-width:450px) {
+    .navlogo__mob{
+        padding-left: 1px;
+        color: red !important;
+    }
+    
+}
