@@ -87,9 +87,10 @@ export default function LogInPage() {
                   <Button onClick={() => submitAuth(credentials)} >Submit</Button>
                 </Col>
               </FormGroup>
+              <p className="text-center mt-3" >If you don't have an account yet, <Link to="/register" >register here</Link>.</p>
             </Form>
 
-            <p className="text-center mt-5" >If you don't have an account yet, <Link to="/register" >register here</Link>.</p>
+           
           </div>
           <div className="bg-danger">
             <hr />

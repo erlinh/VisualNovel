@@ -127,9 +127,8 @@ export default function RegisterPage() {
                 <Button onClick={() => registerNewUser(newUser)} >Submit</Button>
               </Col>
             </FormGroup>
+            <p className="text-center mt-5" >If you have an account already, <Link to="/login" >log in here</Link>.</p>
           </Form>
-
-          <p className="text-center mt-5" >If you have an account already, <Link to="/login" >log in here</Link>.</p>
 
           <div className="bg-danger">
             <hr />
