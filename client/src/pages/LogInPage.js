@@ -63,12 +63,12 @@ export default function LogInPage() {
             <Form  className="auth-form container-fluid">
               <h4 className="text-center">Log In</h4>
               {errMsg ? (
-            <div className="error-msg text-danger text-center">
-              <p>{errMsg}</p>
-            </div>
-          ) : (
-            null
-          )}
+                <div className="error-msg text-danger text-center">
+                  <p>{errMsg}</p>
+                </div>
+              ) : (
+                null
+              )}
               <FormGroup row>
                 <Label for="email" sm={2}>Email</Label>
                 <Col sm={10}>

@@ -1,11 +1,17 @@
 .navbar__top{
     background-image: linear-gradient(to left, #072b5c, #05274b, #0b2239, #121d28, #161718);
 }
+.navbar__logo{
+    padding-left: 20px;
+    color: rgba(198, 33, 33, 0.954) !important;
+   
+}
 
 @media only screen and (max-width:450px) {
-    .navlogo__mob{
-        padding-left: 1px;
-        color: red !important;
+    .navbar__logo{
+        padding-left: 0px;
+        object-fit: contain;
+        font-size: 15px !important;
     }
     
 }

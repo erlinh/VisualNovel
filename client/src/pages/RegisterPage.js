@@ -85,50 +85,50 @@ export default function RegisterPage() {
       ) : (
         
         <div className="container col-lg-12 mt-5 pt-5">
-        <NavBar />
-        <div style={{minHeight:'80vh'}}>
-          <Form className="auth-form">
-          <h4 className="text-center">Register</h4>
-          {errMsg ? (
+          <NavBar />
+          <div style={{minHeight:'80vh'}}>
+            <Form className="auth-form">
+              <h4 className="text-center">Register</h4>
+              {errMsg ? (
                 <div className="error-msg text-center text-danger">
                   <p>{errMsg}</p>
                 </div>
               ) : (
                 null
               )}
-            <FormGroup row>
-              <Label for="firstname" sm={2}>First Name</Label>
-              <Col sm={10}>
-                <Input type="firstname" name="firstname" id="firstname" onChange={handleInputChange} onFocus={resetErrMsg} />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="email" sm={2}>Email</Label>
-              <Col sm={10}>
-                <Input type="email" name="email" id="email" onChange={handleInputChange} onFocus={resetErrMsg} />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="password" sm={2}>Password</Label>
-              <Col sm={10}>
-                <Input type="password" name="password" id="password" onChange={handleInputChange} onFocus={resetErrMsg} />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="confirmPassword" sm={2}>Confirm Password</Label>
-              <Col sm={10}>
-                <Input type="password" name="confirmPassword" id="confirmPassword" onChange={handleInputChange} onFocus={resetErrMsg} />
-              </Col>
+              <FormGroup row>
+                <Label for="firstname" sm={2}>First Name</Label>
+                <Col sm={10}>
+                  <Input type="firstname" name="firstname" id="firstname" onChange={handleInputChange} onFocus={resetErrMsg} />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label for="email" sm={2}>Email</Label>
+                <Col sm={10}>
+                  <Input type="email" name="email" id="email" onChange={handleInputChange} onFocus={resetErrMsg} />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label for="password" sm={2}>Password</Label>
+                <Col sm={10}>
+                  <Input type="password" name="password" id="password" onChange={handleInputChange} onFocus={resetErrMsg} />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label for="confirmPassword" sm={2}>Confirm Password</Label>
+                <Col sm={10}>
+                  <Input type="password" name="confirmPassword" id="confirmPassword" onChange={handleInputChange} onFocus={resetErrMsg} />
+                </Col>
 
-            </FormGroup>
-            <FormGroup check row>
-              <Col className="d-flex justify-content-center">
-                <Button onClick={() => registerNewUser(newUser)} >Submit</Button>
-              </Col>
-            </FormGroup>
-            <p className="text-center mt-5" >If you have an account already, <Link to="/login" >log in here</Link>.</p>
-          </Form>
-</div>
+              </FormGroup>
+              <FormGroup check row>
+                <Col className="d-flex justify-content-center">
+                  <Button onClick={() => registerNewUser(newUser)} >Submit</Button>
+                </Col>
+              </FormGroup>
+              <p className="text-center mt-5" >If you have an account already, <Link to="/login" >log in here</Link>.</p>
+            </Form>
+          </div>
           <div className="bg-danger">
             <hr />
           </div>
