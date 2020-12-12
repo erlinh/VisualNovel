@@ -87,7 +87,7 @@ Productrouter.post('/stories', async(req,res)=>{
 });
 
 // POST - search for entries that include the searchphrase in any field
-Productrouter.post('/search/:searchTerm', async (req, res) => {
+Productrouter.get('/search/:searchTerm', async (req, res) => {
   try {
     const searchQuery = req.params.searchTerm;
     

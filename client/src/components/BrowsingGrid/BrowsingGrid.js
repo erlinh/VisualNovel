@@ -25,7 +25,7 @@ export default function BrowsingGrid() {
       try {
         setLoading(true);
         const {data} = await instance.get('/stories');
-        console.log(data);
+        //console.log(data);
         setWholeBooksObject(data);
         setLoading(false);
 
