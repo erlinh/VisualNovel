@@ -18,7 +18,6 @@ function App() {
     const user = window.localStorage.getItem('userinfo');
     if(user){
       updateUserID(user);
-      
     }
   },[]);
   const updateUserID = (newUserID) => {

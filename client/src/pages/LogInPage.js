@@ -6,7 +6,7 @@ import { AuthContext } from '../firebase/authContext';
 import NavBar from '../components/NavBar/NavBar';
 import FooterGrid from '../components/Footer/FooterGrid';
 
-import { Col, Card, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Col,Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import './LogInPage.css';
 
 
@@ -57,7 +57,7 @@ export default function LogInPage() {
       {userID ? (
         <Redirect to="/" /> 
       ) : (
-        <div className=" col-lg-12 mt-5 pt-5">
+        <div className=" container col-lg-12 mt-5 pt-5">
           <NavBar />
           <div style={{minHeight:'80vh'}}>
             <Form  className="auth-form container-fluid">

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect} from 'react';
 import firebaseApp from '../../firebase/firebase.config';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../firebase/authContext';
@@ -7,20 +7,25 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
-  NavItem
+  NavItem,
+  Alert
 } from 'reactstrap';
 import './Navbar.css';
+
 
 const NavBar = (props) => {
   const { userID, updateUserID } = useContext(AuthContext);
   //console.log(userID);
 
   const logOut = () => {
+   
     firebaseApp.auth().signOut()
       .then(() => {
         console.log('signed out!');
+        //logoutSucess();
         window.localStorage.removeItem('userinfo');
         updateUserID(null);
+       
       })
       .catch((error) => {
         var errorCode = error.code;

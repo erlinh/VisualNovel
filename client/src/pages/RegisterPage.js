@@ -86,6 +86,7 @@ export default function RegisterPage() {
         
         <div className="container col-lg-12 mt-5 pt-5">
         <NavBar />
+        <div style={{minHeight:'80vh'}}>
           <Form className="auth-form">
           <h4 className="text-center">Register</h4>
           {errMsg ? (
@@ -127,7 +128,7 @@ export default function RegisterPage() {
             </FormGroup>
             <p className="text-center mt-5" >If you have an account already, <Link to="/login" >log in here</Link>.</p>
           </Form>
-
+</div>
           <div className="bg-danger">
             <hr />
           </div>
