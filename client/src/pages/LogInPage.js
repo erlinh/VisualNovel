@@ -43,7 +43,7 @@ export default function LogInPage() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        if (errorMessage ==='The email address is badly formatted.')  setErrMsg('Please enter username and password');
+        if (errorMessage ==='The email address is badly formatted.')  setErrMsg('Please enter email and password');
         console.log(errorCode);
         console.log(errorMessage);
         if (errorCode === 'auth/user-not-found' || errorCode === 'auth/wrong-password' ) {
