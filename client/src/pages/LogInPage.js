@@ -59,16 +59,16 @@ export default function LogInPage() {
       ) : (
         <div className=" col-lg-12 mt-5 pt-5">
           <NavBar />
-          {errMsg ? (
+          <div style={{minHeight:'80vh'}}>
+            <Form  className="auth-form container-fluid">
+              <h4 className="text-center">Log In</h4>
+              {errMsg ? (
             <div className="error-msg text-danger text-center">
               <p>{errMsg}</p>
             </div>
           ) : (
             null
           )}
-          <div style={{minHeight:'80vh'}}>
-            <Form  className="auth-form container-fluid">
-              <h4>Log In</h4>
               <FormGroup row>
                 <Label for="email" sm={2}>Email</Label>
                 <Col sm={10}>

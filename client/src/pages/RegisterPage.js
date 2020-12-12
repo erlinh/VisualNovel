@@ -83,12 +83,18 @@ export default function RegisterPage() {
       {userID ? (
         <Redirect to="/" /> 
       ) : (
-        <div className="container col-lg-10 mt-5 pt-5">
-          <NavBar />
         
-          <h1>Register</h1>
-
+        <div className="container col-lg-12 mt-5 pt-5">
+        <NavBar />
           <Form className="auth-form">
+          <h4 className="text-center">Register</h4>
+          {errMsg ? (
+                <div className="error-msg text-center text-danger">
+                  <p>{errMsg}</p>
+                </div>
+              ) : (
+                null
+              )}
             <FormGroup row>
               <Label for="firstname" sm={2}>First Name</Label>
               <Col sm={10}>
@@ -112,14 +118,6 @@ export default function RegisterPage() {
               <Col sm={10}>
                 <Input type="password" name="confirmPassword" id="confirmPassword" onChange={handleInputChange} onFocus={resetErrMsg} />
               </Col>
-
-              {errMsg ? (
-                <div className="error-msg">
-                  <p>{errMsg}</p>
-                </div>
-              ) : (
-                null
-              )}
 
             </FormGroup>
             <FormGroup check row>
