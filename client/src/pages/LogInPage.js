@@ -41,8 +41,8 @@ export default function LogInPage() {
       // console.log('refresh token', user.user.refreshToken);
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
 
