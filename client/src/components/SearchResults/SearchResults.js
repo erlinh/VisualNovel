@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import { Button } from 'reactstrap';
-
+import { Button , Card } from 'reactstrap';
 import './SearchResults.css';
+ 
 
 export default function SearchResults({searchTerm, searchResults}) {
   // console.log(searchResults);

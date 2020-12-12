@@ -43,12 +43,13 @@ export default function LogInPage() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        if (errorMessage ==='The email address is badly formatted.')  setErrMsg('Please enter username and password');
         console.log(errorCode);
         console.log(errorMessage);
-
-        if (errorCode === 'auth/user-not-found' || errorCode === 'auth/wrong-password') {
+        if (errorCode === 'auth/user-not-found' || errorCode === 'auth/wrong-password' ) {
           setErrMsg('Email or password incorrect.');
         }
+
       });
   };
 
@@ -60,7 +61,7 @@ export default function LogInPage() {
         <div className=" container col-lg-12 mt-5 pt-5">
           <NavBar />
           <div style={{minHeight:'80vh'}}>
-            <Form  className="auth-form container-fluid">
+            <Form onSubmit={submitAuth} className="auth-form container-fluid">
               <h4 className="text-center">Log In</h4>
               {errMsg ? (
                 <div className="error-msg text-danger text-center">
