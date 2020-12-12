@@ -41,7 +41,7 @@ const NavBar = (props) => {
   return (
     <div>
       <Navbar className="fixed-top navbar__top" light expand="md">
-        <Link className="navbar-brand navbar__logo navlogo__mob " to="/">🆂🆃🅾🆁🆈🅵🅸🅲🆂</Link>
+        <Link className="navbar-brand navbar__logo" to="/">🆂🆃🅾🆁🆈🅵🅸🅲🆂</Link>
         <NavbarToggler style={{backgroundColor:'#1e272e'}} onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
