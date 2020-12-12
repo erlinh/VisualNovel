@@ -8,7 +8,7 @@ export default function LandingPage() {
   return (
     <>
       <NavBar />
-      <div style={{minHeight:"90vh"}} className="container col-lg-10">
+      <div style={{minHeight:'90vh'}} className="container col-lg-10">
         <BrowsingGrid />
         <div className="bg-danger">
           <hr />

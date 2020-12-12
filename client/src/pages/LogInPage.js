@@ -6,7 +6,7 @@ import { AuthContext } from '../firebase/authContext';
 import NavBar from '../components/NavBar/NavBar';
 import FooterGrid from '../components/Footer/FooterGrid';
 
-import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Col, Card, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import './LogInPage.css';
 
 
@@ -57,47 +57,48 @@ export default function LogInPage() {
       {userID ? (
         <Redirect to="/" /> 
       ) : (
-        <div className="container col-lg-10 mt-5 pt-5">
+        <div className=" col-lg-12 mt-5 pt-5">
           <NavBar />
-        
-          <h1>Log In</h1>
+          {errMsg ? (
+            <div className="error-msg text-danger text-center">
+              <p>{errMsg}</p>
+            </div>
+          ) : (
+            null
+          )}
+          <div style={{minHeight:'80vh'}}>
+            <Form  className="auth-form container-fluid">
+              <h4>Log In</h4>
+              <FormGroup row>
+                <Label for="email" sm={2}>Email</Label>
+                <Col sm={10}>
+                  <Input type="email" name="email" id="email" onChange={handleInputChange} onFocus={resetErrMsg} required={true} />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label for="password" sm={2}>Password</Label>
+                <Col sm={10}>
+                  <Input type="password" name="password" id="password" onChange={handleInputChange} onFocus={resetErrMsg} required={true} />
+                </Col>
+              </FormGroup>
 
-          <Form className="auth-form">
-            <FormGroup row>
-              <Label for="email" sm={2}>Email</Label>
-              <Col sm={10}>
-                <Input type="email" name="email" id="email" onChange={handleInputChange} onFocus={resetErrMsg} />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="password" sm={2}>Password</Label>
-              <Col sm={10}>
-                <Input type="password" name="password" id="password" onChange={handleInputChange} onFocus={resetErrMsg} />
-              </Col>
-            </FormGroup>
+              <FormGroup check row>
+                <Col className="d-flex justify-content-center">
+                  <Button onClick={() => submitAuth(credentials)} >Submit</Button>
+                </Col>
+              </FormGroup>
+            </Form>
 
-            {errMsg ? (
-              <div className="error-msg">
-                <p>{errMsg}</p>
-              </div>
-            ) : (
-              null
-            )}
-
-            <FormGroup check row>
-              <Col className="d-flex justify-content-center">
-                <Button onClick={() => submitAuth(credentials)} >Submit</Button>
-              </Col>
-            </FormGroup>
-          </Form>
-
-          <p className="text-center mt-5" >If you don't have an account yet, <Link to="/register" >register here</Link>.</p>
-
+            <p className="text-center mt-5" >If you don't have an account yet, <Link to="/register" >register here</Link>.</p>
+          </div>
           <div className="bg-danger">
             <hr />
           </div>
+          
           <FooterGrid/>
+    
         </div>
+        
       )}
     </>
   );

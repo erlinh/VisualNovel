@@ -19,6 +19,7 @@ const NavBar = (props) => {
     firebaseApp.auth().signOut()
       .then(() => {
         console.log('signed out!');
+        window.localStorage.removeItem('userinfo');
         updateUserID(null);
       })
       .catch((error) => {

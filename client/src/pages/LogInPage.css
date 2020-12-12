@@ -1,4 +1,19 @@
 .auth-form {
     max-width: 500px;
     margin: 0 auto;
+    /* border: 1px solid red; */
+    padding:50px;
+    border-radius: 10px;
+    background-image:  linear-gradient(to left, #072b5c, #05274b, #0b2239, #121d28, #161718);;
+    box-shadow: 0 4px 8px 5px rgba(9, 153, 230, 0.461), 0 2px 20px 0 rgba(9, 153, 230, 0.461);
 }
+
+
+@media only screen and (max-width:450px) {
+    .auth-form {
+    
+        background-image:  linear-gradient(to left, #072b5c, #05274b, #0b2239, #121d28, #161718);;
+        box-shadow: 0 4px 2px 0px rgba(9, 153, 230, 0.461), 0 2px 0px 0 rgba(9, 153, 230, 0.461);
+    }
+}
+

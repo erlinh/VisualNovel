@@ -28,7 +28,7 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, m
       { contents.length === 0 ? (
         <h3>Loading...</h3>
       ) : (
-          <TextChunk content={contents[currentChunkId].text} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} bgColorClass={bgColor} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
+        <TextChunk content={contents[currentChunkId].text} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} bgColorClass={bgColor} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
       )}
     </div>
   );

@@ -50,7 +50,7 @@ export default function RegisterPage() {
         setErrMsg('');
         const firebaseID = user.user.uid;
         updateUserID(firebaseID);
-      // console.log('refresh token', user.user.refreshToken);
+        // console.log('refresh token', user.user.refreshToken);
         return firebaseID;
       })
       .then(async (firebaseID) => {
