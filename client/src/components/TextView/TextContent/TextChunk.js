@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 import './TextContent.css';
 
 const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, fontClass, marginsClass, spacingClass}) => {
@@ -11,6 +12,9 @@ const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, 
 
       <div className="choice-screen">
         <h3>Choice buttons here</h3>
+  <Button className="choice-btn">Choice button 1</Button>
+  <Button className="choice-btn">Choice button 2</Button>
+  
       </div>
 
     </div>

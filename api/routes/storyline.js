@@ -2,13 +2,13 @@ var express = require('express');
 var StoryRouter = express.Router();
 const Storyline = require('../models/Storyline');
 
-StoryRouter.get('/', async (req,res)=>{
-
-    
-
+StoryRouter.get('/', async (req,res)=>{  
     try {
-        const allStorylines = await Storyline.find({});
-        console.log(allStorylines);
+        const pullStorylines = await Storyline.find({});
+        console.log(pullStorylines);
+        // res.json(pullStorylines)
+
+        const allStorylines = {pullStorylines};
         res.json(allStorylines);
     }
     catch (err){

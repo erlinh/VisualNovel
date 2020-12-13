@@ -30,6 +30,11 @@ body {
     color: var(--font-dark);
 }
 
+.choice-btn {
+    background-color: var(--main-orange);
+    color: var(--font-dark);
+}
+
 .linkToText {
     color: var(--font-light);
 }

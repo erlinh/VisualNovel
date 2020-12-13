@@ -28,8 +28,16 @@
 }
 
 .choice-screen h3 {
+    margin-top: 3rem;
     color: var(--main-orange);
     width: 100vw;
+}
+
+.choice-btn {
+    margin: 3rem;
+    width: 150px;
+    background-color: var(--main-orange);
+    color: var(--font-dark);
 }
 
 

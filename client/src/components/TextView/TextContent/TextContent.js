@@ -6,6 +6,9 @@ import './TextContent.css';
 
 const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, marginsClass, spacingClass}) => {
  
+  // const [allChunks, setAllChunks]= useState({
+  //   pullStoryLines: []
+  // });
   const [contents, setContents] = useState([]);
   const [currentChunkId, setCurrentChunkId] = useState(0);
 
@@ -14,14 +17,23 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, m
   useEffect(()=>{
     async function fetchContent(){
       try {
+        // const {data} = await instance.get('/storyline');
+        // console.log(data);
+        // setAllChunks(data);
+        // console.log(contents);
+        
         const {data} = await instance.get(`/stories/${slug}/content`);
         setContents(data.content);
+
       } catch (err) {
         console.log('There is an error to get content', err);
       }
     }
     fetchContent();
-  },[slug]);
+  },
+  [slug]
+  // []
+  );
 
   return (
     <div className="textContentContainer">
