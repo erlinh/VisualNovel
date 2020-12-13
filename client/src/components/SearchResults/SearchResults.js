@@ -21,8 +21,6 @@ export default function SearchResults({searchTerm, searchResults}) {
         </div>
       </div>);
   });
-
-
   return (
     <div>
       {searchResults.length === 0 ?

@@ -30,8 +30,6 @@ export default function SearchBox(props) {
     e.preventDefault();
     searchByPhrase(searchInput);
   };
-
-
   return (
     <div className="searchbox">
       <form onSubmit={submitSearchForm}>
