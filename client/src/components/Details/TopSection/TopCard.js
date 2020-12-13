@@ -11,7 +11,9 @@ const TopCard =({title, author, imgUrl, rating, slug, categories})=>{
         <div className="topSection__row text-light">
           <div className="topSection__CardImg ">
             <img src={imgUrl} alt="Book cover"/>
+            <Link to={`/stories/${slug}/content`} className="linkToText topSection__button pt-2 text-center"><Button style={{backgroundColor:'green', borderRadius:'15px',marginRight:'5px'}}>Read More</Button></Link>
           </div>
+
           <div className="media-body topSection__p">
             <h5 className="mt-0">{title}</h5>
             <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.

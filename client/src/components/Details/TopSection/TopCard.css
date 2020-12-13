@@ -32,6 +32,10 @@
     max-height: 70vh;
  }
 
+ .topSection__button{
+     display: none;
+ }
+
 .media-body {
     padding: 2rem;
 }
@@ -71,5 +75,9 @@
     }
     .topSection__row {
         margin-bottom: 2px;
+    }
+
+    .topSection__button{
+        display: block;
     }
 }
