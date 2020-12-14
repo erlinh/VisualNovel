@@ -44,7 +44,7 @@ const DetailsPage=()=>{
         <div style={{minHeight:'90vh'}} className="col-lg-11 container">
           <TopCard key={storiesDetails._id} id={storiesDetails._id} title={storiesDetails.title} author={storiesDetails.author} imgUrl={storiesDetails.imgUrl} content={storiesDetails.content} rating={storiesDetails.rating} slug={storiesDetails.slug} categories={storiesDetails.categories+''} />
           <CarouselLists />
-          <div className="bg-danger">
+          <div className="detailsPage__hr">
             <hr />
           </div>
         </div>

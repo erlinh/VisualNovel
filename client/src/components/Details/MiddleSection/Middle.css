@@ -13,7 +13,9 @@
     width: fit-content;
     padding-right: 20px;
 }
-
+.detailsPage__hr{
+    background: var( --bg-hr-background);
+}
 
 @media only screen and (max-width:1024px) {
     .carouselcard{
