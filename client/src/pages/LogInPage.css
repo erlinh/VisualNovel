@@ -1,3 +1,9 @@
+@import '../styles/variables.css';
+
+.loginPage__hr{
+    background: var( --bg-hr-background);
+}
+
 .auth-form {
     max-width: 500px;
     margin: 0 auto;

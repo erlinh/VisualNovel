@@ -94,15 +94,11 @@ export default function LogInPage() {
               </FormGroup>
               <p className="text-center mt-3" >If you don't have an account yet, <Link to="/register" >register here</Link>.</p>
             </Form>
-
-           
           </div>
-          <div className="bg-danger">
+          <div className="loginPage__hr">
             <hr />
           </div>
-          
           <FooterGrid/>
-    
         </div>
         
       )}
