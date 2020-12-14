@@ -1,3 +1,5 @@
+@import '../../../styles/variables.css';
+
 .body {
     letter-spacing: .02em;
     font-size: 1rem;
@@ -8,7 +10,8 @@
 }
 
 .topSection__bg {
-    background-color: #130f40;
+    /* background-color: #130f40; */
+    background: var( --bg-navbar-background);
     padding: 20px;
 }
 
@@ -19,7 +22,6 @@
     margin-top: 5rem;
     margin-bottom: 4rem;
     /*border: 1px solid red; */
-
 }
 
 .topSection__CardImg {
