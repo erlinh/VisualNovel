@@ -76,7 +76,7 @@ export default function BrowsingGrid() {
 
   return (
     <>
-      <div style={{backgroundColor:'black'}}>
+      <div className="BrowsingGrid__bg">
         <div className="search__bar">
           <input type="text" placeholder="Search story..." 
             onChange={InputChangeOnSearch}/>

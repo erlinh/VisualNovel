@@ -10,7 +10,7 @@ import './StoryCard.css';
 const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
 
   return (
-    <Card className="mr-3 text-light" style={{marginBottom:'20px'}} >
+    <Card className="mr-3 text-light" style={{marginBottom:'30px'}} >
       <Button className="popoverBtn">
         <img className="img-fluid card__mob" src={imgUrl} alt="Cover of the story"  id= {'Popover-' + id}/>
       </Button>
