@@ -3,6 +3,7 @@ import SearchBox from '../components/SearchBox/SearchBox';
 import SearchResults from '../components/SearchResults/SearchResults';
 import NavBar from '../components/NavBar/NavBar';
 import FooterGrid from '../components/Footer/FooterGrid';
+import './SearchPage.css';
 
 export default function SearchPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -19,8 +20,7 @@ export default function SearchPage() {
       <h2>Search</h2>
       <SearchBox passDataToPage={handleDataFromChild} />
       <SearchResults searchTerm={searchTerm} searchResults={foundStories} />
-
-      <div className="bg-danger">
+      <div className="searchPage__hr">
         <hr />
       </div>
       <FooterGrid/>

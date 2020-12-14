@@ -1,0 +1,5 @@
+@import '../styles/variables.css';
+
+.searchPage__hr{
+    background: var( --bg-hr-background);
+}
