@@ -10,12 +10,16 @@ h3 {
     margin-left: 2rem;
 }
 
+.BrowsingGrid__hr{
+    background: var(--bg-hr-background);
+}
+
 .browsingGrid {
     margin-top: 4rem;
 }
 
 .BrowsingGrid__categorytitle{
-    color:#cc8e35;
+    /* color:#cc8e35; */
     font-size: 15px;
     padding: 8px;
    background: var(--bg-navbar-background);

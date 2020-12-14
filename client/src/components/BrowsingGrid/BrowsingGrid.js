@@ -85,7 +85,9 @@ export default function BrowsingGrid() {
           <h5 className="BrowsingGrid__categorytitle" >Avaliable Stories</h5>{!search==filteredStories?<p className="text-light">No story with that search</p>:null}
           <StoryCards booksOfCategory={filteredStories} />
         </div>:null}
-        <hr className="bg-danger"/>
+        <div className="LandingPage__hr">
+          <hr />
+        </div>
         <div>
           <h5 className="BrowsingGrid__categorytitle" >Top 10</h5>
           <StoryCards booksOfCategory={top10} />

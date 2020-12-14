@@ -17,7 +17,7 @@ export default function LandingPage() {
       </div>): null}  
       <div style={{minHeight:'90vh'}} className="container col-lg-10">
         <BrowsingGrid />
-        <div className="bg-danger">
+        <div className="LandingPage__hr">
           <hr />
         </div>
       </div>
