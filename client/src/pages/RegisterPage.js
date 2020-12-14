@@ -130,7 +130,7 @@ export default function RegisterPage() {
               <p className="text-center mt-5" >If you have an account already, <Link to="/login" >log in here</Link>.</p>
             </Form>
           </div>
-          <div className="bg-danger">
+          <div className="registerPage__hr">
             <hr />
           </div>
           <FooterGrid/>

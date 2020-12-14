@@ -4,6 +4,10 @@
     background: var( --bg-hr-background);
 }
 
+.registerPage__hr{
+    background: var( --bg-hr-background);
+}
+
 .auth-form {
     max-width: 500px;
     margin: 0 auto;
