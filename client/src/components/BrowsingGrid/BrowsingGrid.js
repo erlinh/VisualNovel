@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import StoryCards from './StoryCards/StoryCards';
 import instance from '../../axios';
- 
 import './BrowsingGrid.css';
-
 
 export default function BrowsingGrid() {
   const[loading, setLoading]=useState(false);
@@ -52,9 +50,8 @@ export default function BrowsingGrid() {
       }
     }
     fetchData();
-    
   },[]);
- 
+
   if(loading){
     return (
       <div className="d-flex justify-content-center">
@@ -85,7 +82,7 @@ export default function BrowsingGrid() {
             onChange={InputChangeOnSearch}/>
         </div>
         {search?<div>
-          <h5 style={{color:'#cc8e35'}} >Avaliable Stories:</h5>{!search==filteredStories?<p className="text-light">No story with that search</p>:null}
+          <h5 style={{color:'#cc8e35'}} >Avaliable Stories:</h5>{!search===filteredStories?<p className="text-light">No story with that search</p>:null}
           <StoryCards booksOfCategory={filteredStories} />
         </div>:null}
         <hr className="bg-danger"/>

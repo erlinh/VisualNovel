@@ -7,31 +7,28 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
-  NavItem,
-  Alert
+  NavItem
 } from 'reactstrap';
 import './Navbar.css';
-
+ 
 
 const NavBar = (props) => {
   const { userID, updateUserID } = useContext(AuthContext);
   //console.log(userID);
-
+ 
   const logOut = () => {
-   
     firebaseApp.auth().signOut()
       .then(() => {
         console.log('signed out!');
-        //logoutSucess();
         window.localStorage.removeItem('userinfo');
         updateUserID(null);
-       
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
+      
   };
 
   const [isOpen, setIsOpen] = useState(false);

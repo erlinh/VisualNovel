@@ -1,13 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 //import firebaseApp from '../firebase/firebase.config';
 import { AuthContext } from '../firebase/authContext';
 import NavBar from '../components/NavBar/NavBar';
 import FooterGrid from '../components/Footer/FooterGrid';
-
 import { Col,Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import './LogInPage.css';
+ 
 
 
 export default function LogInPage() {
@@ -51,12 +51,16 @@ export default function LogInPage() {
         }
 
       });
+
+     
   };
 
   return (
     <>
-      {userID ? (
+      {userID ? 
+       (
         <Redirect to="/" /> 
+       
       ) : (
         <div className=" container col-lg-12 mt-5 pt-5">
           <NavBar />
