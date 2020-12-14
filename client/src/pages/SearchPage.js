@@ -18,9 +18,9 @@ export default function SearchPage() {
     <div className="container col-lg-12 mt-5 pt-5">
       <NavBar/>
       <div style={{minHeight:'80vh'}}>
-      <h2>Search</h2>
-      <SearchBox passDataToPage={handleDataFromChild} />
-      <SearchResults searchTerm={searchTerm} searchResults={foundStories} />
+        <h2>Search</h2>
+        <SearchBox passDataToPage={handleDataFromChild} />
+        <SearchResults searchTerm={searchTerm} searchResults={foundStories} />
       </div>
       <div className="searchPage__hr">
         <hr />

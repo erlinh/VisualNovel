@@ -46,7 +46,7 @@ export default function CarouselLists(){
   return(
     <>
       <h5 className="carausel__title">
-      You may like this:</h5>
+      You may like this</h5>
       <Carousel responsive={responsive} draggable={false} infinite={true} showDots={false} removeArrowOnDeviceType={['mobile']} containerClass="carousel-container">
         {allListCategory}
       </Carousel>

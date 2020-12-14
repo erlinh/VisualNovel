@@ -13,7 +13,7 @@ export default function LandingPage() {
     <>
       <NavBar />
       {userID ?( <div className="mt-5">
-      <LoginAlert header="Welcome Story Reader!"/>
+        <LoginAlert header="Welcome Story Reader!"/>
       </div>): null}  
       <div style={{minHeight:'100vh'}} className="container col-lg-11">
         <BrowsingGrid />
