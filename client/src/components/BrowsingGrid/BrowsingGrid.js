@@ -82,47 +82,47 @@ export default function BrowsingGrid() {
             onChange={InputChangeOnSearch}/>
         </div>
         {search?<div>
-          <h5 style={{color:'#cc8e35'}} >Avaliable Stories:</h5>{!search==filteredStories?<p className="text-light">No story with that search</p>:null}
+          <h5 className="BrowsingGrid__categorytitle" >Avaliable Stories</h5>{!search==filteredStories?<p className="text-light">No story with that search</p>:null}
           <StoryCards booksOfCategory={filteredStories} />
         </div>:null}
         <hr className="bg-danger"/>
         <div>
-          <h5 style={{color:'#cc8e35'}} >Top 10:</h5>
+          <h5 className="BrowsingGrid__categorytitle" >Top 10</h5>
           <StoryCards booksOfCategory={top10} />
         </div>
 
         <div>
-          <h5 style={{color:'#cc8e35'}} >Popular in Your Area:</h5>
+          <h5 className="BrowsingGrid__categorytitle" >Popular in Your Area</h5>
           <StoryCards booksOfCategory={popularInArea} />
         </div>
   
         <div>
-          <h5 style={{color:'#cc8e35'}} >Recent Stories:</h5>
+          <h5 className="BrowsingGrid__categorytitle" >Recent Stories</h5>
           <StoryCards booksOfCategory={recent} />
         </div>
 
         <div>
-          <h5 style={{color:'#cc8e35'}} >All Stories:</h5>
+          <h5 className="BrowsingGrid__categorytitle" >All Stories</h5>
           <StoryCards booksOfCategory={wholeBooksObject.all} />
         </div>
 
         <div>
-          <h5 style={{color:'#cc8e35'}} >Mystery:</h5>
+          <h5 className="BrowsingGrid__categorytitle" >Mystery</h5>
           <StoryCards booksOfCategory={wholeBooksObject.mystery} />
         </div>
 
         <div>
-          <h5 style={{color:'#cc8e35'}} >Sci-fi:</h5>
+          <h5 className="BrowsingGrid__categorytitle" >Sci-fi</h5>
           <StoryCards booksOfCategory={wholeBooksObject.scifi} />
         </div>
 
         <div>
-          <h5 style={{color:'#cc8e35'}} >Romance:</h5>
+          <h5 className="BrowsingGrid__categorytitle" >Romance</h5>
           <StoryCards booksOfCategory={wholeBooksObject.romance} />
         </div>
 
         <div>
-          <h5 style={{color:'#cc8e35'}} >Erotic:</h5>
+          <h5 className="BrowsingGrid__categorytitle" >Erotic</h5>
           <StoryCards booksOfCategory={wholeBooksObject.erotic} />
         </div>
       </div>
