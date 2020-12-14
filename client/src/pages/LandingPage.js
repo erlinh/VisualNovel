@@ -7,7 +7,7 @@ import LoginAlert from '../components/LoginAlert';
 import { AuthContext } from '../firebase/authContext';
 
 export default function LandingPage() {
-  const { userID} = useContext(AuthContext);
+  const {userID} = useContext(AuthContext);
   
   return (
     <>

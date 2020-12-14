@@ -50,6 +50,8 @@ export default function RegisterPage() {
         setErrMsg('');
         const firebaseID = user.user.uid;
         updateUserID(firebaseID);
+        //userinfo(logintoken) stored at local storage
+        window.localStorage.setItem('userinfo', JSON.stringify(firebaseID) );
         // console.log('refresh token', user.user.refreshToken);
         return firebaseID;
       })
@@ -83,7 +85,6 @@ export default function RegisterPage() {
       {userID ? (
         <Redirect to="/" /> 
       ) : (
-        
         <div className="container col-lg-12 mt-5 pt-5">
           <NavBar />
           <div style={{minHeight:'80vh'}}>
