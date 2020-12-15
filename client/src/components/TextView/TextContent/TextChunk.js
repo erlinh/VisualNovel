@@ -8,13 +8,15 @@ const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, 
     passChunkId(nextId);
     // window.scrollTo({left: 100})
     document.getElementById('text-start').scrollIntoView();
+    document.getElementById('page-start').scrollIntoView();
   };
 
   return (
-    <div className={`text-view-grid text-size-${textSizeClass} font-${fontClass} bg-${bgColorClass} spacing-${spacingClass}`}>
+    <div className={`text-view-grid text-size-${textSizeClass} font-${fontClass} bg-${bgColorClass} spacing-${spacingClass}`} id="page-start" >
 
-      <div className="text-grid" id="text-start" onClick={toggleReadingNavOpen}>
+      <div className="text-grid" onClick={toggleReadingNavOpen}>
         <p className={`mb-0 text-columns margins-${marginsClass}`}>{content.text}</p>
+        <div id="text-start"></div>
       </div>
 
       <div className="choice-screen">

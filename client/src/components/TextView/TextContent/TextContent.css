@@ -15,6 +15,11 @@
     overflow-x: auto;
 }
 
+#text-start {
+    width: 10px;
+    background-color: transparent;
+}
+
 .text-columns {
     height: 95vh;
     column-width: 200px;
