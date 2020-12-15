@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AuthContext } from './firebase/authContext';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import ProtectedRoute from './firebase/ProtectedRoute';
 //import NavBar from './components/NavBar/NavBar';
 import DetailsPage from './pages/DetailsPage';
@@ -36,6 +36,7 @@ function App() {
             <ProtectedRoute path='/stories/:slug/content' component={TextPage} /> 
             <ProtectedRoute path="/stories/:slug" component={DetailsPage} />
             <Route path='/search' component={SearchPage} />
+            <Redirect to ='/'/>
           </Switch>
         </div>
       </BrowserRouter>
