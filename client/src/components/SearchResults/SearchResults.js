@@ -12,11 +12,11 @@ export default function SearchResults({searchTerm, searchResults}) {
       <div key={story.slug} className="search-res-card mb-2 d-flex">
         <img src={story.imgUrl} alt="book cover" />
         <div className="pl-3">
-          <h3>{story.title}</h3>
+          <h4>{story.title}</h4>
           <p>By {story.author}</p>
           <p>Rating: {story.rating}/5</p>
           <Link to= {`/stories/${story.slug}`}>
-            <Button color="primary">Read More</Button>
+          <Button className="topSection__button">Read More</Button>
           </Link>
         </div>
       </div>);
@@ -24,10 +24,10 @@ export default function SearchResults({searchTerm, searchResults}) {
   return (
     <div>
       {searchResults.length === 0 ?
-        <h4>No search results.</h4>
+        <p>No search results.</p>
         :
         <div>
-          <h4>We found {searchResults.length} items for "{searchTerm}":</h4>
+          <p>We found {searchResults.length} items for "{searchTerm}":</p>
           {storiesToDisplay}
         </div>
       }

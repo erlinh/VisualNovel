@@ -1,7 +1,27 @@
+@import '../../styles/variables.css';
+
+.searchBox__searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.searchBox__searchbar input{
+    border-radius: 20px;
+    min-width: 60vw;
+    line-height: 2;
+    border-style: none;
+    background-color: rgba(222, 223, 225, 0.427);
+    color: white;
+    outline-style: none;
+
+}
 .search-res-card {
     border-radius: 5px;
     border: solid 1px rgba(104, 104, 104, 0.384);
     padding: 1rem;
+    background: var( --bg-navbar-background);
 }
 
 .search-res-card h3 {

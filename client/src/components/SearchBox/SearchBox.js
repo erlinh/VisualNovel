@@ -31,10 +31,11 @@ export default function SearchBox(props) {
     searchByPhrase(searchInput);
   };
   return (
-    <div className="searchbox">
+    <div className="searchBox__searchbar">
       <form onSubmit={submitSearchForm}>
+      <h5>Search</h5>
         <input type="text" onChange={handleSearchboxInputChange}/>
-        <Button color="primary" type="submit">Search</Button>
+        <Button className="topSection__button">Search</Button>
       </form>
     </div>
   );
