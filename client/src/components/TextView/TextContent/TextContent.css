@@ -15,6 +15,11 @@
     overflow-x: auto;
 }
 
+#text-start {
+    width: 10px;
+    background-color: transparent;
+}
+
 .text-columns {
     height: 95vh;
     column-width: 200px;
@@ -43,6 +48,12 @@
 .choice-screen h3 {
     color: var(--main-orange);
     margin: 0 0 1rem 0;
+    text-align: center;
+    max-width: 75vw;
+}
+
+.choice-screen a {
+    margin-left: 1rem;
 }
 
 .choice-btn {
