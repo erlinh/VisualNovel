@@ -9,9 +9,9 @@ const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, 
   };
 
   return (
-    <div onClick={toggleReadingNavOpen} className={`text-view-grid text-size-${textSizeClass} font-${fontClass} bg-${bgColorClass} spacing-${spacingClass}`}>
+    <div className={`text-view-grid text-size-${textSizeClass} font-${fontClass} bg-${bgColorClass} spacing-${spacingClass}`}>
 
-      <div className="text-grid">
+      <div onClick={toggleReadingNavOpen} className="text-grid">
         <p className={`mb-0 text-columns margins-${marginsClass}`}>{content.text}</p>
       </div>
 

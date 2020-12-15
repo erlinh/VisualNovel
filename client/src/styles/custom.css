@@ -36,7 +36,8 @@ body {
 
 .choice-btn,
 .choice-btn:active,
-.choice-btn:hover {
+.choice-btn:hover,
+.choice-btn:focus {
     background-color: var(--main-orange);
     color: var(--font-dark);
 }
