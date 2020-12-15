@@ -22,11 +22,11 @@ export default function SearchResults({searchTerm, searchResults}) {
       </div>);
   });
   return (
-    <div>
+    <div className="col-lg-10 col-sm-12 mx-auto">
       {searchResults.length === 0 ?
         <p>No search results.</p>
         :
-        <div>
+        <div >
           <p>We found {searchResults.length} items for "{searchTerm}":</p>
           {storiesToDisplay}
         </div>

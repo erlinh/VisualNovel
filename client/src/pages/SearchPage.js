@@ -15,7 +15,7 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="container col-lg-12 mt-5 pt-5">
+    <div className="container col-lg-12 mt-5 pt-4">
       <NavBar/>
       <div style={{minHeight:'80vh'}}>
         <SearchBox passDataToPage={handleDataFromChild} />
