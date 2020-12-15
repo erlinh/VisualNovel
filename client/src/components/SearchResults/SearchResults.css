@@ -13,6 +13,7 @@
     line-height: 2;
     border-style: none;
     background-color: rgba(222, 223, 225, 0.427);
+    /* background: var( --bg-navbar-background); */
     color: white;
     outline-style: none;
 
