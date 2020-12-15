@@ -8,29 +8,36 @@ body {
 
 
 
-.card,.card-title, .card-subtitle, .overlayText p {
-    color: var(--font-light); 
-    }
+.card,
+.card-title,
+.card-subtitle,
+.overlayText p {
+    color: var(--font-light);
+}
 
 .popoverBtn {
-        padding: 0;
-        background-color: var(--background-dark);
-        border: none;
-    }
+    padding: 0;
+    background-color: var(--background-dark);
+    border: none;
+}
 
 
-.getDetailsBtn{
+.getDetailsBtn {
     background-color: var(--main-orange);
     color: var(--font-dark);
     font-weight: 600;
-    
+
 }
 
-.storyPage, .textSettingsContainer {
+.storyPage,
+.textSettingsContainer {
     color: var(--font-dark);
 }
 
-.choice-btn {
+.choice-btn,
+.choice-btn:active,
+.choice-btn:hover,
+.choice-btn:focus {
     background-color: var(--main-orange);
     color: var(--font-dark);
 }
@@ -38,5 +45,3 @@ body {
 .linkToText {
     color: var(--font-light);
 }
-
-
