@@ -5,13 +5,15 @@ import './TextContent.css';
 const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, fontClass, marginsClass, spacingClass, passChunkId}) => {
   const choiceFunction = (nextId) => {
     passChunkId(nextId);
-    window.scrollTo({left: 100})
+    // window.scrollTo({left: 100})
+    // window.scroll({ top: 0, left: 800})
+    document.getElementById("text-start").scrollIntoView();
   };
 
   return (
     <div onClick={toggleReadingNavOpen} className={`text-view-grid text-size-${textSizeClass} font-${fontClass} bg-${bgColorClass} spacing-${spacingClass}`}>
 
-      <div className="text-grid">
+      <div className="text-grid" id="text-start">
         <p className={`mb-0 text-columns margins-${marginsClass}`}>{content.text}</p>
       </div>
 
