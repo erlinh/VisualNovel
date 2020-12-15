@@ -48,8 +48,8 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, m
       { allChunks.length === 0 ? (
         <h3>Loading...</h3>
       ) : (
-          <TextChunk content={allChunks[currentChunkId]} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} bgColorClass={bgColor} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} passChunkId={passChunkId}/>
-          // <TextChunk content={contents[currentChunkId].text} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} bgColorClass={bgColor} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
+        <TextChunk content={allChunks[currentChunkId]} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} bgColorClass={bgColor} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} passChunkId={passChunkId}/>
+      // <TextChunk content={contents[currentChunkId].text} toggleReadingNavOpen={toggleReadingNavOpen} textSizeClass={textSizeClass} bgColorClass={bgColor} fontClass={fontClass} marginsClass={marginsClass} spacingClass={spacingClass} />
       )}
     </div>
   );
