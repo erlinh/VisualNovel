@@ -5,7 +5,7 @@ import './TextContent.css';
 const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, fontClass, marginsClass, spacingClass, passChunkId}) => {
   const choiceFunction = (nextId) => {
     passChunkId(nextId);
-    window.scrollTo({left: 100})
+    window.scrollTo({left: 100});
   };
 
   return (
@@ -18,17 +18,17 @@ const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, 
       <div className="choice-screen">
         { content.choice.length === 1 ? (
           <>
-          <h3>The End!</h3>
+            <h3>The End!</h3>
         
-          <Button className="choice-btn" onClick={() => choiceFunction(content.choice[0].chunkId)}>{content.choice[0].btnText}</Button>
+            <Button className="choice-btn" onClick={() => choiceFunction(content.choice[0].chunkId)}>{content.choice[0].btnText}</Button>
           </>
         ) : (
           <>
-        <h3>Choice buttons here</h3>
+            <h3>Choice buttons here</h3>
         
-  <Button className="choice-btn" onClick={() => choiceFunction(content.choice[0].chunkId)}>{content.choice[0].btnText}</Button>
-  <Button className="choice-btn" onClick={() => choiceFunction(content.choice[1].chunkId)}>{content.choice[1].btnText}</Button>
-        </>
+            <Button className="choice-btn" onClick={() => choiceFunction(content.choice[0].chunkId)}>{content.choice[0].btnText}</Button>
+            <Button className="choice-btn" onClick={() => choiceFunction(content.choice[1].chunkId)}>{content.choice[1].btnText}</Button>
+          </>
         )}
       </div>
 
