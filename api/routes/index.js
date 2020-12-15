@@ -47,7 +47,7 @@ Productrouter.get('/stories', async (req,res)=>{
     productsInCategories[category] = productsOfCategory;
   })
 
-  console.log(productsInCategories);
+  //console.log(productsInCategories);
   res.json(productsInCategories);
 
 
