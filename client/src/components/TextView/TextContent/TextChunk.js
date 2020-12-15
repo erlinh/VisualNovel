@@ -28,7 +28,7 @@ const TextChunk = ({content, toggleReadingNavOpen, textSizeClass, bgColorClass, 
           </>
         ) : (
           <>
-            <h3>Choice buttons here</h3>
+            <h3>What would you like to do?</h3>
         
             <Button className="choice-btn" onClick={() => choiceFunction(content.choice[0].chunkId)}>{content.choice[0].btnText}</Button>
             <Button className="choice-btn" onClick={() => choiceFunction(content.choice[1].chunkId)}>{content.choice[1].btnText}</Button>
