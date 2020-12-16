@@ -42,6 +42,15 @@ set in custom.css */
     margin: 1rem; 
 }
 
+.popupcard__button{
+    background: rgb(2,0,36);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.5942752100840336) 0%,
+     rgba(9,9,10,1) 0%, rgba(0,47,82,1) 27%, rgba(6,58,96,1) 41%, rgba(0,54,94,1) 61%, rgba(1,31,52,1) 78%, rgba(0,0,0,1) 100%, rgba(9,53,82,1) 100%, rgba(9,75,121,1) 100%);
+    border-radius: 15px;
+    margin-right: 5px;
+ }
+
 @media only screen and (max-width:1024px) {
     .card {
         max-width: 30vw;    
