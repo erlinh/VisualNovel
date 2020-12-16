@@ -1,11 +1,21 @@
+@import '../../../styles/variables.css';
+
 .carouselcard{
    max-height: 30vh;
 }
 .carausel__title{
-    color: #cc8e35;
-    padding: 50px 0 10px 0;
+     /* color:#cc8e35; */
+     /* border: 1px solid red; */
+     font-size: 15px;
+     margin-top: 10px;
+     padding: 8px;
+    background: var(--bg-navbar-background);
+    width: fit-content;
+    padding-right: 20px;
 }
-
+.detailsPage__hr{
+    background: var( --bg-hr-background);
+}
 
 @media only screen and (max-width:1024px) {
     .carouselcard{
@@ -19,9 +29,14 @@
         max-width: 40vw;
     }
     .carausel__title{
-        font-size: small;
-        color:#cc8e35;
-        padding: 30px 0 10px 0;
+        color:white;
+        font-size: 16px;
+        margin-top: 10px;
+        padding: 8px;
+        background: var(--bg-navbar-background);
+        width: fit-content;
+        padding-right: 20px;
+        
     }
     
 }

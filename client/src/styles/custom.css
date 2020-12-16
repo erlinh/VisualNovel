@@ -34,13 +34,18 @@ body {
     color: var(--font-dark);
 }
 
+
 .choice-btn,
 .choice-btn:active,
 .choice-btn:hover,
 .choice-btn:focus {
-    background-color: var(--main-orange);
+    background-color:  rgba(16, 152, 250, 0.2);
     color: var(--font-dark);
+    font-weight: bold;
+
 }
+
+
 
 .linkToText {
     color: var(--font-light);

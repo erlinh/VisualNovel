@@ -11,6 +11,8 @@ const TopCard =({title, author, imgUrl, rating, slug, categories})=>{
         <div className="topSection__row text-light">
           <div className="topSection__CardImg ">
             <img src={imgUrl} alt="Book cover"/>
+            <Link to={`/stories/${slug}/content`} className="linkToText topSection__buttonLink pt-2 text-center "><Button className="topSection__button">
+              <i className="fas fa-book-open"></i></Button></Link>
           </div>
           <div className="media-body topSection__p">
             <h5 className="mt-0">{title}</h5>
@@ -29,9 +31,7 @@ const TopCard =({title, author, imgUrl, rating, slug, categories})=>{
             <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
             </p>
             <h6 className="mt-0 pb-3"> rating:{rating} /5</h6>
-            <Link to={`/stories/${slug}/content`} className="linkToText"><Button style={{backgroundColor:'green', borderRadius:'15px',marginRight:'5px'}}>Read More</Button></Link>
-            
-              
+            <Link to={`/stories/${slug}/content`} className="linkToText"><Button className="topSection__button">Read More</Button></Link>
           </div>
         </div>
       </div>

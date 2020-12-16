@@ -15,7 +15,7 @@ export default function SearchBox(props) {
       
     try {
       // get the stories
-      const response = await instance.post(`/search/${phrase}`);
+      const response = await instance.get(`/search/${phrase}`);
       const foundStories = response.data;
       // console.log(searchInput, foundStories);
 
@@ -30,13 +30,12 @@ export default function SearchBox(props) {
     e.preventDefault();
     searchByPhrase(searchInput);
   };
-
-
   return (
-    <div className="searchbox">
+    <div className="searchBox__searchbar">
       <form onSubmit={submitSearchForm}>
+        <h5>Search</h5>
         <input type="text" onChange={handleSearchboxInputChange}/>
-        <Button color="primary" type="submit">Search</Button>
+        <Button className="topSection__button">Search</Button>
       </form>
     </div>
   );

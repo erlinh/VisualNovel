@@ -10,3 +10,7 @@ h1 {
 h2{
     color: var(--font-light);  
     }
+
+.LandingPage__hr{
+        background: var(--bg-hr-background);
+    }

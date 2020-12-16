@@ -1,11 +1,22 @@
 .navbar__top{
     background-image: linear-gradient(to left, #072b5c, #05274b, #0b2239, #121d28, #161718);
 }
+.navbar__logo{
+    margin-left: 40px;
+    padding: 10px;
+    background: rgb(2,0,36);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.5942752100840336) 0%,
+     rgba(9,9,10,1) 0%, rgba(0,47,82,1) 27%, rgba(6,58,96,1) 41%, rgba(0,54,94,1) 61%, rgba(1,31,52,1) 78%, rgba(0,0,0,1) 100%, rgba(9,53,82,1) 100%, rgba(9,75,121,1) 100%);
+    color: white !important;
+   
+}
 
 @media only screen and (max-width:450px) {
-    .navlogo__mob{
-        padding-left: 1px;
-        color: red !important;
+    .navbar__logo{
+        margin-left: 0;
+        padding: 5px;
+        font-size: 15px !important;
     }
     
 }
