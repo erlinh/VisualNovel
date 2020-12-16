@@ -33,7 +33,7 @@ export default function SearchBox(props) {
   return (
     <div className="searchBox__searchbar">
       <form onSubmit={submitSearchForm}>
-      <h5>Search</h5>
+        <h5>Search</h5>
         <input type="text" onChange={handleSearchboxInputChange}/>
         <Button className="topSection__button">Search</Button>
       </form>

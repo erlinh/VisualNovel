@@ -16,7 +16,7 @@ export default function SearchResults({searchTerm, searchResults}) {
           <p>By {story.author}</p>
           <p>Rating: {story.rating}/5</p>
           <Link to= {`/stories/${story.slug}`}>
-          <Button className="topSection__button">Read More</Button>
+            <Button className="topSection__button">Read More</Button>
           </Link>
         </div>
       </div>);
