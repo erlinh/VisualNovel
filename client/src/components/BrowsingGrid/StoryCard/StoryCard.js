@@ -24,7 +24,7 @@ const StoryCard=({id, title, author, imgUrl, rating, slug, categories})=> {
             <p>{rating}/5</p>        
             <p>{categories}</p>
             <Link to= {`/stories/${slug}`}>
-              <Button className="getDetailsBtn">Get Details</Button>
+              <Button className="popupcard__button">Get Details</Button>
             </Link>
           </div>
         </PopoverBody>
