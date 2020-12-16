@@ -54,6 +54,8 @@
     font-size: 14px;
     font-size: .875rem;
 }
+
+
  
 @media only screen and (max-width:1024px) {
     .topSection__CardImg img{

@@ -1,10 +1,5 @@
 @import '../../styles/variables.css';
 
-/* .browsing-grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-} */
-
 .BrowsingGrid__bg{
     background:  black;
 }
@@ -23,8 +18,8 @@ h3 {
 }
 
 .BrowsingGrid__categorytitle{
-    /* color:#cc8e35; */
-    font-size: 15px;
+    
+    font-size: 18px;
     padding: 8px;
    background: var(--bg-navbar-background);
    width: fit-content;
@@ -35,7 +30,7 @@ h3 {
     justify-content: center;
     margin-top: 70px;
     padding: 20px;
-    /* border: 1px solid red; */
+    
 }
  .search__bar input{
     border-radius: 20px;
@@ -45,6 +40,7 @@ h3 {
     background-color: rgba(1, 8, 23, 0.9);
     color:white;
     outline-style: none;
+    padding-left: 1rem;
     
  }
 @media only screen and (max-width:420px) {
@@ -52,7 +48,6 @@ h3 {
         margin-top: 70px;
         margin-bottom: 0px;
         border: none;
-        /* border: 1px solid red; */
         padding: 0px;
         
      }
@@ -65,13 +60,5 @@ h3 {
          outline-style: none;
      }
 
-     .BrowsingGrid__categorytitle{
-         color:white;
-         font-size: 16px;
-         padding: 8px;
-        background: var(--bg-navbar-background);
-        width: fit-content;
-        padding-right: 20px;
-     }
     
 }

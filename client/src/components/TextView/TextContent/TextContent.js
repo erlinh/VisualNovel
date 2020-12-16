@@ -7,12 +7,9 @@ import './TextContent.css';
 const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, marginsClass, spacingClass}) => {
  
   const [allChunks, setAllChunks]= useState([]);
-  const [contents, setContents] = useState([]);
   const [currentChunkId, setCurrentChunkId] = useState(0);
 
-  const slug = useParams().slug;
-
-  useEffect(()=>{
+    useEffect(()=>{
     async function fetchContent(){
       try {
         const {data} = await instance.get('/storyline');
@@ -21,12 +18,6 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, m
         setAllChunks(data.pullStorylines[0].content);
         console.log(allChunks);
         
-        // const {data} = await instance.get(`/stories/${slug}/content`);
-        // setContents(data.content);
-        // console.log(data)
-        // console.log(data.content)
-        // console.log(contents)
-
       } catch (err) {
         console.log('There is an error to get content', err);
       }
@@ -34,8 +25,7 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, m
     fetchContent();
     // console.log(contents)
   },
-  // [slug]
-  []
+   []
   );
 
   const passChunkId = (nextChunk) =>{

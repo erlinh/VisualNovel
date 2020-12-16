@@ -39,7 +39,7 @@ const NavBar = (props) => {
     <div>
       <Navbar className="fixed-top navbar__top" light expand="md">
         <Link className="navbar-brand navbar__logo" to="/">🆂🆃🅾🆁🆈🅵🅸🅲🆂</Link>
-        <NavbarToggler style={{backgroundColor:'#1e272e'}} onClick={toggle} />
+        <NavbarToggler style={{backgroundColor:'#094b79'}} onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             {!userID ? (

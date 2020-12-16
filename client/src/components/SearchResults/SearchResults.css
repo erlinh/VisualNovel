@@ -17,6 +17,7 @@
     /* background: var( --bg-navbar-background); */
     color:black;
     outline-style: none;
+    padding-left: 1rem; 
 
 }
 .search-res-card {
