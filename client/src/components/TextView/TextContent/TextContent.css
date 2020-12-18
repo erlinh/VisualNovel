@@ -120,6 +120,7 @@
     line-height: 2;
 }
 
+
 @media only screen and (max-width:400px) {
 
     .margins-0 {
@@ -144,5 +145,37 @@
         padding: 0 3rem;
         column-gap: 6rem;
         margin: 0;
+    }
+}
+
+
+/*Media rules to make the desktop version more demo friendly. Does not function correctly with longer texts.*/
+@media only screen and (min-width:1000px){
+    .textContentContainer {
+        overflow-x: hidden;
+    }
+    
+
+    .text-view-grid {
+        display: grid;
+        grid-template-columns: auto 0px;
+        width: 50vw;
+        padding-left: 2rem;
+    }
+
+    .text-columns {
+            column-width: 45vw;
+            
+    }
+
+    .choice-screen {
+        width: 50vw;
+        height: 100vh;
+        padding: 5rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+       
     }
 }
