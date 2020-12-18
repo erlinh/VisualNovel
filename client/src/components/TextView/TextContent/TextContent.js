@@ -9,7 +9,7 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, m
   const [allChunks, setAllChunks]= useState([]);
   const [currentChunkId, setCurrentChunkId] = useState(0);
 
-    useEffect(()=>{
+  useEffect(()=>{
     async function fetchContent(){
       try {
         const {data} = await instance.get('/storyline');
@@ -25,7 +25,7 @@ const TextContent = ({toggleReadingNavOpen, textSizeClass, bgColor, fontClass, m
     fetchContent();
     // console.log(contents)
   },
-   []
+  []
   );
 
   const passChunkId = (nextChunk) =>{
